@@ -10,7 +10,9 @@ Eddy-Meenu의 사이드 프로젝트 레포입니다.
 
 ## :people_hugging: Authors
 
-- [@Eddy](https://www.github.com/JUNY0110) | [@Meenu](https://github.com/taek0622)
+|<img src="https://github.com/JUNY0110.png">|<img src="https://github.com/taek0622.png">|
+|:-:|:-:|
+|[Eddy](https://www.github.com/JUNY0110)|[Meenu](https://github.com/taek0622)|
 
 
 ## :framed_picture: Demo
