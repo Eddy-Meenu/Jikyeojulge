@@ -23,6 +23,7 @@
 		98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F5128688524001A13C5 /* MedicineSearchView.swift */; };
 		98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F532868855E001A13C5 /* ModifyingInfoView.swift */; };
 		98913F562868856E001A13C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F552868856E001A13C5 /* OnboardingView.swift */; };
+		98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		98913F5128688524001A13C5 /* MedicineSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSearchView.swift; sourceTree = "<group>"; };
 		98913F532868855E001A13C5 /* ModifyingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoView.swift; sourceTree = "<group>"; };
 		98913F552868856E001A13C5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		98F1CBFB2869858100B9737B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		98913F5828688612001A13C5 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				98F1CBFB2869858100B9737B /* Color+Extension.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */,
 				98913F1D286884B8001A13C5 /* ContentView.swift in Sources */,
 				98913F27286884B9001A13C5 /* Jikyeojulge.xcdatamodeld in Sources */,
+				98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */,
 				98913F502868850D001A13C5 /* SettingView.swift in Sources */,
 				98913F4E28688502001A13C5 /* MedicinRecordView.swift in Sources */,
 				98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */,
