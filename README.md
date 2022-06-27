@@ -1,12 +1,9 @@
-# Jikyeojulge
+# :iphone: Jikyeojulge
+Eddy-Meenu의 사이드 프로젝트 레포입니다.
+
 혼자가 아닌 당신을 위한 기록
 
 ![Logo](https://dummyimage.com/1000x300/000/fff.png)
-
-
-# :iphone: MC2 Team10
-
-Eddy-Meenu의 사이드 프로젝트 레포입니다.
 
 ## :people_hugging: Authors
 
@@ -30,3 +27,7 @@ swiftUI, CoreData, XML Parser
 
 ## ✔️ History
 2022.06.26. GIT REPO CREATED
+
+## 🧩 ETC
+
+[Convention](./Convention.md)
