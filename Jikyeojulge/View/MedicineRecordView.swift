@@ -35,11 +35,32 @@ struct MedicineInfo: View {
     }
 }
 
+struct DateSearchBar: View {
+    @State private var startDate = Date()
+    @State private var endDate = Date()
+    
+    var body: some View {
+        HStack {
+            DatePicker("시작 날짜", selection: $startDate, in:...Date(), displayedComponents: .date)
+                .labelsHidden()
+            Text("~")
+            DatePicker("끝 날짜", selection: $endDate, in:...Date(), displayedComponents: .date)
+                .labelsHidden()
+            Button(action: {
+                
+            }, label: {
+                Text("확인")
+                    .foregroundColor(Color.white)
+            })
+            .padding(5)
+            .background(RoundedRectangle(cornerRadius: 5).fill(Color.subBtnBlue))
+        }
+    }
+}
+
 struct MedicineRecordView: View {
     @State private var isShowingSheet = false
     @State private var isShowingFullScreen = false
-    @State private var startDate = Date()
-    @State private var endDate = Date()
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -47,23 +68,9 @@ struct MedicineRecordView: View {
                 .ignoresSafeArea()
             
             VStack {
-                HStack {
-                    DatePicker("시작 날짜", selection: $startDate, in:...Date(), displayedComponents: .date)
-                        .labelsHidden()
-                    Text("~")
-                    DatePicker("끝 날짜", selection: $endDate, in:...Date(), displayedComponents: .date)
-                        .labelsHidden()
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("확인")
-                            .foregroundColor(Color.white)
-                    })
-                    .padding(5)
-                    .background(RoundedRectangle(cornerRadius: 5).fill(Color.subBtnBlue))
-                }
-                .padding(.horizontal, 20)
-                .padding(.top, 15)
+                DateSearchBar()
+                    .padding(.horizontal, 20)
+                    .padding(.top, 15)
                 
                 List {
                     NavigationLink(destination: {
