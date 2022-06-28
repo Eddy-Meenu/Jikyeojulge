@@ -121,7 +121,7 @@ Button(action: {
 
 ### 3. 코드 스타일
 
-#### 3.1. struct / classs
+#### 3.1. struct / class
 
 - 구조체를 생성할 때는 구조체 생성자를 사용한다
 
