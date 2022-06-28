@@ -9,7 +9,10 @@ import SwiftUI
 
 struct Initbtn: View {
     @Binding var arrayCount: Int
+    @Binding var showText: Bool
+    @Binding var name: String
     var body: some View {
+        
         Button(action: {
             arrayCount += 1
         }, label: {
