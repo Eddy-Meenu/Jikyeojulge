@@ -25,7 +25,7 @@ struct MedicineSearchView: View {
                     UITableView.appearance().contentInset.top = -20
                 }
             }
-            .navigationTitle("조회하여 추가")
+            .navigationTitle("약품 검색")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchKeyword, placement: .navigationBarDrawer(displayMode: .always))
             .toolbar {
