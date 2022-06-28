@@ -13,7 +13,10 @@ struct JikyeojulgeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            InitSettingView()
+            NavigationView {
+                InitSettingView()
+            }
+            .navigationBarHidden(true)
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

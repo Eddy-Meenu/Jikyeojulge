@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
+		987036A7286AE53600451744 /* InitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A6286AE53600451744 /* InitTextField.swift */; };
+		987036A9286AE55700451744 /* InitTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A8286AE55700451744 /* InitTitle.swift */; };
+		987036AC286AEB5200451744 /* CustomTextEditior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AB286AEB5200451744 /* CustomTextEditior.swift */; };
+		987036AE286AEBB800451744 /* ModifyingInfoTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */; };
+		987036B0286AECA500451744 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AF286AECA500451744 /* ImagePicker.swift */; };
+		987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */; };
 		266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */; };
 		98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F1A286884B8001A13C5 /* JikyeojulgeApp.swift */; };
 		98913F1D286884B8001A13C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F1C286884B8001A13C5 /* ContentView.swift */; };
@@ -45,6 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
+		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
+		987036A8286AE55700451744 /* InitTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTitle.swift; sourceTree = "<group>"; };
+		987036AB286AEB5200451744 /* CustomTextEditior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditior.swift; sourceTree = "<group>"; };
+		987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoTextLine.swift; sourceTree = "<group>"; };
+		987036AF286AECA500451744 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HidKeyboard+Extension.swift"; sourceTree = "<group>"; };
 		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
 		98913F17286884B8001A13C5 /* Jikyeojulge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jikyeojulge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98913F1A286884B8001A13C5 /* JikyeojulgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikyeojulgeApp.swift; sourceTree = "<group>"; };
@@ -93,6 +107,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		987036A3286AE4F300451744 /* InitSettingView */ = {
+			isa = PBXGroup;
+			children = (
+				98913F49286884E4001A13C5 /* InitSettingView.swift */,
+				987036A8286AE55700451744 /* InitTitle.swift */,
+				987036A6286AE53600451744 /* InitTextField.swift */,
+				987036A4286AE52100451744 /* InitBtn.swift */,
+			);
+			path = InitSettingView;
+			sourceTree = "<group>";
+		};
+		987036AA286AE58300451744 /* ModifyingInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				98913F532868855E001A13C5 /* ModifyingInfoView.swift */,
+				987036AB286AEB5200451744 /* CustomTextEditior.swift */,
+				987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */,
+			);
+			path = ModifyingInfoView;
+			sourceTree = "<group>";
+		};
 		98913F0E286884B8001A13C5 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +192,7 @@
 		98913F5728688586001A13C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				987036AF286AECA500451744 /* ImagePicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				98F1CBFB2869858100B9737B /* Color+Extension.swift */,
+				987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -172,13 +209,13 @@
 		98913F5928688622001A13C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				98913F49286884E4001A13C5 /* InitSettingView.swift */,
+				987036A3286AE4F300451744 /* InitSettingView */,
 				98913F4B286884F3001A13C5 /* MainView.swift */,
 				98913F4D28688502001A13C5 /* MedicineRecordView.swift */,
 				266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */,
 				98913F5128688524001A13C5 /* MedicineSearchView.swift */,
 				98913F4F2868850D001A13C5 /* SettingView.swift */,
-				98913F532868855E001A13C5 /* ModifyingInfoView.swift */,
+				987036AA286AE58300451744 /* ModifyingInfoView */,
 				98913F552868856E001A13C5 /* OnboardingView.swift */,
 			);
 			path = View;
@@ -315,11 +352,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				98913F24286884B9001A13C5 /* Persistence.swift in Sources */,
+				987036A5286AE52100451744 /* InitBtn.swift in Sources */,
+				987036AC286AEB5200451744 /* CustomTextEditior.swift in Sources */,
+				987036B0286AECA500451744 /* ImagePicker.swift in Sources */,
 				98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */,
 				98913F4C286884F3001A13C5 /* MainView.swift in Sources */,
 				98913F4A286884E4001A13C5 /* InitSettingView.swift in Sources */,
 				98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */,
 				98913F1D286884B8001A13C5 /* ContentView.swift in Sources */,
+				987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */,
+				987036A7286AE53600451744 /* InitTextField.swift in Sources */,
+				987036AE286AEBB800451744 /* ModifyingInfoTextLine.swift in Sources */,
+				987036A9286AE55700451744 /* InitTitle.swift in Sources */,
 				98913F27286884B9001A13C5 /* Jikyeojulge.xcdatamodeld in Sources */,
 				98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */,
 				98913F502868850D001A13C5 /* SettingView.swift in Sources */,
