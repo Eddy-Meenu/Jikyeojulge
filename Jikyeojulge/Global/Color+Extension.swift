@@ -13,3 +13,12 @@ extension Color {
     static let mainBlue: Color = Color(red: 6/255, green: 44/255, blue: 187/255).opacity(0.1)
     static let mainWhite: Color = Color(red: 249/255, green: 249/255, blue: 249/255)
 }
+
+extension TextField {
+    func nothing() -> some View {
+        self
+            .multilineTextAlignment(.center)
+            .font(.system(size: 18, weight: .regular))
+            .padding(.top, 15)
+    }
+}
