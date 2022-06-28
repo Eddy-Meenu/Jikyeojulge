@@ -66,17 +66,24 @@ struct MedicineRecordView: View {
                 .padding(.top, 15)
                 
                 List {
-                    NavigationLink(destination: { Text("A") }, label: {
+                    NavigationLink(destination: {
+                        MedicineDetailView()
+                    }, label: {
                         MedicineInfo()
                     })
-                    NavigationLink(destination: { Text("B") }, label: {
+                    NavigationLink(destination: {
+                        MedicineDetailView()
+                    }, label: {
                         MedicineInfo()
                     })
-                    NavigationLink(destination: { Text("C") }, label: {
+                    NavigationLink(destination: {
+                        MedicineDetailView()
+                    }, label: {
                         MedicineInfo()
                     })
                 }
-                .onAppear { UITableView.appearance().backgroundColor = UIColor.clear
+                .onAppear {
+                    UITableView.appearance().backgroundColor = UIColor.clear
                     UITableView.appearance().contentInset.top = -20
                 }
             }
