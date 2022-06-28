@@ -14,6 +14,7 @@
 		987036AE286AEBB800451744 /* ModifyingInfoTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */; };
 		987036B0286AECA500451744 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AF286AECA500451744 /* ImagePicker.swift */; };
 		987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */; };
+		266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */; };
 		98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F1A286884B8001A13C5 /* JikyeojulgeApp.swift */; };
 		98913F1D286884B8001A13C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F1C286884B8001A13C5 /* ContentView.swift */; };
 		98913F1F286884B9001A13C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98913F1E286884B9001A13C5 /* Assets.xcassets */; };
@@ -25,7 +26,7 @@
 		98913F3D286884B9001A13C5 /* JikyeojulgeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F3C286884B9001A13C5 /* JikyeojulgeUITestsLaunchTests.swift */; };
 		98913F4A286884E4001A13C5 /* InitSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F49286884E4001A13C5 /* InitSettingView.swift */; };
 		98913F4C286884F3001A13C5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F4B286884F3001A13C5 /* MainView.swift */; };
-		98913F4E28688502001A13C5 /* MedicinRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F4D28688502001A13C5 /* MedicinRecordView.swift */; };
+		98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F4D28688502001A13C5 /* MedicineRecordView.swift */; };
 		98913F502868850D001A13C5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F4F2868850D001A13C5 /* SettingView.swift */; };
 		98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F5128688524001A13C5 /* MedicineSearchView.swift */; };
 		98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F532868855E001A13C5 /* ModifyingInfoView.swift */; };
@@ -58,6 +59,7 @@
 		987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoTextLine.swift; sourceTree = "<group>"; };
 		987036AF286AECA500451744 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HidKeyboard+Extension.swift"; sourceTree = "<group>"; };
+		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
 		98913F17286884B8001A13C5 /* Jikyeojulge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jikyeojulge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98913F1A286884B8001A13C5 /* JikyeojulgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikyeojulgeApp.swift; sourceTree = "<group>"; };
 		98913F1C286884B8001A13C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		98913F3C286884B9001A13C5 /* JikyeojulgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikyeojulgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		98913F49286884E4001A13C5 /* InitSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitSettingView.swift; sourceTree = "<group>"; };
 		98913F4B286884F3001A13C5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		98913F4D28688502001A13C5 /* MedicinRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinRecordView.swift; sourceTree = "<group>"; };
+		98913F4D28688502001A13C5 /* MedicineRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineRecordView.swift; sourceTree = "<group>"; };
 		98913F4F2868850D001A13C5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		98913F5128688524001A13C5 /* MedicineSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSearchView.swift; sourceTree = "<group>"; };
 		98913F532868855E001A13C5 /* ModifyingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoView.swift; sourceTree = "<group>"; };
@@ -209,7 +211,8 @@
 			children = (
 				987036A3286AE4F300451744 /* InitSettingView */,
 				98913F4B286884F3001A13C5 /* MainView.swift */,
-				98913F4D28688502001A13C5 /* MedicinRecordView.swift */,
+				98913F4D28688502001A13C5 /* MedicineRecordView.swift */,
+				266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */,
 				98913F5128688524001A13C5 /* MedicineSearchView.swift */,
 				98913F4F2868850D001A13C5 /* SettingView.swift */,
 				987036AA286AE58300451744 /* ModifyingInfoView */,
@@ -364,7 +367,8 @@
 				98913F27286884B9001A13C5 /* Jikyeojulge.xcdatamodeld in Sources */,
 				98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */,
 				98913F502868850D001A13C5 /* SettingView.swift in Sources */,
-				98913F4E28688502001A13C5 /* MedicinRecordView.swift in Sources */,
+				98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */,
+				266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */,
 				98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */,
 				98913F562868856E001A13C5 /* OnboardingView.swift in Sources */,
 			);
