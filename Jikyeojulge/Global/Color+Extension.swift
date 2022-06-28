@@ -22,4 +22,3 @@ extension TextField {
             .padding(.top, 15)
     }
 }
-
