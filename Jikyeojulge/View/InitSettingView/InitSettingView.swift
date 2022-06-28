@@ -15,6 +15,7 @@ struct InitSettingView: View {
     @State var Contact2 = ""
     @State var title = ["이름을 입력해주세요", "생년월일을 입력해주세요", "혈액형을 입력해주세요", "비상연락처를 입력해주세요", "사진을 등록해주세요"]
     @State var arrayCount = 0
+
     var body: some View {
         ZStack{
             Color.mainBlue.ignoresSafeArea()
@@ -67,52 +68,5 @@ struct InitSettingView: View {
 struct InitSettingView_Previews: PreviewProvider {
     static var previews: some View {
         InitSettingView()
-    }
-}
-
-
-struct InitTitle: View {
-    @Binding var title: [String]
-    @Binding var arrayCount: Int
-    
-    var body: some View {
-        
-        HStack {
-            Text("\(title[arrayCount])")
-                .font(.system(size: 25, weight: .bold))
-            Spacer()
-        }
-    }
-}
-
-struct Initbtn: View {
-    @Binding var arrayCount: Int
-    var body: some View {
-        Button(action: {
-            arrayCount += 1
-        }, label: {
-            Text("확인")
-                .foregroundColor(.mainWhite)
-                .font(.system(size: 18, weight: .bold))
-                .padding(.horizontal, 133)
-                .padding(.vertical, 14)
-        })
-        .background(RoundedRectangle(cornerRadius: 15).fill(Color.mainBtnBlue))
-    }
-}
-
-
-struct InitTextField: View {
-    var placeholder = ""
-    @Binding var value: String
-
-    var body: some View {
-        
-        TextField(placeholder, text: $value)
-            .multilineTextAlignment(.center)
-            .font(.system(size: 18, weight: .regular))
-            .padding(.top, 15)
-        Divider()
-            .background(.black)
     }
 }
