@@ -35,13 +35,8 @@ struct MedicineDetailView: View {
                         Text("이 약은 식욕감퇴(식욕부진), 위부팽만감, 소화불량, 과식, 체함, 구역, 구토에 사용합니다.")
                             .font(.system(size: 16))
                         
-                        Spacer()
-                            .frame(height: 15)
-                        
                         Divider()
-                        
-                        Spacer()
-                            .frame(height: 15)
+                            .padding(.vertical, 15)
                     }
                     
                     Group {
@@ -51,13 +46,8 @@ struct MedicineDetailView: View {
                         Text("메토트렉세이트, 설포닐우레아, 다른 국소 적용 약물과 함께 사용 시 의사 또는 약사와 상의하십시오.")
                             .font(.system(size: 16))
                         
-                        Spacer()
-                            .frame(height: 15)
-                        
                         Divider()
-                        
-                        Spacer()
-                            .frame(height: 15)
+                            .padding(.vertical, 15)
                     }
                     
                     Text("부작용")
