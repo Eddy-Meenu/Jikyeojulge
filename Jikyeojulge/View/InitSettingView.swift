@@ -22,6 +22,7 @@ struct InitSettingView: View {
             VStack {
 
                 InitTitle(title: $title, arrayCount: $arrayCount)
+                
                 if arrayCount >= 4 {
                     Image(systemName: "photo")
                         .resizable()
@@ -34,49 +35,24 @@ struct InitSettingView: View {
                 if arrayCount >= 3 {
                     HStack {
                         VStack {
-                            TextField("000-0000-0000", text: $Contact1)
-                                .multilineTextAlignment(.center)
-                                .font(.system(size: 18, weight: .regular))
-                                .padding(.top, 30)
-                            Divider()
-                                .background(.black)
+                            InitTextField(placeholder: "010-0000-0000", value: $Contact1)
                         }
+                        
                         VStack {
-                            TextField("111-1111-1111", text: $Contact2)
-                                .multilineTextAlignment(.center)
-                                .font(.system(size: 18, weight: .regular))
-                                .padding(.top, 30)
-                            Divider()
-                                .background(.black)
+                            InitTextField(placeholder: "010-2222-2222", value: $Contact2)
                         }
                     }
                 }
-
                 
                 if arrayCount >= 2 {
-                    TextField("A+", text: $bloodType)
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 18, weight: .regular))
-                        .padding(.top, 30)
-                    Divider()
-                        .background(.black)
+                    InitTextField(placeholder: "A+", value: $bloodType)
                 }
+                
                 if arrayCount >= 1 {
-                    TextField("1999년 01월 01일", text: $birth)
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 18, weight: .regular))
-                        .padding(.top, 30)
-                    Divider()
-                        .background(.black)
+                    InitTextField(placeholder: "1999년 01월 01일", value: $birth)
                 }
                 
-                TextField("홍길동", text: $name)
-                    .multilineTextAlignment(.center)
-                    .font(.system(size: 18, weight: .regular))
-                    .padding(.top, 30)
-                Divider()
-                    .background(.black)
-                
+                InitTextField(placeholder: "홍길동", value: $name)
                 Spacer()
                 
                 Initbtn(arrayCount: $arrayCount)
@@ -122,5 +98,21 @@ struct Initbtn: View {
                 .padding(.vertical, 14)
         })
         .background(RoundedRectangle(cornerRadius: 15).fill(Color.mainBtnBlue))
+    }
+}
+
+
+struct InitTextField: View {
+    var placeholder = ""
+    @Binding var value: String
+
+    var body: some View {
+        
+        TextField(placeholder, text: $value)
+            .multilineTextAlignment(.center)
+            .font(.system(size: 18, weight: .regular))
+            .padding(.top, 15)
+        Divider()
+            .background(.black)
     }
 }
