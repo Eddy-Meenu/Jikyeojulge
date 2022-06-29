@@ -28,12 +28,12 @@ struct InitSettingView: View {
 
     var body: some View {
         ZStack{
-            Color.mainBlue.ignoresSafeArea()
+            Color.mainBlue
+                .ignoresSafeArea()
             
             VStack {
 
                 InitTitle(title: $title, arrayCount: $arrayCount)
-                    .padding(.top, 90)
 
                 if arrayCount >= 4 {
                     if showImage == nil {

@@ -155,7 +155,6 @@
 				98913F5828688612001A13C5 /* Global */,
 				98913F5928688622001A13C5 /* View */,
 				98913F1E286884B9001A13C5 /* Assets.xcassets */,
-				98913F23286884B9001A13C5 /* Persistence.swift */,
 				98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */,
 				98913F20286884B9001A13C5 /* Preview Content */,
 			);
@@ -190,6 +189,7 @@
 		98913F5728688586001A13C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				98913F23286884B9001A13C5 /* Persistence.swift */,
 				987036AF286AECA500451744 /* ImagePicker.swift */,
 			);
 			path = Model;
