@@ -17,9 +17,9 @@ struct MedicineSearchView: View {
                 Color.mainBlue
                     .ignoresSafeArea()
                 List {
-                    MedicineInfo()
-                    MedicineInfo()
-                    MedicineInfo()
+//                    MedicineInfo()
+//                    MedicineInfo()
+//                    MedicineInfo()
                 }
                 .onAppear { UITableView.appearance().backgroundColor = UIColor.clear
                     UITableView.appearance().contentInset.top = -20

@@ -60,6 +60,7 @@ struct MedicineDetailView: View {
             .frame(maxHeight: .infinity)
             .background(RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
+                .border(.white.opacity(0.2)).cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.15), radius: 30, x: 6, y: 6))
             .padding(20)
         }
