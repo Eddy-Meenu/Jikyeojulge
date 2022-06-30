@@ -15,7 +15,7 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         //
-        container = NSPersistentContainer(name: "LearningCoreData")
+        container = NSPersistentContainer(name: "Jikyeojulge")
         if inMemory {
             
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
@@ -24,9 +24,9 @@ struct PersistenceController {
         // ladPersistentStore의 completionHandler가 실행하면, stack은 완전히 초기화되고, 사용할 준비가 마쳐진다. completion handler는 생성된 각각의 persistent store에 의해 한 번 호출된다.
         // 만약 persistent store의 loading에 error가 있다면, NSError값이 채워질 것이다.
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
+//            if let error = error as NSError? {
+//                fatalError("Unresolved error \(error), \(error.userInfo)")
+//            }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }

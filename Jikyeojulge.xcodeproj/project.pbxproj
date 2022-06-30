@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */; };
 		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
 		987036A7286AE53600451744 /* InitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A6286AE53600451744 /* InitTextField.swift */; };
 		987036A9286AE55700451744 /* InitTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A8286AE55700451744 /* InitTitle.swift */; };
@@ -14,7 +15,6 @@
 		987036AE286AEBB800451744 /* ModifyingInfoTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */; };
 		987036B0286AECA500451744 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AF286AECA500451744 /* ImagePicker.swift */; };
 		987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */; };
-		266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */; };
 		98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F1A286884B8001A13C5 /* JikyeojulgeApp.swift */; };
 		98913F1D286884B8001A13C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F1C286884B8001A13C5 /* ContentView.swift */; };
 		98913F1F286884B9001A13C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98913F1E286884B9001A13C5 /* Assets.xcassets */; };
@@ -31,6 +31,8 @@
 		98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F5128688524001A13C5 /* MedicineSearchView.swift */; };
 		98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F532868855E001A13C5 /* ModifyingInfoView.swift */; };
 		98913F562868856E001A13C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F552868856E001A13C5 /* OnboardingView.swift */; };
+		98DE9BAB286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
+		98DE9BAC286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
 		98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
 		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
 		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
 		987036A8286AE55700451744 /* InitTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTitle.swift; sourceTree = "<group>"; };
@@ -59,7 +62,6 @@
 		987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoTextLine.swift; sourceTree = "<group>"; };
 		987036AF286AECA500451744 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HidKeyboard+Extension.swift"; sourceTree = "<group>"; };
-		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
 		98913F17286884B8001A13C5 /* Jikyeojulge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jikyeojulge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98913F1A286884B8001A13C5 /* JikyeojulgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikyeojulgeApp.swift; sourceTree = "<group>"; };
 		98913F1C286884B8001A13C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 		98913F5128688524001A13C5 /* MedicineSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSearchView.swift; sourceTree = "<group>"; };
 		98913F532868855E001A13C5 /* ModifyingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoView.swift; sourceTree = "<group>"; };
 		98913F552868856E001A13C5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		98F1CBFB2869858100B9737B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +195,8 @@
 		98913F5728688586001A13C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */,
+				98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */,
 				98913F23286884B9001A13C5 /* Persistence.swift */,
 				987036AF286AECA500451744 /* ImagePicker.swift */,
 			);
@@ -357,6 +363,7 @@
 				987036B0286AECA500451744 /* ImagePicker.swift in Sources */,
 				98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */,
 				98913F4C286884F3001A13C5 /* MainView.swift in Sources */,
+				98DE9BAC286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				98913F4A286884E4001A13C5 /* InitSettingView.swift in Sources */,
 				98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */,
 				98913F1D286884B8001A13C5 /* ContentView.swift in Sources */,
@@ -370,6 +377,7 @@
 				98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */,
 				266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */,
 				98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */,
+				98DE9BAB286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				98913F562868856E001A13C5 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
