@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct DateSearchBar: View {
     @State private var startDate = Date()

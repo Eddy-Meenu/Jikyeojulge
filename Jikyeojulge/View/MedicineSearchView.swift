@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct MedicineSearchView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
