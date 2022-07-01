@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var images: Data?
+    @Binding var images: Data
     @Binding var show: Bool
 
     @Environment(\.presentationMode) private var presentationMode
