@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */; };
 		266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */; };
 		266AB3BA286C2CA4008A8079 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3B9286C2CA4008A8079 /* MedicineModel.swift */; };
 		266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3BC286C2E93008A8079 /* NetworkManager.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		265E4CFE286C3FB400FF83A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineInfo.swift; sourceTree = "<group>"; };
 		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
 		266AB3B9286C2CA4008A8079 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
 		266AB3BC286C2E93008A8079 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		265E4D01286F40E100FF83A6 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
 		266AB3BB286C2E79008A8079 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 				98913F5728688586001A13C5 /* Model */,
 				266AB3BB286C2E79008A8079 /* ViewModel */,
 				98913F5828688612001A13C5 /* Global */,
+				265E4D01286F40E100FF83A6 /* UIComponent */,
 				98913F5928688622001A13C5 /* View */,
 				98913F1E286884B9001A13C5 /* Assets.xcassets */,
 				98913F23286884B9001A13C5 /* Persistence.swift */,
@@ -380,6 +391,7 @@
 				987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */,
 				266AB3BA286C2CA4008A8079 /* MedicineModel.swift in Sources */,
 				987036A7286AE53600451744 /* InitTextField.swift in Sources */,
+				265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */,
 				987036AE286AEBB800451744 /* ModifyingInfoTextLine.swift in Sources */,
 				987036A9286AE55700451744 /* InitTitle.swift in Sources */,
 				98913F27286884B9001A13C5 /* Jikyeojulge.xcdatamodeld in Sources */,
