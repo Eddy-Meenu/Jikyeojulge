@@ -23,7 +23,8 @@ class NetworkManager: ObservableObject {
         let itemNameQuery = URLQueryItem(name: "itemName", value: itemName)
         let itemSeqQuery = URLQueryItem(name: "itemSeq", value: itemSeq)
         urlComponents?.queryItems = [serviceKeyQuery, typeQuery, itemNameQuery, itemSeqQuery]
-        components?.percentEncodedQuery = urlComponents?.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+        components?.percentEncodedQuery = urlComponents?.percentEncodedQuery?
+            .replacingOccurrences(of: "+", with: "%2B")
         
         guard let url = URL(string: (components?.string)!) else {
             return
