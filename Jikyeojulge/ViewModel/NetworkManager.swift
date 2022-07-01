@@ -48,34 +48,4 @@ class NetworkManager: ObservableObject {
             }
         }.resume()
     }
-    
-    func searchData() {
-        var urlComponents = URLComponents(string: urlString)
-        var components = urlComponents
-        let serviceKeyQuery = URLQueryItem(name: "serviceKey", value: serviceKey)
-        let typeQuery = URLQueryItem(name: "type", value: type)
-        urlComponents?.queryItems = [serviceKeyQuery, typeQuery]
-        components?.percentEncodedQuery = urlComponents?.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
-        
-        guard let url = URL(string: (components?.string)!) else {
-            return
-        }
-        
-        let requestURL = URLRequest(url: url)
-        
-        URLSession.shared.dataTask(with: requestURL) { data, _, _ in
-            guard let data = data else {
-                return
-            }
-            
-            do {
-                let result = try JSONDecoder().decode(MedicineJSON.self, from: data)
-                DispatchQueue.main.async {
-                    self.medicineList = result.body?.items ?? [Medicine]()
-                }
-            } catch {
-                print("\(error.localizedDescription)\n\(error)")
-            }
-        }.resume()
-    }
 }
