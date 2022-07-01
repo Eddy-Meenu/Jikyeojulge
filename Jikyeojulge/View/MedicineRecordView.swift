@@ -12,11 +12,13 @@ struct MedicineInfo: View {
 
     var body: some View {
         HStack {
-            Image(medicine.itemImage ?? "DefaultMedicine")
-                .resizable()
+            AsyncImage(url: URL(string: medicine.itemImage ?? "https://github.com/Eddy-Meenu/Jikyeojulge/blob/main/Jikyeojulge/Assets.xcassets/DefaultMedicine.imageset/medicineDefault.png?raw=true"), scale: 6.0)
                 .frame(width: 80, height: 80)
                 .cornerRadius(10)
-                .foregroundColor(Color.red)
+//            Image(medicine.itemImage ?? "DefaultMedicine")
+//                .resizable()
+//                .frame(width: 80, height: 80)
+//                .cornerRadius(10)
             
             Spacer()
                 .frame(width: 16)
@@ -64,7 +66,6 @@ struct MedicineRecordView: View {
     @ObservedObject var networkManager = NetworkManager()
     @State private var isShowingSheet = false
     @State private var isShowingFullScreen = false
-    @State private var medicineList = [Medicine]()
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -75,16 +76,10 @@ struct MedicineRecordView: View {
                 DateSearchBar()
                     .padding(.horizontal, 20)
                     .padding(.top, 15)
-                Button(action: {
-                    networkManager.getData()
-                    print(medicineList)
-                }, label: {
-                    Text("클릭해줭")
-                })
                 
                 List(networkManager.medicineList, id: \.itemSeq) { medicine in
                     NavigationLink(destination: {
-                        MedicineDetailView()
+//                        MedicineDetailView(medicine: medicine)
                     }, label: {
                         MedicineInfo(medicine: medicine)
                     })
@@ -92,29 +87,8 @@ struct MedicineRecordView: View {
                 .onAppear {
                     UITableView.appearance().backgroundColor = UIColor.clear
                     UITableView.appearance().contentInset.top = -20
+                    networkManager.getData(itemName: "", itemSeq: "")
                 }
-                
-//                List {
-//                    NavigationLink(destination: {
-//                        MedicineDetailView()
-//                    }, label: {
-//                        MedicineInfo()
-//                    })
-//                    NavigationLink(destination: {
-//                        MedicineDetailView()
-//                    }, label: {
-//                        MedicineInfo()
-//                    })
-//                    NavigationLink(destination: {
-//                        MedicineDetailView()
-//                    }, label: {
-//                        MedicineInfo()
-//                    })
-//                }
-//                .onAppear {
-//                    UITableView.appearance().backgroundColor = UIColor.clear
-//                    UITableView.appearance().contentInset.top = -20
-//                }
             }
         }
         .navigationTitle("진단서 및 복용약")
