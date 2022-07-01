@@ -13,8 +13,8 @@ struct InitSettingView: View {
     @State var name = ""
     @State var birth = ""
     @State var bloodType = ""
-    @State var Contact1 = ""
-    @State var Contact2 = ""
+    @State var contact1 = ""
+    @State var contact2 = ""
     @State var title = ["이름을 입력해주세요", "생년월일을 입력해주세요", "혈액형을 입력해주세요", "비상연락처를 입력해주세요", "사진을 등록해주세요"]
     
     @State var arrayCount = 0
@@ -67,11 +67,11 @@ struct InitSettingView: View {
                     if arrayCount >= 3 {
                         HStack {
                             VStack {
-                                InitTextField(placeholder: "010-0000-0000", value: $Contact1)
+                                InitTextField(placeholder: "010-0000-0000", value: $contact1)
                             }
 
                             VStack {
-                                InitTextField(placeholder: "010-2222-2222", value: $Contact2)
+                                InitTextField(placeholder: "010-1234-1234", value: $contact2)
                             }
                         }
                     }
@@ -98,8 +98,6 @@ struct InitSettingView: View {
 
                         nextView = true
 
-//                        self.showImage.count = 0
-
                     }, label: {
                         Text("확인")
                             .foregroundColor(.mainWhite)
@@ -109,7 +107,7 @@ struct InitSettingView: View {
                     })
                     .background(RoundedRectangle(cornerRadius: 15).fill(Color.mainBtnBlue))
 
-                } else if !Contact1.isEmpty && !Contact2.isEmpty {
+                } else if !contact1.isEmpty && !contact2.isEmpty {
                     Initbtn(arrayCount: $arrayCount, showText: $showText, name: $name)
                         .opacity(self.arrayCount < 4 ? 1 : 0)
                 } else if !bloodType.isEmpty {
@@ -136,8 +134,8 @@ struct InitSettingView: View {
         let add = PersonalInfoEntity(context: self.viewContext)
         add.name = self.name
         add.photoImage = self.showImage
-        add.contact1 = self.Contact1
-        add.contact2 = self.Contact2
+        add.contact1 = self.contact1
+        add.contact2 = self.contact2
         add.birth = self.birth
         add.bloodType = self.bloodType
 
