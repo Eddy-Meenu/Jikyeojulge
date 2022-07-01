@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */; };
+		266AB3BA286C2CA4008A8079 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3B9286C2CA4008A8079 /* MedicineModel.swift */; };
+		266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3BC286C2E93008A8079 /* NetworkManager.swift */; };
 		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
 		987036A7286AE53600451744 /* InitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A6286AE53600451744 /* InitTextField.swift */; };
 		987036A9286AE55700451744 /* InitTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A8286AE55700451744 /* InitTitle.swift */; };
@@ -54,7 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		265E4CFE286C3FB400FF83A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
+		266AB3B9286C2CA4008A8079 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
+		266AB3BC286C2E93008A8079 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
 		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
 		987036A8286AE55700451744 /* InitTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTitle.swift; sourceTree = "<group>"; };
@@ -111,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		266AB3BB286C2E79008A8079 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				987036AF286AECA500451744 /* ImagePicker.swift */,
+				266AB3BC286C2E93008A8079 /* NetworkManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		987036A3286AE4F300451744 /* InitSettingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,9 +169,11 @@
 		98913F19286884B8001A13C5 /* Jikyeojulge */ = {
 			isa = PBXGroup;
 			children = (
+				265E4CFE286C3FB400FF83A6 /* Info.plist */,
 				98913F1A286884B8001A13C5 /* JikyeojulgeApp.swift */,
 				98913F1C286884B8001A13C5 /* ContentView.swift */,
 				98913F5728688586001A13C5 /* Model */,
+				266AB3BB286C2E79008A8079 /* ViewModel */,
 				98913F5828688612001A13C5 /* Global */,
 				98913F5928688622001A13C5 /* View */,
 				98913F1E286884B9001A13C5 /* Assets.xcassets */,
@@ -195,6 +211,7 @@
 		98913F5728688586001A13C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				266AB3B9286C2CA4008A8079 /* MedicineModel.swift */,
 				98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */,
 				98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */,
 				98913F23286884B9001A13C5 /* Persistence.swift */,
@@ -361,6 +378,7 @@
 				987036A5286AE52100451744 /* InitBtn.swift in Sources */,
 				987036AC286AEB5200451744 /* CustomTextEditior.swift in Sources */,
 				987036B0286AECA500451744 /* ImagePicker.swift in Sources */,
+				266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */,
 				98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */,
 				98913F4C286884F3001A13C5 /* MainView.swift in Sources */,
 				98DE9BAC286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
@@ -368,6 +386,7 @@
 				98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */,
 				98913F1D286884B8001A13C5 /* ContentView.swift in Sources */,
 				987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */,
+				266AB3BA286C2CA4008A8079 /* MedicineModel.swift in Sources */,
 				987036A7286AE53600451744 /* InitTextField.swift in Sources */,
 				987036AE286AEBB800451744 /* ModifyingInfoTextLine.swift in Sources */,
 				987036A9286AE55700451744 /* InitTitle.swift in Sources */,
@@ -540,6 +559,7 @@
 				DEVELOPMENT_TEAM = N6LML762WM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Jikyeojulge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -569,6 +589,7 @@
 				DEVELOPMENT_TEAM = N6LML762WM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Jikyeojulge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
