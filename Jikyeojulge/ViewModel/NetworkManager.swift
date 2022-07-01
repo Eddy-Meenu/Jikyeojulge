@@ -31,8 +31,6 @@ class NetworkManager: ObservableObject {
         
         let requestURL = URLRequest(url: url)
         
-        print(requestURL)
-        
         URLSession.shared.dataTask(with: requestURL) { data, _, _ in
             guard let data = data else {
                 return
