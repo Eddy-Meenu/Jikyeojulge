@@ -17,7 +17,7 @@ struct MedicineDetailView: View {
                 .ignoresSafeArea()
             ScrollView {
                 VStack(alignment: .center) {
-                    Image(medicine.itemImage ?? "DefaultMedicine")
+                    AsyncImage(url: URL(string: medicine.itemImage ?? "https://github.com/Eddy-Meenu/Jikyeojulge/blob/main/Jikyeojulge/Assets.xcassets/DefaultMedicine.imageset/medicineDefault.png?raw=true"), scale: 5.0)
                         .cornerRadius(10)
                     
                     Spacer()
@@ -71,9 +71,3 @@ struct MedicineDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
-//struct MedicineDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MedicineDetailView()
-//    }
-//}

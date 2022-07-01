@@ -15,10 +15,6 @@ struct MedicineInfo: View {
             AsyncImage(url: URL(string: medicine.itemImage ?? "https://github.com/Eddy-Meenu/Jikyeojulge/blob/main/Jikyeojulge/Assets.xcassets/DefaultMedicine.imageset/medicineDefault.png?raw=true"), scale: 6.0)
                 .frame(width: 80, height: 80)
                 .cornerRadius(10)
-//            Image(medicine.itemImage ?? "DefaultMedicine")
-//                .resizable()
-//                .frame(width: 80, height: 80)
-//                .cornerRadius(10)
             
             Spacer()
                 .frame(width: 16)
@@ -79,7 +75,7 @@ struct MedicineRecordView: View {
                 
                 List(networkManager.medicineList, id: \.itemSeq) { medicine in
                     NavigationLink(destination: {
-//                        MedicineDetailView(medicine: medicine)
+                        MedicineDetailView(medicine: medicine)
                     }, label: {
                         MedicineInfo(medicine: medicine)
                     })

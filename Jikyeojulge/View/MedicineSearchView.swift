@@ -19,7 +19,7 @@ struct MedicineSearchView: View {
                     .ignoresSafeArea()
                 List(networkManager.medicineList, id: \.itemSeq) { medicine in
                     NavigationLink(destination: {
-//                        MedicineDetailView(medicine: medicine)
+                        MedicineDetailView(medicine: medicine)
                     }, label: {
                         MedicineInfo(medicine: medicine)
                     })
