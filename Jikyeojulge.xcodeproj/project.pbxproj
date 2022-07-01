@@ -35,6 +35,7 @@
 		98913F562868856E001A13C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F552868856E001A13C5 /* OnboardingView.swift */; };
 		98DE9BAB286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
 		98DE9BAC286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
+		98DE9BB1286F23B100EFA265 /* DataSorts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BB0286F23B100EFA265 /* DataSorts.swift */; };
 		98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		98913F552868856E001A13C5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		98DE9BB0286F23B100EFA265 /* DataSorts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSorts.swift; sourceTree = "<group>"; };
 		98F1CBFB2869858100B9737B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,7 +217,7 @@
 				98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */,
 				98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */,
 				98913F23286884B9001A13C5 /* Persistence.swift */,
-				987036AF286AECA500451744 /* ImagePicker.swift */,
+				98DE9BB0286F23B100EFA265 /* DataSorts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -392,6 +394,7 @@
 				987036A9286AE55700451744 /* InitTitle.swift in Sources */,
 				98913F27286884B9001A13C5 /* Jikyeojulge.xcdatamodeld in Sources */,
 				98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */,
+				98DE9BB1286F23B100EFA265 /* DataSorts.swift in Sources */,
 				98913F502868850D001A13C5 /* SettingView.swift in Sources */,
 				98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */,
 				266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */,
