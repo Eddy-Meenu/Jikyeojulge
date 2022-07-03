@@ -18,10 +18,10 @@ struct MedicineInfo: View {
                 .padding(.trailing, 16)
             
             VStack(alignment: .leading, spacing: 15) {
-                Text(medicine.itemName?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 이름")
+                contentsProvider(contents: medicine.itemName)
                     .font(.system(size: 16, weight: .bold))
                 
-                Text(medicine.efcyQesitm?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 효능")
+                contentsProvider(contents: medicine.efcyQesitm)
                     .font(.system(size: 14))
                     .lineLimit(2)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -30,5 +30,9 @@ struct MedicineInfo: View {
         }
         .padding(.vertical, 10)
         .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+    }
+    
+    func contentsProvider(contents: String?) -> some View {
+        return AnyView(Text(contents?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "등록된 정보가 없습니다"))
     }
 }
