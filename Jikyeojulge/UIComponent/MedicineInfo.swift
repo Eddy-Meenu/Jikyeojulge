@@ -12,7 +12,7 @@ struct MedicineInfo: View {
 
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: medicine.itemImage ?? "https://github.com/Eddy-Meenu/Jikyeojulge/blob/main/Jikyeojulge/Assets.xcassets/DefaultMedicine.imageset/medicineDefault.png?raw=true"), scale: 6.0)
+            AsyncImage(url: URL(string: medicine.itemImage ?? "https://immeenu.com/image/defaultMedicine.png"), scale: 6.0)
                 .frame(width: 80, height: 80)
                 .cornerRadius(10)
                 .padding(.trailing, 16)
