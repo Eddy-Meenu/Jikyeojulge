@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct MedicineDetailView: View {
+    @ObservedObject var networkManager = NetworkManager()
+    var medicine: Medicine
+    
     var body: some View {
         ZStack {
             Color.mainBlue
                 .ignoresSafeArea()
             ScrollView {
                 VStack(alignment: .center) {
-                    Image("DefaultMedicine")
+                    AsyncImage(url: URL(string: medicine.itemImage ?? "https://immeenu.com/image/defaultMedicine.png"), scale: 5.0)
                         .cornerRadius(10)
                     
                     Spacer()
                         .frame(height: 25)
                     
-                    Text("약 이름")
+                    contentsProvider(contents: medicine.itemName)
                         .font(.system(size: 20, weight: .bold))
                 }
                 
@@ -32,7 +35,7 @@ struct MedicineDetailView: View {
                         Text("효능")
                             .font(.system(size: 16, weight: .bold))
                         
-                        Text("이 약은 식욕감퇴(식욕부진), 위부팽만감, 소화불량, 과식, 체함, 구역, 구토에 사용합니다.")
+                        contentsProvider(contents: medicine.efcyQesitm)
                             .font(.system(size: 16))
                         
                         Divider()
@@ -43,7 +46,7 @@ struct MedicineDetailView: View {
                         Text("상호작용")
                             .font(.system(size: 16, weight: .bold))
                         
-                        Text("메토트렉세이트, 설포닐우레아, 다른 국소 적용 약물과 함께 사용 시 의사 또는 약사와 상의하십시오.")
+                        contentsProvider(contents: medicine.intrcQesitm)
                             .font(.system(size: 16))
                         
                         Divider()
@@ -52,7 +55,8 @@ struct MedicineDetailView: View {
                     
                     Text("부작용")
                         .font(.system(size: 16, weight: .bold))
-                    Text("발진, 발적(충혈되어 붉어짐), 홍반(붉은 반점), 가려움, 정상 피부에 닿았을 경우 국소 자극 반응이 나타나는 경우 사용을 즉각 중지하고 의사 또는 약사와 상의하십시오.\n\n드물게 피부자극, 접촉성 알레르기 반응 등이 나타날 수 있습니다.")
+                    
+                    contentsProvider(contents: medicine.seQesitm)
                         .font(.system(size: 16))
                 }
             }
@@ -67,10 +71,8 @@ struct MedicineDetailView: View {
         .navigationTitle("약품 정보")
         .navigationBarTitleDisplayMode(.inline)
     }
-}
-
-struct MedicineDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MedicineDetailView()
+    
+    func contentsProvider(contents: String?) -> some View {
+        return AnyView(Text(contents?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "등록된 정보가 없습니다"))
     }
 }
