@@ -18,10 +18,10 @@ struct MedicineInfo: View {
                 .padding(.trailing, 16)
             
             VStack(alignment: .leading, spacing: 15) {
-                Text(medicine.itemName ?? "약 이름")
+                Text(medicine.itemName?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 이름")
                     .font(.system(size: 16, weight: .bold))
                 
-                Text(medicine.efcyQesitm ?? "약 효능")
+                Text(medicine.efcyQesitm?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 효능")
                     .font(.system(size: 14))
                     .lineLimit(2)
                     .frame(maxWidth: .infinity, alignment: .leading)

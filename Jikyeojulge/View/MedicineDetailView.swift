@@ -23,7 +23,7 @@ struct MedicineDetailView: View {
                     Spacer()
                         .frame(height: 25)
                     
-                    Text(medicine.itemName ?? "약 이름")
+                    Text(medicine.itemName?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 이름")
                         .font(.system(size: 20, weight: .bold))
                 }
                 
@@ -35,7 +35,7 @@ struct MedicineDetailView: View {
                         Text("효능")
                             .font(.system(size: 16, weight: .bold))
                         
-                        Text(medicine.efcyQesitm ?? "약 효능")
+                        Text(medicine.efcyQesitm?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 효능")
                             .font(.system(size: 16))
                         
                         Divider()
@@ -46,7 +46,7 @@ struct MedicineDetailView: View {
                         Text("상호작용")
                             .font(.system(size: 16, weight: .bold))
                         
-                        Text(medicine.intrcQesitm ?? "약 상호작용")
+                        Text(medicine.intrcQesitm?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 상호작용")
                             .font(.system(size: 16))
                         
                         Divider()
@@ -55,7 +55,7 @@ struct MedicineDetailView: View {
                     
                     Text("부작용")
                         .font(.system(size: 16, weight: .bold))
-                    Text(medicine.seQesitm ?? "약 부작용")
+                    Text(medicine.seQesitm?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 부작용")
                         .font(.system(size: 16))
                 }
             }
