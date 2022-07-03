@@ -6,36 +6,7 @@
 //
 
 import SwiftUI
-
-struct MedicineInfo: View {
-    var medicine: Medicine
-
-    var body: some View {
-        HStack {
-            Image(medicine.itemImage ?? "DefaultMedicine")
-                .resizable()
-                .frame(width: 80, height: 80)
-                .cornerRadius(10)
-                .foregroundColor(Color.red)
-            
-            Spacer()
-                .frame(width: 16)
-            
-            VStack(alignment: .leading, spacing: 15) {
-                Text(medicine.itemName ?? "약 이름")
-                    .font(.system(size: 16, weight: .bold))
-                
-                Text(medicine.efcyQesitm ?? "약 효능")
-                    .font(.system(size: 14))
-                    .lineLimit(2)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.leading)
-            }
-        }
-        .padding(.vertical, 10)
-        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
-    }
-}
+import UIKit
 
 struct DateSearchBar: View {
     @State private var startDate = Date()
@@ -64,7 +35,6 @@ struct MedicineRecordView: View {
     @ObservedObject var networkManager = NetworkManager()
     @State private var isShowingSheet = false
     @State private var isShowingFullScreen = false
-    @State private var medicineList2 = [Medicine]()
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -75,16 +45,10 @@ struct MedicineRecordView: View {
                 DateSearchBar()
                     .padding(.horizontal, 20)
                     .padding(.top, 15)
-                Button(action: {
-                    NetworkManger()
-                    print(medicineList2)
-                }, label: {
-                    Text("클릭해줭")
-                })
                 
                 List(networkManager.medicineList, id: \.itemSeq) { medicine in
                     NavigationLink(destination: {
-                        MedicineDetailView()
+                        MedicineDetailView(medicine: medicine)
                     }, label: {
                         MedicineInfo(medicine: medicine)
                     })
@@ -92,29 +56,8 @@ struct MedicineRecordView: View {
                 .onAppear {
                     UITableView.appearance().backgroundColor = UIColor.clear
                     UITableView.appearance().contentInset.top = -20
+                    networkManager.getData(itemName: "", itemSeq: "")
                 }
-                
-//                List {
-//                    NavigationLink(destination: {
-//                        MedicineDetailView()
-//                    }, label: {
-//                        MedicineInfo()
-//                    })
-//                    NavigationLink(destination: {
-//                        MedicineDetailView()
-//                    }, label: {
-//                        MedicineInfo()
-//                    })
-//                    NavigationLink(destination: {
-//                        MedicineDetailView()
-//                    }, label: {
-//                        MedicineInfo()
-//                    })
-//                }
-//                .onAppear {
-//                    UITableView.appearance().backgroundColor = UIColor.clear
-//                    UITableView.appearance().contentInset.top = -20
-//                }
             }
         }
         .navigationTitle("진단서 및 복용약")
@@ -149,36 +92,6 @@ struct MedicineRecordView: View {
         .fullScreenCover(isPresented: $isShowingFullScreen, content: {
             MedicineSearchView()
         })
-    }
-    
-    func NetworkManger() {
-        let urlString = "http://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList"
-        
-        let serviceKey = "5HtxWM9%2BfExd03260y2ei9X4a4e9UwwI5vbxKNtkVT1YrNGfNrapFTrlqApqhO1rX9LcaHYXEeT8yR9MCyRhnw%3D%3D"
-        let type = "json"
-        
-        let url = "http://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=5HtxWM9%2BfExd03260y2ei9X4a4e9UwwI5vbxKNtkVT1YrNGfNrapFTrlqApqhO1rX9LcaHYXEeT8yR9MCyRhnw%3D%3D&type=json"
-        
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        
-        var requestURL = URLRequest(url: url)
-        
-        URLSession.shared.dataTask(with: requestURL) { data, _, _ in
-            guard let data = data else {
-                return
-            }
-            
-            do {
-                let result = try JSONDecoder().decode(MedicineModel.self, from: data)
-                DispatchQueue.main.async {
-                    self.medicineList2 = result.items ?? [Medicine]()
-                }
-            } catch {
-                print("\(error.localizedDescription)\n\(error)")
-            }
-        }.resume()
     }
 }
 
