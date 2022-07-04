@@ -4,7 +4,7 @@ Eddy-Meenu의 사이드 프로젝트 레포입니다.
 혼자가 아닌 당신을 위한 기록
 
 ![Logo](https://dummyimage.com/1000x300/000/fff.png)
-![Logo](file:///Users/joonyong/Downloads/KakaoTalk_Photo_2022-07-04-22-14-50-1.png)
+![Logo]<img src= "file:///Users/joonyong/Downloads/KakaoTalk_Photo_2022-07-04-22-14-50-1.png">
 
 ## :people_hugging: Authors
 
