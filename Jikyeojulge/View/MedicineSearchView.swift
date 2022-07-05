@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct MedicineSearchView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var networkManager = NetworkManager()
     @State private var searchKeyword = ""
 
     var body: some View {
@@ -16,18 +18,24 @@ struct MedicineSearchView: View {
             ZStack {
                 Color.mainBlue
                     .ignoresSafeArea()
-                List {
-//                    MedicineInfo()
-//                    MedicineInfo()
-//                    MedicineInfo()
+                List(networkManager.medicineList, id: \.itemSeq) { medicine in
+                    NavigationLink(destination: {
+                        MedicineDetailView(medicine: medicine)
+                    }, label: {
+                        MedicineInfo(medicine: medicine)
+                    })
                 }
-                .onAppear { UITableView.appearance().backgroundColor = UIColor.clear
+                .onAppear {
+                    UITableView.appearance().backgroundColor = UIColor.clear
                     UITableView.appearance().contentInset.top = -20
                 }
             }
             .navigationTitle("약품 검색")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchKeyword, placement: .navigationBarDrawer(displayMode: .always))
+            .onSubmit(of: .search) {
+                networkManager.getData(itemName: searchKeyword, itemSeq: "")
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading, content: {
                     Button(action: {
