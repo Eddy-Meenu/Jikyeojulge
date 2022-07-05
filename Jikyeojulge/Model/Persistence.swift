@@ -20,14 +20,19 @@ struct PersistenceController {
         let storeURL = containerURL.appendingPathComponent("Jikyeojulge.sqlite")
         print(storeURL, "🌊")
         let description = NSPersistentStoreDescription(url: storeURL)
+        print(description, "🐞")
 
         container = NSPersistentContainer(name: "Jikyeojulge")
+        print(container, "🤟🏻")
+        
+        container.persistentStoreDescriptions = [description]
         
         if inMemory {
             
 //            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
             container.persistentStoreDescriptions = [description]
         }
+        print(container.persistentStoreCoordinator, "🌲")
         // persistent container가 초기화되면, persistent stores를 load하고 Core Data stack 생성을 완료하도록 container를 지시하기 위해 loadPersistentStores를 실행해야한다.
         // ladPersistentStore의 completionHandler가 실행하면, stack은 완전히 초기화되고, 사용할 준비가 마쳐진다. completion handler는 생성된 각각의 persistent store에 의해 한 번 호출된다.
         // 만약 persistent store의 loading에 error가 있다면, NSError값이 채워질 것이다.
