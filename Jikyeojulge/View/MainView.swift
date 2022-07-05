@@ -37,6 +37,13 @@ struct MainView: View {
                         .scaledToFill()
                         .frame(width: 150, height: 150)
                     
+                    Button(action: {
+                        print(personalInfo[0].bloodType!)
+                        print(personalInfo[0].contact1!)
+                        print(personalInfo[0].contact2!)
+                    }, label: {
+                        Text("보여줭")
+                    })
                     
                     VStack {
                         HStack {
