@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var images: Data
+    @Binding var images: UIImage?
     @Binding var show: Bool
 
     @Environment(\.presentationMode) private var presentationMode
@@ -30,7 +30,6 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//        let data = image.jpegData(compressionQuality: 0.5)
         let img0: ImagePicker
         init(img1: ImagePicker) {
             img0 = img1
@@ -40,18 +39,14 @@ struct ImagePicker: UIViewControllerRepresentable {
         }
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-            if let image = info[.originalImage] as? UIImage {
-                let data = image.jpegData(compressionQuality: 0.5)
+            guard let image = info[.originalImage] as? UIImage else { return }
 
-                self.img0.images = data!
+                self.img0.images = image
                 self.img0.show.toggle()
-            }
-
-//            let data = image.jpegData(compressionQuality: 0.5)
         }
     }
+    
     func makeCoordinator() -> Coordinator {
         return Self.Coordinator(img1: self)
-//        return ImagePicker.Coordinator(img1: self)
     }
 }

@@ -17,6 +17,7 @@ struct ModifyingInfoTextLine: View {
             Text(label)
             TextField(placeholder, text: $value)
                 .multilineTextAlignment(.trailing)
+                .disableAutocorrection(true)
         }
     }
 }
