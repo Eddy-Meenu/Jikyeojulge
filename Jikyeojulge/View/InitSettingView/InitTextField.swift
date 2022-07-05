@@ -16,6 +16,7 @@ struct InitTextField: View {
         TextField(placeholder, text: $value)
             .multilineTextAlignment(.center)
             .font(.system(size: 18, weight: .regular))
+            .disableAutocorrection(true)
             .padding(.top, 15)
         Divider()
             .background(.black)

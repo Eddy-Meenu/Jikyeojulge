@@ -27,6 +27,11 @@ struct InitSettingView: View {
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
     @State var nextView: Bool? = false
+    
+    @State private var selectedURL: URL?
+    @ObservedObject var imageLoader = ImageLoader()
+    @State var selectedImage: UIImage?
+    @State var photoImage: Image?
 
     var body: some View {
         ZStack{
@@ -38,30 +43,44 @@ struct InitSettingView: View {
 
                 ScrollView(showsIndicators: false) {
                     if arrayCount >= 4 {
-                        if showImage.count != 0 {
-                            Button(action: {
+//                        if photoImage != nil {
+                            let image = photoImage ?? Image(systemName: "photo.fill")
+                            image
+                            .resizable()
+                            .clipShape(Circle())
+                            .scaledToFill()
+                            .frame(width: 150, height: 150)
+                            .padding(.top, 50)
+                            .onTapGesture{
                                 self.show.toggle()
-                            }, label: {
-                                Image(uiImage: UIImage(data: self.showImage)!)
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .scaledToFill()
-                                    .frame(width: 150, height: 150)
-                                    .padding(.top, 50)
+                            }
+                            .sheet(isPresented: self.$show, onDismiss: loadImage, content: {
+                                ImagePicker(images: self.$selectedImage, show: self.$show, sourceType: self.sourceType)
                             })
-                        } else {
-                            Button(action: {
-                                self.show.toggle()
-                            }, label: {
-                                Image(systemName: "photo.fill")
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .scaledToFill()
-                                    .foregroundColor(.gray)
-                                    .frame(width: 150, height: 150)
-                                    .padding(.top, 50)
-                            })
-                        }
+//                        Button(action: {
+//                                self.show.toggle()
+//                            }, label: {
+//                                Image(uiImage: UIImage(data: self.showImage)!)
+//                                    .resizable()
+//                                    .clipShape(Circle())
+//                                    .scaledToFill()
+//                                    .frame(width: 150, height: 150)
+//                                    .padding(.top, 50)
+//                            })
+//                        } else {
+//                            Button(action: {
+//                                self.show.toggle()
+//                            }, label: {
+//                                Image(systemName: "photo.fill")
+//                                    .resizable()
+//                                    .clipShape(Circle())
+//                                    .scaledToFill()
+//                                    .foregroundColor(.gray)
+//                                    .frame(width: 150, height: 150)
+//                                    .padding(.top, 50)
+//                            })
+//                        }
+//                    }
                     }
 
                     if arrayCount >= 3 {
@@ -88,12 +107,12 @@ struct InitSettingView: View {
                 }
                 Spacer()
 
-                if showImage.count != 0 {
+                if photoImage != nil {
                     NavigationLink(destination: MainView(), tag: true, selection: $nextView) {
                         EmptyView()
                     }.isDetailLink(false)
                     Button(action: {
-                        savePersonalInfo()
+                        savePersonalInfo(name: name, photoImage: selectedImage!, contact1: contact1, contact2: contact2, birth: birth, bloodType: bloodType)
                         UserDefaults.standard.set(true, forKey: "initSetting")
 
                         nextView = true
@@ -124,20 +143,37 @@ struct InitSettingView: View {
             .onTapGesture(perform: hideKeyboard)
             .padding(.top, 40)
             .padding(.horizontal, 25)
-            .sheet(isPresented: self.$show, content: {
-                ImagePicker(images: self.$showImage, show: self.$show, sourceType: self.sourceType)
-            })
+//            .sheet(isPresented: self.$show, content: {
+//                ImagePicker(images: self.$selectedImage, show: self.$show, sourceType: self.sourceType)
+//            })
         }
         .navigationBarHidden(true)
     }
-    func savePersonalInfo() {
+    private func loadImage() {
+        if self.selectedURL != nil {
+            self.imageLoader.loadImage(with: selectedURL!)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                if self.imageLoader.image != nil {
+                    selectedImage = self.imageLoader.image
+                    photoImage = Image(uiImage: selectedImage!)
+                } else {
+                    loadImage()
+                }
+            }
+        } else {
+            guard let selectedImage = selectedImage else { return }
+            photoImage = Image(uiImage: selectedImage)
+        }
+    }
+    
+    func savePersonalInfo(name: String, photoImage: UIImage, contact1: String, contact2: String, birth: String, bloodType: String ) {
         let add = PersonalInfoEntity(context: self.viewContext)
-        add.name = self.name
-        add.photoImage = self.showImage
-        add.contact1 = self.contact1
-        add.contact2 = self.contact2
-        add.birth = self.birth
-        add.bloodType = self.bloodType
+        add.name = name
+        add.photoImage = photoImage.pngData()
+        add.contact1 = contact1
+        add.contact2 = contact2
+        add.birth = birth
+        add.bloodType = bloodType
 
         try! self.viewContext.save()
     }
