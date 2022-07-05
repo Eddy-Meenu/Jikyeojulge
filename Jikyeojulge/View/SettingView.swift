@@ -12,7 +12,9 @@ struct SettingView: View {
     
     var body: some View {
         
-        NavigationView {
+        ZStack {
+            Color.mainBlue
+                .ignoresSafeArea()
             List {
                 Section() {
                     NavigationLink {
