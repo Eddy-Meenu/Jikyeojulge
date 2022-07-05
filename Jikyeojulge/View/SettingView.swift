@@ -22,6 +22,7 @@ struct SettingView: View {
                             .font(.system(size: 15, weight: .bold))
                     }
                 }
+                
                 Section() {
                     NavigationLink {
                         OnboardingView()
@@ -31,6 +32,7 @@ struct SettingView: View {
                         
                     }
                 }
+                
                 Section() {
                     NavigationLink {
                         //개발자 정보 뷰 생성
