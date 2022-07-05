@@ -6,10 +6,11 @@
         <attribute name="contact1" optional="YES" attributeType="String"/>
         <attribute name="contact2" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="medicalRecord" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photoImage" optional="YES" attributeType="Binary"/>
     </entity>
     <elements>
-        <element name="PersonalInfoEntity" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="PersonalInfoEntity" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>
