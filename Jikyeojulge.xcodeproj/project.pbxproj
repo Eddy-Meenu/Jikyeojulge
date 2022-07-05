@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261A1CC72874C49200D1D6D0 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
+		261A1CC82874C49500D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
 		264D01E128743F73007FD45F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
 		265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */; };
 		265E4D0B287208A600FF83A6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0A287208A600FF83A6 /* WidgetKit.framework */; };
@@ -21,8 +23,8 @@
 		266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3BC286C2E93008A8079 /* NetworkManager.swift */; };
 		26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */; };
 		26A583072874218D0091B671 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F23286884B9001A13C5 /* Persistence.swift */; };
-		26A583092874245B0091B671 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
-		26A5830A2874245D0091B671 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
+		26A583092874245B0091B671 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		26A5830A2874245D0091B671 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
 		987036A7286AE53600451744 /* InitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A6286AE53600451744 /* InitTextField.swift */; };
 		987036A9286AE55700451744 /* InitTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A8286AE55700451744 /* InitTitle.swift */; };
@@ -46,7 +48,6 @@
 		98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F5128688524001A13C5 /* MedicineSearchView.swift */; };
 		98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F532868855E001A13C5 /* ModifyingInfoView.swift */; };
 		98913F562868856E001A13C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F552868856E001A13C5 /* OnboardingView.swift */; };
-		98DE9BB32871B5A300EFA265 /* PersonalInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BB22871B5A300EFA265 /* PersonalInfoModel.swift */; };
 		98DE9BD22873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
 		98DE9BD32873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
 		98DE9BD52874642200EFA265 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD42874642200EFA265 /* LoadingView.swift */; };
@@ -107,7 +108,7 @@
 		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
 		266AB3B9286C2CA4008A8079 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
 		266AB3BC286C2E93008A8079 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		26DF30A22874BD5C0098FEA6 /* JikyeojulgeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JikyeojulgeWidgetExtension.entitlements; sourceTree = "<group>"; };
+		26DF30A32874C3EE0098FEA6 /* JikyeojulgeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JikyeojulgeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
 		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
 		987036A8286AE55700451744 /* InitTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTitle.swift; sourceTree = "<group>"; };
@@ -134,8 +135,6 @@
 		98913F5128688524001A13C5 /* MedicineSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSearchView.swift; sourceTree = "<group>"; };
 		98913F532868855E001A13C5 /* ModifyingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoView.swift; sourceTree = "<group>"; };
 		98913F552868856E001A13C5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		98DE9BB22871B5A300EFA265 /* PersonalInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoModel.swift; sourceTree = "<group>"; };
-		98DE9BBC2871D11200EFA265 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		98DE9BD42874642200EFA265 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -257,7 +256,7 @@
 		98913F0E286884B8001A13C5 = {
 			isa = PBXGroup;
 			children = (
-				26DF30A22874BD5C0098FEA6 /* JikyeojulgeWidgetExtension.entitlements */,
+				26DF30A32874C3EE0098FEA6 /* JikyeojulgeWidgetExtension.entitlements */,
 				98913F19286884B8001A13C5 /* Jikyeojulge */,
 				98913F2F286884B9001A13C5 /* JikyeojulgeTests */,
 				98913F39286884B9001A13C5 /* JikyeojulgeUITests */,
@@ -327,7 +326,6 @@
 				98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */,
 				98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */,
 				98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */,
-				98DE9BB22871B5A300EFA265 /* PersonalInfoModel.swift */,
 				266AB3B9286C2CA4008A8079 /* MedicineModel.swift */,
 				98913F23286884B9001A13C5 /* Persistence.swift */,
 			);
@@ -357,14 +355,6 @@
 				98913F552868856E001A13C5 /* OnboardingView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		98DE9BB92871D11200EFA265 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				98DE9BBC2871D11200EFA265 /* SwiftUI.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,7 +465,6 @@
 			knownRegions = (
 				en,
 				Base,
-				ko,
 			);
 			mainGroup = 98913F0E286884B8001A13C5;
 			productRefGroup = 98913F18286884B8001A13C5 /* Products */;
@@ -529,13 +518,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A583092874245B0091B671 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
+				26A583092874245B0091B671 /* (null) in Sources */,
 				264D01E128743F73007FD45F /* Color+Extension.swift in Sources */,
 				26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */,
 				26A583072874218D0091B671 /* Persistence.swift in Sources */,
+				261A1CC82874C49500D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				265E4D10287208A600FF83A6 /* JikyeojulgeWidget.swift in Sources */,
 				265E4D15287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */,
-				26A5830A2874245D0091B671 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
+				261A1CC72874C49200D1D6D0 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
+				26A5830A2874245D0091B671 /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +556,6 @@
 				987036A9286AE55700451744 /* InitTitle.swift in Sources */,
 				98913F27286884B9001A13C5 /* Jikyeojulge.xcdatamodeld in Sources */,
 				98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */,
-				98DE9BB32871B5A300EFA265 /* PersonalInfoModel.swift in Sources */,
 				98913F502868850D001A13C5 /* SettingView.swift in Sources */,
 				98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */,
 				98DE9BD32873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
@@ -625,7 +615,7 @@
 				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
+				INFOPLIST_KEY_CFBundleDisplayName = JikyeojulgeWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -653,7 +643,7 @@
 				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
+				INFOPLIST_KEY_CFBundleDisplayName = JikyeojulgeWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
