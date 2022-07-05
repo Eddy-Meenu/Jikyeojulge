@@ -16,15 +16,41 @@ struct JikyeojulgeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationView{
                 if initSetting {
-                    MainView()
+                    TabView {
+                        NavigationView {
+                            MainView()
+                                .navigationBarTitle("기본 정보")
+                                .navigationBarTitleDisplayMode(.inline)
+                        }
+                        .tabItem{
+                            Image(systemName: "house")
+                            Text("기본정보")
+                        }
+                        NavigationView {
+                            MedicineRecordView()
+                                .navigationBarTitle("진단서 및 복용약")
+                                .navigationBarTitleDisplayMode(.inline)
+                        }
+                        .tabItem{
+                            Image(systemName: "pills.fill")
+                            Text("약 정보")
+                        }
+                        NavigationView {
+                            SettingView()
+                                .navigationBarTitle("환경 설정")
+                                .navigationBarTitleDisplayMode(.inline)
+                        }
+                        .tabItem{
+                            Image(systemName: "gearshape.2.fill")
+                            Text("환경설정")
+                        }
+                    }
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 } else {
                     InitSettingView()
+                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 }
-            }
-            .navigationBarHidden(true)
-            .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
