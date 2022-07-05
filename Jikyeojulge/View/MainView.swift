@@ -11,7 +11,7 @@ struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: false),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
@@ -92,7 +92,6 @@ struct MainView: View {
                 .fill(Color.mainWhite)
                 .shadow(color: .gray.opacity(0.25), radius: 10, x: 2, y: 2))
         }
-        .navigationBarHidden(true)
     }
 }
     
