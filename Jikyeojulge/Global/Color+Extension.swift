@@ -15,6 +15,7 @@ extension Color {
     static let lightGray: Color = Color(red: 118/255, green: 118/255, blue: 128/255).opacity(0.12)
     static let darkGray: Color = Color(red: 60/255, green: 60/255, blue: 67/255).opacity(0.6)
     static let widgetBlue: Color = Color(red: 161/255, green: 176/255, blue: 249/255)
+    static let mainBlueGeneric:  Color = Color(red: 229/255, green: 233/255, blue: 247/255)
 }
 
 extension TextField {
