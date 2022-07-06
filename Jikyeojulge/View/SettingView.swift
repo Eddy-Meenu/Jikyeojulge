@@ -37,7 +37,7 @@ struct SettingView: View {
                 
                 Section() {
                     NavigationLink {
-                        //개발자 정보 뷰 생성
+                        DeveloperInfoView()
                     } label: {
                         Text("개발자 정보")
                             .font(.system(size: 15, weight: .bold))
