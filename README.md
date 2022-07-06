@@ -22,7 +22,7 @@ Insert gif or link to demo
 ![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
 
 ## :sparkles: Skills & Tech Stack
-swiftUI, CoreData, XML Parser
+swiftUI, CoreData, URLSession, Codable, Combine, WidgetKit
 
 
 ## ✔️ History
