@@ -13,24 +13,32 @@ struct DeveloperInfoView: View {
             Color.mainBlue
                 .ignoresSafeArea()
             VStack {
-                HStack {
-                    Text("Eddy")
-                        .font(.system(size: 25, weight: .bold))
-                    Spacer()
-                    Text("https://github.com/JUNY0110")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(.mainBtnBlue)
+                List{
+                    Link(destination: URL(string: "https://github.com/JUNY0110")!){
+                        VStack(alignment: .leading) {
+                            Text("Eddy")
+                                .font(.system(size: 25, weight: .bold))
+                                .foregroundColor(.black)
+                            
+                            Text("https://github.com/JUNY0110")
+                                .font(.system(size: 18, weight: .semibold))
+                                .foregroundColor(.mainBtnBlue)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    Link(destination: URL(string: "https://github.com/JUNY0110")!){
+                        VStack(alignment: .leading) {
+                            Text("Meenu")
+                                .font(.system(size: 25, weight: .bold))
+                                .foregroundColor(.black)
+                            
+                            Text("https://github.com/taek0622")
+                                .font(.system(size: 18, weight: .semibold))
+                                .foregroundColor(.mainBtnBlue)
+                        }
+                    }
+                    .padding(.horizontal, 20)
                 }
-                .padding(.horizontal, 20)
-                HStack {
-                    Text("Meenu")
-                        .font(.system(size: 25, weight: .bold))
-                    Spacer()
-                    Text("https://github.com/taek0622")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(.mainBtnBlue)
-                }
-                .padding(.horizontal, 20)
             }
         }
     }
