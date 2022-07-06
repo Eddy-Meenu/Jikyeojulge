@@ -40,9 +40,9 @@ struct MedicineRecordView: View {
                 .ignoresSafeArea()
             
             VStack {
-                DateSearchBar()
-                    .padding(.horizontal, 20)
-                    .padding(.top, 15)
+//                DateSearchBar()
+//                    .padding(.horizontal, 20)
+//                    .padding(.top, 15)
                 
                 List{
                     ForEach(medicineData) { medicine in

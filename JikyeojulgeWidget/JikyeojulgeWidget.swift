@@ -55,16 +55,17 @@ struct JikyeojulgeWidgetEntryView : View {
 //        sortDescriptors: [NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true)],
 //        animation: .default)
     
-    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
-    var personalInfo: FetchedResults<PersonalInfoEntity>
+//    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
+//    var personalInfo: FetchedResults<PersonalInfoEntity>
     
+    @State var personalInfo: FetchedResults<PersonalInfoEntity>.Element?
     var entry: Provider.Entry
 
     var body: some View {
@@ -72,20 +73,20 @@ struct JikyeojulgeWidgetEntryView : View {
             Color.widgetBlue
             HStack {
     //            Text(personalInfo[0].bloodType ?? "a")
-                Text("A+")
-                    .font(.system(size: 60, weight: .bold))
-                    .padding(.trailing, 20)
+                Text(personalInfo?.bloodType ?? "A+")
                     .foregroundColor(Color.white)
-
+                    .font(.system(size: 70, weight: .black, design: .rounded))
+                    .padding(.trailing, 10)
                 VStack(alignment: .leading) {
-    //                Text(personalInfo[0].contact1 ?? "b")
+                    
     //                Text(personalInfo[0].contact2 ?? "c")
-                    Text("010-1111-1111")
-                        .font(.system(size: 20, weight: .bold))
+                    Text(personalInfo?.contact1 ?? "010-1234-5678")
                         .foregroundColor(Color.white)
-                    Text("010-2222-2222")
-                        .font(.system(size: 20, weight: .bold))
+                        .font(.system(size: 22, weight: .black, design: .rounded))
+                    Text(personalInfo?.contact1 ?? "010-5678-1234")
                         .foregroundColor(Color.white)
+                        .font(.system(size: 22, weight: .black, design: .rounded))
+                        .padding(.top, 5)
                 }
             }
         }
