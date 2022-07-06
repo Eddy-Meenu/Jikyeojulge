@@ -9,21 +9,29 @@ import SwiftUI
 import UIKit
 
 struct MedicineSearchView: View {
+    
+//    var medicine: Medicine
+
+    @Environment(\.managedObjectContext) private var viewContext
+
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var networkManager = NetworkManager()
     @State private var searchKeyword = ""
 
+//    @State var date: Date
+    
     var body: some View {
         NavigationView {
             ZStack {
                 Color.mainBlue
                     .ignoresSafeArea()
                 List(networkManager.medicineList, id: \.itemSeq) { medicine in
-                    NavigationLink(destination: {
-                        MedicineDetailView(medicine: medicine)
+                    Button(action: {
+                        print("저장")
                     }, label: {
                         MedicineInfo(medicine: medicine)
                     })
+                    .foregroundColor(.black)
                 }
                 .onAppear {
                     UITableView.appearance().backgroundColor = UIColor.clear
@@ -47,12 +55,26 @@ struct MedicineSearchView: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
+                        saveMedicine(medicine: networkManager.medicineList[0])
+
                     }, label: {
                         Text("확인")
                     })
                 })
             }
         }
+    }
+    func saveMedicine(medicine: Medicine) {
+        let add = MedicineDataEntity(context: viewContext)
+        add.itemName = medicine.itemName
+        add.itemSeq = medicine.itemSeq
+        add.itemImage = medicine.itemImage
+        add.date = Date()
+        add.efcyQesitm = medicine.efcyQesitm
+        add.intrcQesitm = medicine.intrcQesitm
+        add.seQesitm = medicine.seQesitm
+        
+        try! self.viewContext.save()
     }
 }
 

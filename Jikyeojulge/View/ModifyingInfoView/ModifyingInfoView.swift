@@ -9,10 +9,6 @@ import SwiftUI
 
 struct ModifyingInfoView: View {
     
-    
-//    private var films: FetchedResults<PersonalInfoEntity>
-
-//    @Binding var personalInfo2: FetchedResults<PersonalInfoEntity>.Element?
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var dismiss
 
