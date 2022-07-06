@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		264D01E128743F73007FD45F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
+		261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
+		261A1CCB2875653F00D1D6D0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F23286884B9001A13C5 /* Persistence.swift */; };
+		261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
+		261A1CCD2875654300D1D6D0 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
+		261A1CCF287565AF00D1D6D0 /* Jikyeojulge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */; };
 		265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */; };
 		265E4D0B287208A600FF83A6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0A287208A600FF83A6 /* WidgetKit.framework */; };
 		265E4D0D287208A600FF83A6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0C287208A600FF83A6 /* SwiftUI.framework */; };
@@ -19,10 +23,6 @@
 		266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */; };
 		266AB3BA286C2CA4008A8079 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3B9286C2CA4008A8079 /* MedicineModel.swift */; };
 		266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3BC286C2E93008A8079 /* NetworkManager.swift */; };
-		26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */; };
-		26A583072874218D0091B671 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F23286884B9001A13C5 /* Persistence.swift */; };
-		26A583092874245B0091B671 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
-		26A5830A2874245D0091B671 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
 		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
 		987036A7286AE53600451744 /* InitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A6286AE53600451744 /* InitTextField.swift */; };
 		987036A9286AE55700451744 /* InitTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A8286AE55700451744 /* InitTitle.swift */; };
@@ -108,6 +108,7 @@
 		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
 		266AB3B9286C2CA4008A8079 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
 		266AB3BC286C2E93008A8079 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		26DF30A32874C3EE0098FEA6 /* JikyeojulgeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JikyeojulgeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
 		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
 		987036A8286AE55700451744 /* InitTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTitle.swift; sourceTree = "<group>"; };
@@ -258,6 +259,7 @@
 		98913F0E286884B8001A13C5 = {
 			isa = PBXGroup;
 			children = (
+				26DF30A32874C3EE0098FEA6 /* JikyeojulgeWidgetExtension.entitlements */,
 				98913F19286884B8001A13C5 /* Jikyeojulge */,
 				98913F2F286884B9001A13C5 /* JikyeojulgeTests */,
 				98913F39286884B9001A13C5 /* JikyeojulgeUITests */,
@@ -358,14 +360,6 @@
 				98913F552868856E001A13C5 /* OnboardingView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		98DE9BB92871D11200EFA265 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				98DE9BBC2871D11200EFA265 /* SwiftUI.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,13 +523,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A583092874245B0091B671 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
-				264D01E128743F73007FD45F /* Color+Extension.swift in Sources */,
-				26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */,
-				26A583072874218D0091B671 /* Persistence.swift in Sources */,
+				261A1CCF287565AF00D1D6D0 /* Jikyeojulge.xcdatamodeld in Sources */,
+				261A1CCD2875654300D1D6D0 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				265E4D10287208A600FF83A6 /* JikyeojulgeWidget.swift in Sources */,
+				261A1CCB2875653F00D1D6D0 /* Persistence.swift in Sources */,
+				261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */,
+				261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				265E4D15287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */,
-				26A5830A2874245D0091B671 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,12 +614,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JikyeojulgeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = JikyeojulgeWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -647,12 +642,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JikyeojulgeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = JikyeojulgeWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -797,7 +793,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -830,7 +826,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

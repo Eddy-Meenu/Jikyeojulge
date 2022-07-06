@@ -10,13 +10,6 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
-    
-//    let moc = CoreDataStack.shared.managedObjectContext
-//
-//    let predicate = NSPredicate(format: "attribute1 == %@", "test")
-//    let request = NSFetchRequest<SomeItem>(entityName: "PersonalInfoEntity")
-//    let result = try moc.fetch(request)
-    
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
     }
@@ -49,12 +42,9 @@ struct SimpleEntry: TimelineEntry {
 
 struct JikyeojulgeWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
-//    @Environment(\.managedObjectContext) private var viewContext
-//
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true)],
-//        animation: .default)
     
+    var entry: Provider.Entry
+
     @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
         NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
@@ -65,27 +55,26 @@ struct JikyeojulgeWidgetEntryView : View {
         NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
     var personalInfo: FetchedResults<PersonalInfoEntity>
     
-    var entry: Provider.Entry
-
+//    @State var personalInfo: FetchedResults<PersonalInfoEntity>.Element?
     var body: some View {
-        ZStack {
+        ZStack{
             Color.widgetBlue
             HStack {
-    //            Text(personalInfo[0].bloodType ?? "a")
-                Text("A+")
-                    .font(.system(size: 60, weight: .bold))
-                    .padding(.trailing, 20)
+//                Text(personalInfo[0].bloodType ?? "혈액형")
+                Text("혈액형")
                     .foregroundColor(Color.white)
-
+                    .font(.system(size: 70, weight: .black, design: .rounded))
+                    .padding(.trailing, 10)
                 VStack(alignment: .leading) {
-    //                Text(personalInfo[0].contact1 ?? "b")
-    //                Text(personalInfo[0].contact2 ?? "c")
-                    Text("010-1111-1111")
-                        .font(.system(size: 20, weight: .bold))
+//                    Text(personalInfo[0].contact1 ?? "비상연락처1")
+                    Text("비상연락처1")
                         .foregroundColor(Color.white)
-                    Text("010-2222-2222")
-                        .font(.system(size: 20, weight: .bold))
+                        .font(.system(size: 22, weight: .black, design: .rounded))
+//                    Text(personalInfo[0].contact2 ?? "비상연락처2")
+                    Text("비상연락처1")
                         .foregroundColor(Color.white)
+                        .font(.system(size: 22, weight: .black, design: .rounded))
+                        .padding(.top, 5)
                 }
             }
         }
@@ -103,8 +92,8 @@ struct JikyeojulgeWidget: Widget {
             JikyeojulgeWidgetEntryView(entry: entry)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("정보 보여주기")
+        .description("위젯을 통해 당신에 대한 기본 정보를 제공할 수 있어요.")
         .supportedFamilies([.systemMedium])
     }
 }
