@@ -60,15 +60,18 @@ struct JikyeojulgeWidgetEntryView : View {
         ZStack{
             Color.widgetBlue
             HStack {
-                Text(personalInfo[0].bloodType ?? "혈액형")
+//                Text(personalInfo[0].bloodType ?? "혈액형")
+                Text("혈액형")
                     .foregroundColor(Color.white)
                     .font(.system(size: 70, weight: .black, design: .rounded))
                     .padding(.trailing, 10)
                 VStack(alignment: .leading) {
-                    Text(personalInfo[0].contact1 ?? "비상연락처1")
+//                    Text(personalInfo[0].contact1 ?? "비상연락처1")
+                    Text("비상연락처1")
                         .foregroundColor(Color.white)
                         .font(.system(size: 22, weight: .black, design: .rounded))
-                    Text(personalInfo[0].contact2 ?? "비상연락처2")
+//                    Text(personalInfo[0].contact2 ?? "비상연락처2")
+                    Text("비상연락처1")
                         .foregroundColor(Color.white)
                         .font(.system(size: 22, weight: .black, design: .rounded))
                         .padding(.top, 5)
