@@ -11,7 +11,7 @@ struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: false),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
@@ -37,6 +37,13 @@ struct MainView: View {
                         .scaledToFill()
                         .frame(width: 150, height: 150)
                     
+                    Button(action: {
+                        print(personalInfo[0].bloodType!)
+                        print(personalInfo[0].contact1!)
+                        print(personalInfo[0].contact2!)
+                    }, label: {
+                        Text("보여줭")
+                    })
                     
                     VStack {
                         HStack {
@@ -92,7 +99,6 @@ struct MainView: View {
                 .fill(Color.mainWhite)
                 .shadow(color: .gray.opacity(0.25), radius: 10, x: 2, y: 2))
         }
-        .navigationBarHidden(true)
     }
 }
     

@@ -12,16 +12,16 @@ struct MedicineInfo: View {
 
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: medicine.itemImage ?? "https://github.com/Eddy-Meenu/Jikyeojulge/blob/main/Jikyeojulge/Assets.xcassets/DefaultMedicine.imageset/medicineDefault.png?raw=true"), scale: 6.0)
+            AsyncImage(url: URL(string: medicine.itemImage ?? "https://immeenu.com/image/defaultMedicine.png"), scale: 6.0)
                 .frame(width: 80, height: 80)
                 .cornerRadius(10)
                 .padding(.trailing, 16)
             
             VStack(alignment: .leading, spacing: 15) {
-                Text(medicine.itemName?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 이름")
+                contentsProvider(contents: medicine.itemName)
                     .font(.system(size: 16, weight: .bold))
                 
-                Text(medicine.efcyQesitm?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "약 효능")
+                contentsProvider(contents: medicine.efcyQesitm)
                     .font(.system(size: 14))
                     .lineLimit(2)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -30,5 +30,9 @@ struct MedicineInfo: View {
         }
         .padding(.vertical, 10)
         .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+    }
+    
+    func contentsProvider(contents: String?) -> some View {
+        return AnyView(Text(contents?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "등록된 정보가 없습니다"))
     }
 }

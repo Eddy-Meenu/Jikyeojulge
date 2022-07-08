@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MedicineDataEntity" representedClassName=".MedicineDataEntity" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="efcyQesitm" optional="YES" attributeType="String"/>
+        <attribute name="intrcQesitm" optional="YES" attributeType="String"/>
+        <attribute name="itemImage" optional="YES" attributeType="String"/>
+        <attribute name="itemName" optional="YES" attributeType="String"/>
+        <attribute name="itemSeq" optional="YES" attributeType="String"/>
+        <attribute name="seQesitm" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="PersonalInfoEntity" representedClassName=".PersonalInfoEntity" syncable="YES">
         <attribute name="birth" optional="YES" attributeType="String"/>
         <attribute name="bloodType" optional="YES" attributeType="String"/>
         <attribute name="contact1" optional="YES" attributeType="String"/>
         <attribute name="contact2" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="medicalRecord" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photoImage" optional="YES" attributeType="Binary"/>
     </entity>
     <elements>
-        <element name="PersonalInfoEntity" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="MedicineDataEntity" positionX="-63" positionY="45" width="128" height="134"/>
+        <element name="PersonalInfoEntity" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>

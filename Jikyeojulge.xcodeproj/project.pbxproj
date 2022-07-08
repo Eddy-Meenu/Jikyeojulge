@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
+		261A1CCB2875653F00D1D6D0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F23286884B9001A13C5 /* Persistence.swift */; };
+		261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
+		261A1CCD2875654300D1D6D0 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
+		261A1CCF287565AF00D1D6D0 /* Jikyeojulge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */; };
 		265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */; };
+		265E4D0B287208A600FF83A6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0A287208A600FF83A6 /* WidgetKit.framework */; };
+		265E4D0D287208A600FF83A6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0C287208A600FF83A6 /* SwiftUI.framework */; };
+		265E4D10287208A600FF83A6 /* JikyeojulgeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E4D0F287208A600FF83A6 /* JikyeojulgeWidget.swift */; };
+		265E4D13287208A700FF83A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265E4D12287208A700FF83A6 /* Assets.xcassets */; };
+		265E4D15287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 265E4D11287208A600FF83A6 /* JikyeojulgeWidget.intentdefinition */; };
+		265E4D16287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 265E4D11287208A600FF83A6 /* JikyeojulgeWidget.intentdefinition */; };
+		265E4D19287208A700FF83A6 /* JikyeojulgeWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 265E4D08287208A600FF83A6 /* JikyeojulgeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */; };
 		266AB3BA286C2CA4008A8079 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3B9286C2CA4008A8079 /* MedicineModel.swift */; };
 		266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3BC286C2E93008A8079 /* NetworkManager.swift */; };
@@ -34,12 +46,24 @@
 		98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F5128688524001A13C5 /* MedicineSearchView.swift */; };
 		98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F532868855E001A13C5 /* ModifyingInfoView.swift */; };
 		98913F562868856E001A13C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F552868856E001A13C5 /* OnboardingView.swift */; };
-		98DE9BAB286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
-		98DE9BAC286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
+		98DE9BD22873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
+		98DE9BD32873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
+		98DE9BD52874642200EFA265 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD42874642200EFA265 /* LoadingView.swift */; };
+		98DE9BD72874642F00EFA265 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD62874642F00EFA265 /* ActivityIndicatorView.swift */; };
+		98DE9BD92874656D00EFA265 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD82874656D00EFA265 /* ImageLoader.swift */; };
+		98DE9BE428747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BE228747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift */; };
+		98DE9BE528747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BE328747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift */; };
 		98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		265E4D17287208A700FF83A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98913F0F286884B8001A13C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 265E4D07287208A600FF83A6;
+			remoteInfo = JikyeojulgeWidgetExtension;
+		};
 		98913F2D286884B9001A13C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 98913F0F286884B8001A13C5 /* Project object */;
@@ -56,12 +80,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		265E4D1A287208A700FF83A6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				265E4D19287208A700FF83A6 /* JikyeojulgeWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		265E4CFE286C3FB400FF83A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineInfo.swift; sourceTree = "<group>"; };
+		265E4D08287208A600FF83A6 /* JikyeojulgeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JikyeojulgeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		265E4D0A287208A600FF83A6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		265E4D0C287208A600FF83A6 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		265E4D0F287208A600FF83A6 /* JikyeojulgeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikyeojulgeWidget.swift; sourceTree = "<group>"; };
+		265E4D11287208A600FF83A6 /* JikyeojulgeWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = JikyeojulgeWidget.intentdefinition; sourceTree = "<group>"; };
+		265E4D12287208A700FF83A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		265E4D14287208A700FF83A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		265E4D1E28740A0000FF83A6 /* Jikyeojulge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jikyeojulge.entitlements; sourceTree = "<group>"; };
 		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
 		266AB3B9286C2CA4008A8079 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
 		266AB3BC286C2E93008A8079 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		26DF30A32874C3EE0098FEA6 /* JikyeojulgeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JikyeojulgeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
 		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
 		987036A8286AE55700451744 /* InitTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTitle.swift; sourceTree = "<group>"; };
@@ -88,12 +135,27 @@
 		98913F5128688524001A13C5 /* MedicineSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSearchView.swift; sourceTree = "<group>"; };
 		98913F532868855E001A13C5 /* ModifyingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoView.swift; sourceTree = "<group>"; };
 		98913F552868856E001A13C5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		98DE9BBC2871D11200EFA265 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		98DE9BD42874642200EFA265 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		98DE9BD62874642F00EFA265 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		98DE9BD82874656D00EFA265 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		98DE9BE228747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicineDataEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98DE9BE328747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicineDataEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		98F1CBFB2869858100B9737B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		265E4D05287208A600FF83A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				265E4D0D287208A600FF83A6 /* SwiftUI.framework in Frameworks */,
+				265E4D0B287208A600FF83A6 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98913F14286884B8001A13C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,12 +180,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		264D01E22874495E007FD45F /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		264D01E3287449C4007FD45F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				264D01E22874495E007FD45F /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		265E4D01286F40E100FF83A6 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
 				265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */,
 			);
 			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		265E4D09287208A600FF83A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				265E4D0A287208A600FF83A6 /* WidgetKit.framework */,
+				265E4D0C287208A600FF83A6 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		265E4D0E287208A600FF83A6 /* JikyeojulgeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				265E4D0F287208A600FF83A6 /* JikyeojulgeWidget.swift */,
+				265E4D11287208A600FF83A6 /* JikyeojulgeWidget.intentdefinition */,
+				265E4D12287208A700FF83A6 /* Assets.xcassets */,
+				265E4D14287208A700FF83A6 /* Info.plist */,
+			);
+			path = JikyeojulgeWidget;
 			sourceTree = "<group>";
 		};
 		266AB3BB286C2E79008A8079 /* ViewModel */ = {
@@ -142,6 +239,9 @@
 				987036A8286AE55700451744 /* InitTitle.swift */,
 				987036A6286AE53600451744 /* InitTextField.swift */,
 				987036A4286AE52100451744 /* InitBtn.swift */,
+				98DE9BD42874642200EFA265 /* LoadingView.swift */,
+				98DE9BD62874642F00EFA265 /* ActivityIndicatorView.swift */,
+				98DE9BD82874656D00EFA265 /* ImageLoader.swift */,
 			);
 			path = InitSettingView;
 			sourceTree = "<group>";
@@ -150,8 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				98913F532868855E001A13C5 /* ModifyingInfoView.swift */,
-				987036AB286AEB5200451744 /* CustomTextEditior.swift */,
 				987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */,
+				987036AB286AEB5200451744 /* CustomTextEditior.swift */,
 			);
 			path = ModifyingInfoView;
 			sourceTree = "<group>";
@@ -159,9 +259,12 @@
 		98913F0E286884B8001A13C5 = {
 			isa = PBXGroup;
 			children = (
+				26DF30A32874C3EE0098FEA6 /* JikyeojulgeWidgetExtension.entitlements */,
 				98913F19286884B8001A13C5 /* Jikyeojulge */,
 				98913F2F286884B9001A13C5 /* JikyeojulgeTests */,
 				98913F39286884B9001A13C5 /* JikyeojulgeUITests */,
+				265E4D0E287208A600FF83A6 /* JikyeojulgeWidget */,
+				265E4D09287208A600FF83A6 /* Frameworks */,
 				98913F18286884B8001A13C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,6 +275,7 @@
 				98913F17286884B8001A13C5 /* Jikyeojulge.app */,
 				98913F2C286884B9001A13C5 /* JikyeojulgeTests.xctest */,
 				98913F36286884B9001A13C5 /* JikyeojulgeUITests.xctest */,
+				265E4D08287208A600FF83A6 /* JikyeojulgeWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +283,7 @@
 		98913F19286884B8001A13C5 /* Jikyeojulge */ = {
 			isa = PBXGroup;
 			children = (
+				265E4D1E28740A0000FF83A6 /* Jikyeojulge.entitlements */,
 				265E4CFE286C3FB400FF83A6 /* Info.plist */,
 				98913F1A286884B8001A13C5 /* JikyeojulgeApp.swift */,
 				98913F1C286884B8001A13C5 /* ContentView.swift */,
@@ -188,7 +293,6 @@
 				265E4D01286F40E100FF83A6 /* UIComponent */,
 				98913F5928688622001A13C5 /* View */,
 				98913F1E286884B9001A13C5 /* Assets.xcassets */,
-				98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */,
 				98913F20286884B9001A13C5 /* Preview Content */,
 			);
 			path = Jikyeojulge;
@@ -222,11 +326,13 @@
 		98913F5728688586001A13C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */,
+				98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */,
+				98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */,
+				98DE9BE228747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift */,
+				98DE9BE328747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift */,
 				266AB3B9286C2CA4008A8079 /* MedicineModel.swift */,
-				98DE9BA9286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift */,
-				98DE9BAA286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */,
 				98913F23286884B9001A13C5 /* Persistence.swift */,
-				987036AF286AECA500451744 /* ImagePicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +340,7 @@
 		98913F5828688612001A13C5 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				264D01E3287449C4007FD45F /* Resource */,
 				98F1CBFB2869858100B9737B /* Color+Extension.swift */,
 				987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */,
 			);
@@ -258,6 +365,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		265E4D07287208A600FF83A6 /* JikyeojulgeWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 265E4D1D287208A700FF83A6 /* Build configuration list for PBXNativeTarget "JikyeojulgeWidgetExtension" */;
+			buildPhases = (
+				265E4D04287208A600FF83A6 /* Sources */,
+				265E4D05287208A600FF83A6 /* Frameworks */,
+				265E4D06287208A600FF83A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JikyeojulgeWidgetExtension;
+			productName = JikyeojulgeWidgetExtension;
+			productReference = 265E4D08287208A600FF83A6 /* JikyeojulgeWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		98913F16286884B8001A13C5 /* Jikyeojulge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98913F40286884B9001A13C5 /* Build configuration list for PBXNativeTarget "Jikyeojulge" */;
@@ -265,10 +389,12 @@
 				98913F13286884B8001A13C5 /* Sources */,
 				98913F14286884B8001A13C5 /* Frameworks */,
 				98913F15286884B8001A13C5 /* Resources */,
+				265E4D1A287208A700FF83A6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				265E4D18287208A700FF83A6 /* PBXTargetDependency */,
 			);
 			name = Jikyeojulge;
 			productName = Jikyeojulge;
@@ -321,6 +447,9 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					265E4D07287208A600FF83A6 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					98913F16286884B8001A13C5 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -350,11 +479,20 @@
 				98913F16286884B8001A13C5 /* Jikyeojulge */,
 				98913F2B286884B9001A13C5 /* JikyeojulgeTests */,
 				98913F35286884B9001A13C5 /* JikyeojulgeUITests */,
+				265E4D07287208A600FF83A6 /* JikyeojulgeWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		265E4D06287208A600FF83A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				265E4D13287208A700FF83A6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98913F15286884B8001A13C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,6 +519,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		265E4D04287208A600FF83A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				261A1CCF287565AF00D1D6D0 /* Jikyeojulge.xcdatamodeld in Sources */,
+				261A1CCD2875654300D1D6D0 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
+				265E4D10287208A600FF83A6 /* JikyeojulgeWidget.swift in Sources */,
+				261A1CCB2875653F00D1D6D0 /* Persistence.swift in Sources */,
+				261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */,
+				261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
+				265E4D15287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98913F13286884B8001A13C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,13 +544,18 @@
 				266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */,
 				98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */,
 				98913F4C286884F3001A13C5 /* MainView.swift in Sources */,
-				98DE9BAC286C2AA000EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				98913F4A286884E4001A13C5 /* InitSettingView.swift in Sources */,
 				98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */,
 				98913F1D286884B8001A13C5 /* ContentView.swift in Sources */,
+				98DE9BD22873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
+				98DE9BE428747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift in Sources */,
+				98DE9BD52874642200EFA265 /* LoadingView.swift in Sources */,
 				987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */,
 				266AB3BA286C2CA4008A8079 /* MedicineModel.swift in Sources */,
+				98DE9BD92874656D00EFA265 /* ImageLoader.swift in Sources */,
 				987036A7286AE53600451744 /* InitTextField.swift in Sources */,
+				98DE9BD72874642F00EFA265 /* ActivityIndicatorView.swift in Sources */,
+				98DE9BE528747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift in Sources */,
 				265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */,
 				987036AE286AEBB800451744 /* ModifyingInfoTextLine.swift in Sources */,
 				987036A9286AE55700451744 /* InitTitle.swift in Sources */,
@@ -406,10 +563,11 @@
 				98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */,
 				98913F502868850D001A13C5 /* SettingView.swift in Sources */,
 				98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */,
+				98DE9BD32873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */,
 				98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */,
-				98DE9BAB286C2AA000EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				98913F562868856E001A13C5 /* OnboardingView.swift in Sources */,
+				265E4D16287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +591,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		265E4D18287208A700FF83A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 265E4D07287208A600FF83A6 /* JikyeojulgeWidgetExtension */;
+			targetProxy = 265E4D17287208A700FF83A6 /* PBXContainerItemProxy */;
+		};
 		98913F2E286884B9001A13C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 98913F16286884B8001A13C5 /* Jikyeojulge */;
@@ -446,6 +609,62 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		265E4D1B287208A700FF83A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JikyeojulgeWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge.JikyeojulgeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		265E4D1C287208A700FF83A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JikyeojulgeWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge.JikyeojulgeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		98913F3E286884B9001A13C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -563,15 +782,18 @@
 		98913F41286884B9001A13C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Jikyeojulge/Jikyeojulge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jikyeojulge/Preview Content\"";
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -593,15 +815,18 @@
 		98913F42286884B9001A13C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Jikyeojulge/Jikyeojulge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jikyeojulge/Preview Content\"";
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -627,7 +852,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -647,7 +872,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -666,7 +891,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Eddy.JikyeojulgeUITests;
@@ -684,7 +909,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Eddy.JikyeojulgeUITests;
@@ -699,6 +924,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		265E4D1D287208A700FF83A6 /* Build configuration list for PBXNativeTarget "JikyeojulgeWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				265E4D1B287208A700FF83A6 /* Debug */,
+				265E4D1C287208A700FF83A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		98913F12286884B8001A13C5 /* Build configuration list for PBXProject "Jikyeojulge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
