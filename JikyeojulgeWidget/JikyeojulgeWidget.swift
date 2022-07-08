@@ -104,8 +104,8 @@ struct JikyeojulgeWidget: Widget {
             JikyeojulgeWidgetEntryView(entry: entry)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("정보 보여주기")
+        .description("위젯을 통해 당신의 기본 정보를 제공할 수 있어요.")
         .supportedFamilies([.systemMedium])
     }
 }
