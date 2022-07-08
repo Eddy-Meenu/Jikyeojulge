@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct MedicineDetailView: View {
-    @ObservedObject var networkManager = NetworkManager()
-    var medicine: Medicine
+    var medicine: MedicineDataEntity
     
     var body: some View {
         ZStack {
