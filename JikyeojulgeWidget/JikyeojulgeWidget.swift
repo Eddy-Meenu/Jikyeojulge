@@ -43,35 +43,35 @@ struct SimpleEntry: TimelineEntry {
 struct JikyeojulgeWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     
+//    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
+//        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
+//    var personalInfo: FetchedResults<PersonalInfoEntity>
+    
+    @State var personalInfo: FetchedResults<PersonalInfoEntity>.Element?
     var entry: Provider.Entry
 
-    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
-    var personalInfo: FetchedResults<PersonalInfoEntity>
-    
-//    @State var personalInfo: FetchedResults<PersonalInfoEntity>.Element?
     var body: some View {
         ZStack{
             Color.widgetBlue
             HStack {
-//                Text(personalInfo[0].bloodType ?? "혈액형")
-                Text("혈액형")
+    //            Text(personalInfo[0].bloodType ?? "a")
+                Text(personalInfo?.bloodType ?? "A+")
                     .foregroundColor(Color.white)
                     .font(.system(size: 70, weight: .black, design: .rounded))
                     .padding(.trailing, 10)
                 VStack(alignment: .leading) {
-//                    Text(personalInfo[0].contact1 ?? "비상연락처1")
-                    Text("비상연락처1")
+                    
+    //                Text(personalInfo[0].contact2 ?? "c")
+                    Text(personalInfo?.contact1 ?? "010-1234-5678")
                         .foregroundColor(Color.white)
                         .font(.system(size: 22, weight: .black, design: .rounded))
-//                    Text(personalInfo[0].contact2 ?? "비상연락처2")
-                    Text("비상연락처1")
+                    Text(personalInfo?.contact1 ?? "010-5678-1234")
                         .foregroundColor(Color.white)
                         .font(.system(size: 22, weight: .black, design: .rounded))
                         .padding(.top, 5)
@@ -93,7 +93,7 @@ struct JikyeojulgeWidget: Widget {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("정보 보여주기")
-        .description("위젯을 통해 당신에 대한 기본 정보를 제공할 수 있어요.")
+        .description("위젯을 통해 당신의 기본 정보를 제공할 수 있어요.")
         .supportedFamilies([.systemMedium])
     }
 }
