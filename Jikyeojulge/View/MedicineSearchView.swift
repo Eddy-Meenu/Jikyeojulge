@@ -27,7 +27,7 @@ struct MedicineSearchView: View {
                     .ignoresSafeArea()
                 List(networkManager.medicineList, id: \.itemSeq) { medicine in
                     Button(action: {
-                        print("저장")
+                        saveMedicine(medicine: medicine)
                     }, label: {
                         MedicineInfo(medicine: medicine)
                     })
@@ -41,6 +41,7 @@ struct MedicineSearchView: View {
             .navigationTitle("약품 검색")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchKeyword, placement: .navigationBarDrawer(displayMode: .always))
+            .disableAutocorrection(true)
             .onSubmit(of: .search) {
                 networkManager.getData(itemName: searchKeyword, itemSeq: "")
             }
@@ -55,7 +56,7 @@ struct MedicineSearchView: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
-                        saveMedicine(medicine: networkManager.medicineList[0])
+//                        saveMedicine(medicine: networkManager.medicineList[0])
 
                     }, label: {
                         Text("확인")
