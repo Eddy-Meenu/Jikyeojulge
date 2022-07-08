@@ -22,7 +22,7 @@ struct MedicineDetailView: View {
                     Spacer()
                         .frame(height: 25)
                     
-                    contentsProvider(contents: medicine.itemName)
+                    Text(medicine.itemName ?? "등록된 정보가 없습니다")
                         .font(.system(size: 20, weight: .bold))
                 }
                 
@@ -34,7 +34,7 @@ struct MedicineDetailView: View {
                         Text("효능")
                             .font(.system(size: 16, weight: .bold))
                         
-                        contentsProvider(contents: medicine.efcyQesitm)
+                        Text(medicine.efcyQesitm ?? "등록된 정보가 업습니다")
                             .font(.system(size: 16))
                         
                         Divider()
@@ -45,7 +45,7 @@ struct MedicineDetailView: View {
                         Text("상호작용")
                             .font(.system(size: 16, weight: .bold))
                         
-                        contentsProvider(contents: medicine.intrcQesitm)
+                        Text(medicine.intrcQesitm ?? "등록된 정보가 없습니다")
                             .font(.system(size: 16))
                         
                         Divider()
@@ -55,7 +55,7 @@ struct MedicineDetailView: View {
                     Text("부작용")
                         .font(.system(size: 16, weight: .bold))
                     
-                    contentsProvider(contents: medicine.seQesitm)
+                    Text(medicine.seQesitm ?? "등록된 정보가 없습니다")
                         .font(.system(size: 16))
                 }
             }
@@ -69,9 +69,5 @@ struct MedicineDetailView: View {
         }
         .navigationTitle("약품 정보")
         .navigationBarTitleDisplayMode(.inline)
-    }
-    
-    func contentsProvider(contents: String?) -> some View {
-        return AnyView(Text(contents?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "등록된 정보가 없습니다"))
     }
 }
