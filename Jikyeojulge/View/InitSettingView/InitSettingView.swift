@@ -15,7 +15,11 @@ struct InitSettingView: View {
     @State var bloodType = ""
     @State var contact1 = ""
     @State var contact2 = ""
-    @State var title = ["이름을 입력해주세요", "생년월일을 입력해주세요", "혈액형을 입력해주세요", "비상연락처를 입력해주세요", "사진을 등록해주세요"]
+    @State var title = ["이름을 입력해주세요",
+                        "생년월일을 입력해주세요",
+                        "혈액형을 입력해주세요",
+                        "비상연락처를 입력해주세요",
+                        "사진을 등록해주세요"]
     
     @State var arrayCount = 0
     
@@ -35,7 +39,8 @@ struct InitSettingView: View {
                 .ignoresSafeArea()
 
             VStack {
-                InitTitle(title: $title, arrayCount: $arrayCount)
+                InitTitle(title: $title,
+                          arrayCount: $arrayCount)
 
                 ScrollView(showsIndicators: false) {
                     if arrayCount >= 4 {
@@ -83,7 +88,12 @@ struct InitSettingView: View {
                         EmptyView()
                     }.isDetailLink(false)
                     Button(action: {
-                        savePersonalInfo(name: name, photoImage: selectedImage!, contact1: contact1, contact2: contact2, birth: birth, bloodType: bloodType)
+                        savePersonalInfo(name: name,
+                                         photoImage: selectedImage!,
+                                         contact1: contact1,
+                                         contact2: contact2,
+                                         birth: birth,
+                                         bloodType: bloodType)
                         UserDefaults.standard.set(true, forKey: "initSetting")
 
                         nextView = true

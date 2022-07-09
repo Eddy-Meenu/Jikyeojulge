@@ -19,6 +19,7 @@ struct ModifyingInfoView: View {
     @State var contact2: String = ""
     @State var medicalRecord: String = "지병에 대해 적어주세요."
     @State var isShowing = false
+    @State var showImage: Data = .init(count: 1)
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
 
     @State var photoImage: Image?
@@ -33,9 +34,7 @@ struct ModifyingInfoView: View {
         NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
     var personalInfo: FetchedResults<PersonalInfoEntity>
-    
-//    @State var personalInfo2: FetchedResults<PersonalInfoEntity>.Element?
-    
+        
     var body: some View {
         ZStack {
             Color.mainBlue
@@ -55,18 +54,28 @@ struct ModifyingInfoView: View {
                         }
 
                     VStack {
-                        ModifyingInfoTextLine(label: "이름", placeholder: info.name ?? "", value: $name)
+                        ModifyingInfoTextLine(label: "이름",
+                                              placeholder: info.name ?? "",
+                                              value: $name)
                         Divider()
 
-                        ModifyingInfoTextLine(label: "생년월일", placeholder: info.birth ?? "", value: $birth)
+                        ModifyingInfoTextLine(label: "생년월일",
+                                              placeholder: info.birth ?? "",
+                                              value: $birth)
                         Divider()
 
-                        ModifyingInfoTextLine(label: "혈액형", placeholder: "A+", value: $bloodType)
+                        ModifyingInfoTextLine(label: "혈액형",
+                                              placeholder: "A+",
+                                              value: $bloodType)
                         Divider()
 
-                        ModifyingInfoTextLine(label: "비상연락처", placeholder: "010-1234-1234", value: $contact1)
+                        ModifyingInfoTextLine(label: "비상연락처",
+                                              placeholder: "010-1234-1234",
+                                              value: $contact1)
 
-                        ModifyingInfoTextLine(label: "", placeholder: "010-5678-5678", value: $contact2)
+                        ModifyingInfoTextLine(label: "",
+                                              placeholder: "010-5678-5678",
+                                              value: $contact2)
                         Divider()
                     }
                     .padding(.horizontal, 24)
@@ -102,7 +111,12 @@ struct ModifyingInfoView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
 
                 Button(action: {
-                    updatePersonalInfo(name: name, photoImage: selectedImage!, contact1: contact1, contact2: contact2, birth: birth, bloodType: bloodType)
+                    updatePersonalInfo(name: name,
+                                       photoImage: selectedImage!,
+                                       contact1: contact1,
+                                       contact2: contact2,
+                                       birth: birth,
+                                       bloodType: bloodType)
                     
                     dismiss.wrappedValue.dismiss()
                 }, label: {
@@ -118,7 +132,6 @@ struct ModifyingInfoView: View {
     }
 
     func updatePersonalInfo(name: String, photoImage: UIImage, contact1: String, contact2: String, birth: String, bloodType: String) {
-//        personalInfo[0].name = name
         personalInfo[0].name = name
         personalInfo[0].photoImage = photoImage.pngData()
         personalInfo[0].contact1 = contact1
