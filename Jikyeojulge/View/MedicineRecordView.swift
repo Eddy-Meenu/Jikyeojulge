@@ -111,6 +111,10 @@ struct MedicineRecordView: View {
                         })
                     }
                 }
+                .onAppear {
+                    UITableView.appearance().backgroundColor = UIColor.clear
+                    UITableView.appearance().contentInset.top = -20
+                }
             }
             .overlay(
                 VStack(alignment: .leading) {
