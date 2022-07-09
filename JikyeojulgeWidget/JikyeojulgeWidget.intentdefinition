@@ -27,7 +27,7 @@
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
-					<string>contact 1</string>
+					<string>비상 연락처1</string>
 					<key>INEnumValueDisplayNameID</key>
 					<string>ao8tx3</string>
 					<key>INEnumValueIndex</key>
@@ -37,7 +37,7 @@
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
-					<string>contact 2</string>
+					<string>비상 연락처2</string>
 					<key>INEnumValueDisplayNameID</key>
 					<string>Uzjifb</string>
 					<key>INEnumValueIndex</key>
@@ -47,7 +47,7 @@
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
-					<string>blood type</string>
+					<string>혈액형</string>
 					<key>INEnumValueDisplayNameID</key>
 					<string>93aq3N</string>
 					<key>INEnumValueIndex</key>
@@ -89,7 +89,7 @@
 					<key>INIntentParameterConfigurable</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
-					<string>PersonalInfo</string>
+					<string>보여줄 정보</string>
 					<key>INIntentParameterDisplayNameID</key>
 					<string>qi82bs</string>
 					<key>INIntentParameterDisplayPriority</key>
