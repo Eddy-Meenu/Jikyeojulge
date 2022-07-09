@@ -42,14 +42,7 @@ struct SimpleEntry: TimelineEntry {
 struct JikyeojulgeSmallBloodTypeWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     
-    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
+    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [])
     var personalInfo: FetchedResults<PersonalInfoEntity>
 
     var entry: Provider.Entry
@@ -65,17 +58,10 @@ struct JikyeojulgeSmallBloodTypeWidgetEntryView : View {
     }
 }
 
-struct JikyeojulgeSmallContactOneWidgetEntryView : View {
+struct JikyeojulgeSmallWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     
-    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
+    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [])
     var personalInfo: FetchedResults<PersonalInfoEntity>
 
     var entry: Provider.Entry
@@ -94,14 +80,7 @@ struct JikyeojulgeSmallContactOneWidgetEntryView : View {
 struct JikyeojulgeSmallContactTwoWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     
-    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
+    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [])
     var personalInfo: FetchedResults<PersonalInfoEntity>
     
     var entry: Provider.Entry
@@ -120,14 +99,7 @@ struct JikyeojulgeSmallContactTwoWidgetEntryView : View {
 struct JikyeojulgeMediumWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     
-    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
+    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [])
     var personalInfo: FetchedResults<PersonalInfoEntity>
 
     var entry: Provider.Entry
@@ -162,57 +134,23 @@ struct JikyeojulgeWidget: WidgetBundle {
     
     @WidgetBundleBuilder
     var body: some Widget {
-        JikyeojulgeSmallBloodTypeWidget()
-        JikyeojulgeSmallContactOneWidget()
-        JikyeojulgeSmallContactTwoWidget()
+        JikyeojulgeSmallWidget()
         JikyeojulgeMediumWidget()
     }
 }
 
-struct JikyeojulgeSmallBloodTypeWidget: Widget {
+struct JikyeojulgeSmallWidget: Widget {
     let persistenceController = PersistenceController.shared
     
-    let kind: String = "JikyeojulgeSmallBloodTypeWidget"
+    let kind: String = "JikyeojulgeSmallWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-           JikyeojulgeSmallBloodTypeWidgetEntryView(entry: entry)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
-        .configurationDisplayName("혈액형")
-        .description("위젯을 통해 혈액형 정보를 제공할 수 있습니다.")
-        .supportedFamilies([.systemSmall])
-    }
-}
-
-struct JikyeojulgeSmallContactOneWidget: Widget {
-    let persistenceController = PersistenceController.shared
-    
-    let kind: String = "JikyeojulgeSmallContactOneWidget"
-
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-           JikyeojulgeSmallContactOneWidgetEntryView(entry: entry)
+           JikyeojulgeSmallWidgetEntryView(entry: entry)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("비상 연락처 1")
-        .description("위젯을 통해 비상 연락처를 제공할 수 있습니다.")
-        .supportedFamilies([.systemSmall])
-    }
-}
-
-struct JikyeojulgeSmallContactTwoWidget: Widget {
-    let persistenceController = PersistenceController.shared
-    
-    let kind: String = "JikyeojulgeSmallContactTwoWidget"
-
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-           JikyeojulgeSmallContactTwoWidgetEntryView(entry: entry)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
-        .configurationDisplayName("비상 연락처 2")
-        .description("위젯을 통해 비상 연락처를 제공할 수 있습니다.")
+        .description("위젯을 통해 비상 연락처 또는 혈액형 정보를 제공할 수 있습니다.")
         .supportedFamilies([.systemSmall])
     }
 }
@@ -228,7 +166,7 @@ struct JikyeojulgeMediumWidget: Widget {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("기본 정보")
-        .description("위젯을 통해 혈액형과 비상 연락처를 제공할 수 있습니다.")
+        .description("위젯을 통해 혈액형 정보와 비상 연락처를 제공할 수 있습니다.")
         .supportedFamilies([.systemMedium])
     }
 }
