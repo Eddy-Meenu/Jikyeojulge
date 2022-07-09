@@ -39,6 +39,17 @@ struct SimpleEntry: TimelineEntry {
     let configuration: PersonalInfoListIntent
 }
 
+struct WidgetText: View {
+    let personalInfoType: String
+    let size: Int
+    
+    var body: some View {
+        Text(personalInfoType)
+            .foregroundColor(Color.white)
+            .font(.system(size: CGFloat(size), weight: .black, design: .rounded))
+    }
+}
+
 struct JikyeojulgeSmallWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     
@@ -53,16 +64,13 @@ struct JikyeojulgeSmallWidgetEntryView : View {
             
             switch entry.configuration.personalInfo {
             case .unknown, .contact1:
-                Text(personalInfo[0].contact1 ?? "010\n1234\n5678")
-                    .widgetText(size: 34)
+                WidgetText(personalInfoType: personalInfo[0].contact1 ?? "010\n1234\n5678", size: 34)
                 
             case .contact2:
-                Text(personalInfo[0].contact2 ?? "010\n1234\n5678")
-                    .widgetText(size: 34)
+                WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010\n1234\n5678", size: 34)
                 
             case .bloodType:
-                Text(personalInfo[0].bloodType ?? "AB+")
-                    .widgetText(size: 50)
+                WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: 50)
             }
         }
     }
@@ -81,16 +89,13 @@ struct JikyeojulgeMediumWidgetEntryView : View {
             Color.widgetBlue
             HStack {
                 
-                Text(personalInfo[0].bloodType ?? "AB+")
-                    .widgetText(size: 65)
+                WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: 65)
                     .padding(.trailing, 10)
                 VStack(alignment: .leading) {
                     
-                    Text(personalInfo[0].contact1 ?? "010-1234-5678")
-                        .widgetText(size: 18)
+                    WidgetText(personalInfoType: personalInfo[0].contact1 ?? "010-1234-5678", size: 18)
                     
-                    Text(personalInfo[0].contact2 ?? "010-5678-1234")
-                        .widgetText(size: 18)
+                    WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010-1234-5678", size: 18)
                         .padding(.top, 5)
                 }
             }
