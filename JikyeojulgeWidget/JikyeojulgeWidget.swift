@@ -86,7 +86,7 @@ struct JikyeojulgeWidget: Widget {
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            JikyeojulgeWidgetEntryView(entry: entry)
+           JikyeojulgeWidgetEntryView(entry: entry)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("정보 보여주기")
@@ -97,7 +97,7 @@ struct JikyeojulgeWidget: Widget {
 
 struct JikyeojulgeWidget_Previews: PreviewProvider {
     static var previews: some View {
-        JikyeojulgeWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+       JikyeojulgeWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
