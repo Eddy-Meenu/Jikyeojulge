@@ -15,6 +15,7 @@ struct SettingView: View {
         ZStack {
             Color.mainBlue
                 .ignoresSafeArea()
+
             List {
                 Section() {
                     NavigationLink {
@@ -24,17 +25,16 @@ struct SettingView: View {
                             .font(.system(size: 15, weight: .bold))
                     }
                 }
-                
+
                 Section() {
                     NavigationLink {
                         OnboardingView()
                     } label: {
                         Text("위젯 만드는 법")
                             .font(.system(size: 15, weight: .bold))
-                        
                     }
                 }
-                
+
                 Section() {
                     NavigationLink {
                         DeveloperInfoView()
@@ -51,11 +51,9 @@ struct SettingView: View {
                             .foregroundColor(.secondary)
                     }
                 }
-                
             }
             .listStyle(InsetGroupedListStyle())
         }
-        
     }
 }
 

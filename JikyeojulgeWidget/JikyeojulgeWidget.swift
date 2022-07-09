@@ -22,7 +22,6 @@ struct Provider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .second, value: hourOffset, to: currentDate)!
@@ -43,35 +42,33 @@ struct SimpleEntry: TimelineEntry {
 struct JikyeojulgeWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     
-//    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-//        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
-//        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
-//        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
-//        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
-//        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
-//        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-//        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
-//    var personalInfo: FetchedResults<PersonalInfoEntity>
+    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
+    var personalInfo: FetchedResults<PersonalInfoEntity>
     
-    @State var personalInfo: FetchedResults<PersonalInfoEntity>.Element?
+//    @State var personalInfo: FetchedResults<PersonalInfoEntity>.Element?
     var entry: Provider.Entry
 
     var body: some View {
         ZStack{
             Color.widgetBlue
             HStack {
-    //            Text(personalInfo[0].bloodType ?? "a")
-                Text(personalInfo?.bloodType ?? "A+")
+                Text(personalInfo[0].bloodType ?? "A+")
                     .foregroundColor(Color.white)
                     .font(.system(size: 70, weight: .black, design: .rounded))
                     .padding(.trailing, 10)
                 VStack(alignment: .leading) {
                     
-    //                Text(personalInfo[0].contact2 ?? "c")
-                    Text(personalInfo?.contact1 ?? "010-1234-5678")
+                    Text(personalInfo[0].contact1 ?? "010-1234-5678")
                         .foregroundColor(Color.white)
                         .font(.system(size: 22, weight: .black, design: .rounded))
-                    Text(personalInfo?.contact1 ?? "010-5678-1234")
+                    Text(personalInfo[0].contact2 ?? "010-5678-1234")
                         .foregroundColor(Color.white)
                         .font(.system(size: 22, weight: .black, design: .rounded))
                         .padding(.top, 5)
