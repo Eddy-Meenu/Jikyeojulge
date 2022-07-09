@@ -13,13 +13,17 @@ struct OnboardingView: View {
     
     var body: some View {
 
+        ZStack{
+            Color.white
+                .ignoresSafeArea()
         TabView {
-            ForEach(0..<6) { num in
+            ForEach(0..<5) { num in
                 OnboardingPage(title: content.title[num],
                                description: content.description[num],
                                imageName: content.imageName[num])
             }
         }.tabViewStyle(PageTabViewStyle())
+        }
     }
 }
 
@@ -28,22 +32,25 @@ struct OnboardingPage: View {
     let title: String
     let description: String
     let imageName: String
-    
-    var content = 0
-    
+        
     var body: some View {
-     
-        VStack {
-            Text(title)
-                .font(.title)
-            Text(description)
-                .font(.title3)
-            Image(imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 250, height: 541)
+
+            VStack {
+                Text(title)
+                    .font(.system(size: 25, weight: .bold))
+                    
+                Text(description)
+                    .font(.system(size: 18, weight: .regular))
+                    .padding(.bottom, 10)
+                
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 541)
+                Spacer()
+            }
+            .padding(.horizontal, 24)
         }
-    }
 }
 
 
