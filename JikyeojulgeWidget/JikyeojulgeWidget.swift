@@ -11,15 +11,15 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+        SimpleEntry(date: Date(), configuration: PersonalInfoListIntent())
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+    func getSnapshot(for configuration: PersonalInfoListIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry(date: Date(), configuration: configuration)
         completion(entry)
     }
 
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: PersonalInfoListIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
         let currentDate = Date()
@@ -36,26 +36,7 @@ struct Provider: IntentTimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
-}
-
-struct JikyeojulgeSmallBloodTypeWidgetEntryView : View {
-    @Environment(\.widgetFamily) var family
-    
-    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [])
-    var personalInfo: FetchedResults<PersonalInfoEntity>
-
-    var entry: Provider.Entry
-
-    var body: some View {
-        ZStack{
-            Color.widgetBlue
-            
-            Text(personalInfo[0].bloodType ?? "AB+")
-                .foregroundColor(Color.white)
-                .font(.system(size: 50, weight: .black, design: .rounded))
-        }
-    }
+    let configuration: PersonalInfoListIntent
 }
 
 struct JikyeojulgeSmallWidgetEntryView : View {
@@ -70,28 +51,19 @@ struct JikyeojulgeSmallWidgetEntryView : View {
         ZStack{
             Color.widgetBlue
             
-            Text(personalInfo[0].contact1 ?? "010\n1234\n5678")
-                .foregroundColor(Color.white)
-                .font(.system(size: 34, weight: .black, design: .rounded))
-        }
-    }
-}
-
-struct JikyeojulgeSmallContactTwoWidgetEntryView : View {
-    @Environment(\.widgetFamily) var family
-    
-    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [])
-    var personalInfo: FetchedResults<PersonalInfoEntity>
-    
-    var entry: Provider.Entry
-
-    var body: some View {
-        ZStack{
-            Color.widgetBlue
-            
-            Text(personalInfo[0].contact2 ?? "010\n1234\n5678")
-                .foregroundColor(Color.white)
-                .font(.system(size: 34, weight: .black, design: .rounded))
+            switch entry.configuration.personalInfo {
+            case .unknown, .contact1:
+                Text(personalInfo[0].contact1 ?? "010\n1234\n5678")
+                    .widgetText(size: 34)
+                
+            case .contact2:
+                Text(personalInfo[0].contact2 ?? "010\n1234\n5678")
+                    .widgetText(size: 34)
+                
+            case .bloodType:
+                Text(personalInfo[0].bloodType ?? "AB+")
+                    .widgetText(size: 50)
+            }
         }
     }
 }
@@ -110,18 +82,15 @@ struct JikyeojulgeMediumWidgetEntryView : View {
             HStack {
                 
                 Text(personalInfo[0].bloodType ?? "AB+")
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 65, weight: .black, design: .rounded))
+                    .widgetText(size: 65)
                     .padding(.trailing, 10)
                 VStack(alignment: .leading) {
                     
                     Text(personalInfo[0].contact1 ?? "010-1234-5678")
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 18, weight: .black, design: .rounded))
+                        .widgetText(size: 18)
                     
                     Text(personalInfo[0].contact2 ?? "010-5678-1234")
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 18, weight: .black, design: .rounded))
+                        .widgetText(size: 18)
                         .padding(.top, 5)
                 }
             }
@@ -145,12 +114,12 @@ struct JikyeojulgeSmallWidget: Widget {
     let kind: String = "JikyeojulgeSmallWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+        IntentConfiguration(kind: kind, intent: PersonalInfoListIntent.self, provider: Provider()) { entry in
            JikyeojulgeSmallWidgetEntryView(entry: entry)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
-        .configurationDisplayName("비상 연락처 1")
-        .description("위젯을 통해 비상 연락처 또는 혈액형 정보를 제공할 수 있습니다.")
+        .configurationDisplayName("선택 정보")
+        .description("위젯을 통해 비상 연락처 또는 혈액형 정보 중 하나를 선택해서 제공할 수 있습니다.")
         .supportedFamilies([.systemSmall])
     }
 }
@@ -161,19 +130,19 @@ struct JikyeojulgeMediumWidget: Widget {
     let kind: String = "JikyeojulgeMediumWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+        IntentConfiguration(kind: kind, intent: PersonalInfoListIntent.self, provider: Provider()) { entry in
            JikyeojulgeMediumWidgetEntryView(entry: entry)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("기본 정보")
-        .description("위젯을 통해 혈액형 정보와 비상 연락처를 제공할 수 있습니다.")
+        .description("위젯을 통해 혈액형 정보와 비상 연락처를 전부 제공할 수 있습니다.")
         .supportedFamilies([.systemMedium])
     }
 }
 
 struct JikyeojulgeMediumWidget_Previews: PreviewProvider {
     static var previews: some View {
-       JikyeojulgeMediumWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+       JikyeojulgeMediumWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: PersonalInfoListIntent()))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

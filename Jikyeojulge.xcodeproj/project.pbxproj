@@ -14,7 +14,6 @@
 		265E4D0D287208A600FF83A6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0C287208A600FF83A6 /* SwiftUI.framework */; };
 		265E4D10287208A600FF83A6 /* JikyeojulgeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E4D0F287208A600FF83A6 /* JikyeojulgeWidget.swift */; };
 		265E4D13287208A700FF83A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265E4D12287208A700FF83A6 /* Assets.xcassets */; };
-		265E4D15287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 265E4D11287208A600FF83A6 /* JikyeojulgeWidget.intentdefinition */; };
 		265E4D16287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 265E4D11287208A600FF83A6 /* JikyeojulgeWidget.intentdefinition */; };
 		265E4D19287208A700FF83A6 /* JikyeojulgeWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 265E4D08287208A600FF83A6 /* JikyeojulgeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */; };
@@ -22,6 +21,9 @@
 		266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3BC286C2E93008A8079 /* NetworkManager.swift */; };
 		26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */; };
 		26A583072874218D0091B671 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F23286884B9001A13C5 /* Persistence.swift */; };
+		26F7814C2879EC98002E8091 /* JikyeojulgeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 265E4D11287208A600FF83A6 /* JikyeojulgeWidget.intentdefinition */; };
+		26F7814E2879FA1F002E8091 /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7814D2879FA1F002E8091 /* Text+Extension.swift */; };
+		26F7814F2879FA1F002E8091 /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7814D2879FA1F002E8091 /* Text+Extension.swift */; };
 		9804CC152874B7510063407A /* DeveloperInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC142874B7510063407A /* DeveloperInfoView.swift */; };
 		9804CC17287544290063407A /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
 		9804CC1A2875486F0063407A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9804CC192875486F0063407A /* Launch Screen.storyboard */; };
@@ -112,6 +114,7 @@
 		266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
 		266AB3B9286C2CA4008A8079 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
 		266AB3BC286C2E93008A8079 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		26F7814D2879FA1F002E8091 /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
 		9804CC142874B7510063407A /* DeveloperInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoView.swift; sourceTree = "<group>"; };
 		9804CC182875447B0063407A /* JikyeojulgeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JikyeojulgeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		9804CC192875486F0063407A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -334,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				98F1CBFB2869858100B9737B /* Color+Extension.swift */,
+				26F7814D2879FA1F002E8091 /* Text+Extension.swift */,
 				987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */,
 			);
 			path = Global;
@@ -519,13 +523,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F7814C2879EC98002E8091 /* JikyeojulgeWidget.intentdefinition in Sources */,
 				9804CC17287544290063407A /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */,
 				26A583072874218D0091B671 /* Persistence.swift in Sources */,
+				26F7814F2879FA1F002E8091 /* Text+Extension.swift in Sources */,
 				265E4D10287208A600FF83A6 /* JikyeojulgeWidget.swift in Sources */,
 				261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */,
 				261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
-				265E4D15287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +566,7 @@
 				98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */,
 				98913F502868850D001A13C5 /* SettingView.swift in Sources */,
 				98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */,
+				26F7814E2879FA1F002E8091 /* Text+Extension.swift in Sources */,
 				98DE9BD32873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */,
 				98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */,
