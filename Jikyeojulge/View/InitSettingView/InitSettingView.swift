@@ -15,15 +15,15 @@ struct InitSettingView: View {
     @State var bloodType = ""
     @State var contact1 = ""
     @State var contact2 = ""
-    @State var title = ["이름을 입력해주세요", "생년월일을 입력해주세요", "혈액형을 입력해주세요", "비상연락처를 입력해주세요", "사진을 등록해주세요"]
+    @State var title = ["이름을 입력해주세요",
+                        "생년월일을 입력해주세요",
+                        "혈액형을 입력해주세요",
+                        "비상연락처를 입력해주세요",
+                        "사진을 등록해주세요"]
     
     @State var arrayCount = 0
     
-    @State var lastInput = false
-    @State var showText = false
-    
     @State var show = false
-    @State public var showImage: Data = .init(count: 0)
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
     @State var nextView: Bool? = false
@@ -39,11 +39,11 @@ struct InitSettingView: View {
                 .ignoresSafeArea()
 
             VStack {
-                InitTitle(title: $title, arrayCount: $arrayCount)
+                InitTitle(title: $title,
+                          arrayCount: $arrayCount)
 
                 ScrollView(showsIndicators: false) {
                     if arrayCount >= 4 {
-//                        if photoImage != nil {
                             let image = photoImage ?? Image(systemName: "photo.fill")
                             image
                             .resizable()
@@ -57,30 +57,6 @@ struct InitSettingView: View {
                             .sheet(isPresented: self.$show, onDismiss: loadImage, content: {
                                 ImagePicker(images: self.$selectedImage, show: self.$show, sourceType: self.sourceType)
                             })
-//                        Button(action: {
-//                                self.show.toggle()
-//                            }, label: {
-//                                Image(uiImage: UIImage(data: self.showImage)!)
-//                                    .resizable()
-//                                    .clipShape(Circle())
-//                                    .scaledToFill()
-//                                    .frame(width: 150, height: 150)
-//                                    .padding(.top, 50)
-//                            })
-//                        } else {
-//                            Button(action: {
-//                                self.show.toggle()
-//                            }, label: {
-//                                Image(systemName: "photo.fill")
-//                                    .resizable()
-//                                    .clipShape(Circle())
-//                                    .scaledToFill()
-//                                    .foregroundColor(.gray)
-//                                    .frame(width: 150, height: 150)
-//                                    .padding(.top, 50)
-//                            })
-//                        }
-//                    }
                     }
 
                     if arrayCount >= 3 {
@@ -112,7 +88,12 @@ struct InitSettingView: View {
                         EmptyView()
                     }.isDetailLink(false)
                     Button(action: {
-                        savePersonalInfo(name: name, photoImage: selectedImage!, contact1: contact1, contact2: contact2, birth: birth, bloodType: bloodType)
+                        savePersonalInfo(name: name,
+                                         photoImage: selectedImage!,
+                                         contact1: contact1,
+                                         contact2: contact2,
+                                         birth: birth,
+                                         bloodType: bloodType)
                         UserDefaults.standard.set(true, forKey: "initSetting")
 
                         nextView = true
@@ -127,25 +108,22 @@ struct InitSettingView: View {
                     .background(RoundedRectangle(cornerRadius: 15).fill(Color.mainBtnBlue))
 
                 } else if !contact1.isEmpty && !contact2.isEmpty {
-                    Initbtn(arrayCount: $arrayCount, showText: $showText, name: $name)
+                    Initbtn(arrayCount: $arrayCount)
                         .opacity(self.arrayCount < 4 ? 1 : 0)
                 } else if !bloodType.isEmpty {
-                    Initbtn(arrayCount: $arrayCount, showText: $showText, name: $name)
+                    Initbtn(arrayCount: $arrayCount)
                         .opacity(self.arrayCount < 3 ? 1 : 0)
                 } else if !birth.isEmpty {
-                    Initbtn(arrayCount: $arrayCount, showText: $showText, name: $name)
+                    Initbtn(arrayCount: $arrayCount)
                         .opacity(self.arrayCount < 2 ? 1 : 0)
                 } else if !name.isEmpty {
-                    Initbtn(arrayCount: $arrayCount, showText: $showText, name: $name)
+                    Initbtn(arrayCount: $arrayCount)
                         .opacity(self.arrayCount < 1 ? 1 : 0)
                 }
             }
             .onTapGesture(perform: hideKeyboard)
             .padding(.top, 40)
             .padding(.horizontal, 25)
-//            .sheet(isPresented: self.$show, content: {
-//                ImagePicker(images: self.$selectedImage, show: self.$show, sourceType: self.sourceType)
-//            })
         }
         .navigationBarHidden(true)
     }

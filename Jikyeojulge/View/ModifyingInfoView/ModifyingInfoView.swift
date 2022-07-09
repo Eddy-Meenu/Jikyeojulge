@@ -25,10 +25,6 @@ struct ModifyingInfoView: View {
     @State var photoImage: Image?
     @State var selectedImage: UIImage?
     
-    @State var saveData = false
-    @State var returnToSetting = false
-    
-    
     @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
         NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
@@ -36,11 +32,10 @@ struct ModifyingInfoView: View {
         NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false),
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.medicalRecord, ascending: false)])
     var personalInfo: FetchedResults<PersonalInfoEntity>
-    
-//    @State var personalInfo2: FetchedResults<PersonalInfoEntity>.Element?
-    
+        
     var body: some View {
         ZStack {
             Color.mainBlue
@@ -58,48 +53,30 @@ struct ModifyingInfoView: View {
                         .onTapGesture {
                             self.isShowing.toggle()
                         }
-//                        .sheet(isPresented: self.$isShowing, content: {
-//                            ImagePicker(images: $showImage, show: $isShowing, sourceType: sourceType)
-//                        })
-                    
-//                    if !showImage.isEmpty {
-//                        Button(action: {
-//                            self.isShowing.toggle()
-//                        }, label: {
-//                            Image(uiImage: UIImage(data: info.photoImage!)!)
-//                                .resizable()
-//                                .clipShape(Circle())
-//                                .scaledToFill()
-//                                .frame(width: 150, height: 150)
-//                                .padding(.top, 50)
-//                        })
-//                    } else {
-//                        Button(action: {
-//                            self.isShowing.toggle()
-//                        }, label: {
-//                            Image(systemName: "photo.fill")
-//                                .resizable()
-//                                .clipShape(Circle())
-//                                .scaledToFill()
-//                                .foregroundColor(.gray)
-//                                .frame(width: 150, height: 150)
-//                                .padding(.top, 50)
-//                        })
-//                    }
 
                     VStack {
-                        ModifyingInfoTextLine(label: "이름", placeholder: info.name ?? "", value: $name)
+                        ModifyingInfoTextLine(label: "이름",
+                                              placeholder: info.name ?? "",
+                                              value: $name)
                         Divider()
 
-                        ModifyingInfoTextLine(label: "생년월일", placeholder: info.birth ?? "", value: $birth)
+                        ModifyingInfoTextLine(label: "생년월일",
+                                              placeholder: info.birth ?? "",
+                                              value: $birth)
                         Divider()
 
-                        ModifyingInfoTextLine(label: "혈액형", placeholder: "A+", value: $bloodType)
+                        ModifyingInfoTextLine(label: "혈액형",
+                                              placeholder: "A+",
+                                              value: $bloodType)
                         Divider()
 
-                        ModifyingInfoTextLine(label: "비상연락처", placeholder: "010-1234-1234", value: $contact1)
+                        ModifyingInfoTextLine(label: "비상연락처",
+                                              placeholder: "010-1234-1234",
+                                              value: $contact1)
 
-                        ModifyingInfoTextLine(label: "", placeholder: "010-5678-5678", value: $contact2)
+                        ModifyingInfoTextLine(label: "",
+                                              placeholder: "010-5678-5678",
+                                              value: $contact2)
                         Divider()
                     }
                     .padding(.horizontal, 24)
@@ -110,7 +87,18 @@ struct ModifyingInfoView: View {
                     }
                     .padding(.horizontal, 24)
 
-                    CustomTextEditor(placholder: "지병에 대해 적어주세요", medicalRecord: $medicalRecord)
+//                    CustomTextEditor(placholder: "지병에 대해 적어주세요", medicalRecord: $medicalRecord)
+                    TextEditor(text: $medicalRecord)
+                        .frame(width: 302, height: 156)
+                        .background(Rectangle()
+                            .stroke(Color.black.opacity(0.5)))
+                        .padding(.horizontal, 24)
+                        .foregroundColor(medicalRecord == "지병에 대해 적어주세요." ? .gray: .primary)
+                        .onTapGesture {
+                            if medicalRecord == "지병에 대해 적어주세요." {
+                                medicalRecord = ""
+                            }
+                        }
                 }
                 .fullScreenCover(isPresented: self.$isShowing, onDismiss: loadImage, content: {
                     ImagePicker(images: self.$selectedImage, show: self.$isShowing, sourceType: self.sourceType)
@@ -120,8 +108,8 @@ struct ModifyingInfoView: View {
             .frame(width: 350, height: 630)
             .background(RoundedRectangle(cornerRadius: 20)
                 .fill(Color.mainWhite)
-                .shadow(color: .gray.opacity(0.25), radius: 10, x: 2, y: 2))
-            
+                .shadow(color: Color.black.opacity(0.15), radius: 30, x: 6, y: 6))
+
         }
         .onAppear {
             name = personalInfo[0].name!
@@ -130,12 +118,19 @@ struct ModifyingInfoView: View {
             contact1 = personalInfo[0].contact1!
             contact2 = personalInfo[0].contact2!
             selectedImage = UIImage(data: personalInfo[0].photoImage!)
+            medicalRecord = personalInfo[0].medicalRecord ?? ""
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
 
                 Button(action: {
-                    updatePersonalInfo(name: name, photoImage: selectedImage!, contact1: contact1, contact2: contact2, birth: birth, bloodType: bloodType)
+                    updatePersonalInfo(name: name,
+                                       photoImage: selectedImage!,
+                                       contact1: contact1,
+                                       contact2: contact2,
+                                       birth: birth,
+                                       bloodType: bloodType,
+                                       medicalRecord: medicalRecord)
                     
                     dismiss.wrappedValue.dismiss()
                 }, label: {
@@ -150,14 +145,14 @@ struct ModifyingInfoView: View {
         photoImage = Image(uiImage: selectedImage)
     }
 
-    func updatePersonalInfo(name: String, photoImage: UIImage, contact1: String, contact2: String, birth: String, bloodType: String) {
-//        personalInfo[0].name = name
+    func updatePersonalInfo(name: String, photoImage: UIImage, contact1: String, contact2: String, birth: String, bloodType: String, medicalRecord: String) {
         personalInfo[0].name = name
         personalInfo[0].photoImage = photoImage.pngData()
         personalInfo[0].contact1 = contact1
         personalInfo[0].contact2 = contact2
         personalInfo[0].birth = birth
         personalInfo[0].bloodType = bloodType
+        personalInfo[0].medicalRecord = medicalRecord
 
         try! self.viewContext.save()
     }

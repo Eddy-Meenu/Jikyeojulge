@@ -8,10 +8,56 @@
 import SwiftUI
 
 struct OnboardingView: View {
+
+    let content = OnboardingComponent()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color.white
+                .ignoresSafeArea()
+            
+            TabView {
+                ForEach(0..<5) { num in
+                    OnboardingPage(title: content.title[num],
+                                   description: content.description[num],
+                                   imageName: content.imageName[num])
+                }
+            }
+            .tabViewStyle(PageTabViewStyle())
+            .onAppear() {
+                UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color.widgetBlue)
+                UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+            }
+        }
     }
 }
+
+struct OnboardingPage: View {
+
+    let title: String
+    let description: String
+    let imageName: String
+        
+    var body: some View {
+
+            VStack {
+                Text(title)
+                    .font(.system(size: 25, weight: .bold))
+                    
+                Text(description)
+                    .font(.system(size: 18, weight: .regular))
+                    .padding(.bottom, 10)
+                
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 541)
+                Spacer()
+            }
+            .padding(.horizontal, 24)
+        }
+}
+
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {

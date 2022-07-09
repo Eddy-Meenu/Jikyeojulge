@@ -22,7 +22,6 @@ struct Provider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .second, value: hourOffset, to: currentDate)!
@@ -43,8 +42,6 @@ struct SimpleEntry: TimelineEntry {
 struct JikyeojulgeWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
     
-    var entry: Provider.Entry
-
     @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
         NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
         NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
@@ -56,24 +53,24 @@ struct JikyeojulgeWidgetEntryView : View {
     var personalInfo: FetchedResults<PersonalInfoEntity>
     
 //    @State var personalInfo: FetchedResults<PersonalInfoEntity>.Element?
+    var entry: Provider.Entry
+
     var body: some View {
         ZStack{
             Color.widgetBlue
             HStack {
-//                Text(personalInfo[0].bloodType ?? "혈액형")
-                Text("혈액형")
+                Text(personalInfo[0].bloodType ?? "AB+")
                     .foregroundColor(Color.white)
-                    .font(.system(size: 70, weight: .black, design: .rounded))
+                    .font(.system(size: 65, weight: .black, design: .rounded))
                     .padding(.trailing, 10)
                 VStack(alignment: .leading) {
-//                    Text(personalInfo[0].contact1 ?? "비상연락처1")
-                    Text("비상연락처1")
+                    
+                    Text(personalInfo[0].contact1 ?? "010-1234-5678")
                         .foregroundColor(Color.white)
-                        .font(.system(size: 22, weight: .black, design: .rounded))
-//                    Text(personalInfo[0].contact2 ?? "비상연락처2")
-                    Text("비상연락처1")
+                        .font(.system(size: 20, weight: .black, design: .rounded))
+                    Text(personalInfo[0].contact2 ?? "010-5678-1234")
                         .foregroundColor(Color.white)
-                        .font(.system(size: 22, weight: .black, design: .rounded))
+                        .font(.system(size: 20, weight: .black, design: .rounded))
                         .padding(.top, 5)
                 }
             }
@@ -89,18 +86,18 @@ struct JikyeojulgeWidget: Widget {
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            JikyeojulgeWidgetEntryView(entry: entry)
+           JikyeojulgeWidgetEntryView(entry: entry)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("정보 보여주기")
-        .description("위젯을 통해 당신에 대한 기본 정보를 제공할 수 있어요.")
+        .description("위젯을 통해 당신의 기본 정보를 제공할 수 있어요.")
         .supportedFamilies([.systemMedium])
     }
 }
 
 struct JikyeojulgeWidget_Previews: PreviewProvider {
     static var previews: some View {
-        JikyeojulgeWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+       JikyeojulgeWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
