@@ -10,13 +10,6 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
-    
-//    let moc = CoreDataStack.shared.managedObjectContext
-//
-//    let predicate = NSPredicate(format: "attribute1 == %@", "test")
-//    let request = NSFetchRequest<SomeItem>(entityName: "PersonalInfoEntity")
-//    let result = try moc.fetch(request)
-    
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
     }
@@ -49,11 +42,6 @@ struct SimpleEntry: TimelineEntry {
 
 struct JikyeojulgeWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
-//    @Environment(\.managedObjectContext) private var viewContext
-//
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true)],
-//        animation: .default)
     
 //    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
 //        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
@@ -69,7 +57,7 @@ struct JikyeojulgeWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        ZStack {
+        ZStack{
             Color.widgetBlue
             HStack {
     //            Text(personalInfo[0].bloodType ?? "a")

@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		264D01E128743F73007FD45F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
+		261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
+		261A1CCB2875653F00D1D6D0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F23286884B9001A13C5 /* Persistence.swift */; };
+		261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
+		261A1CCD2875654300D1D6D0 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
+		261A1CCF287565AF00D1D6D0 /* Jikyeojulge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */; };
 		265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */; };
 		265E4D0B287208A600FF83A6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0A287208A600FF83A6 /* WidgetKit.framework */; };
 		265E4D0D287208A600FF83A6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0C287208A600FF83A6 /* SwiftUI.framework */; };
@@ -21,8 +25,6 @@
 		266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266AB3BC286C2E93008A8079 /* NetworkManager.swift */; };
 		26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */; };
 		26A583072874218D0091B671 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F23286884B9001A13C5 /* Persistence.swift */; };
-		26A583092874245B0091B671 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		26A5830A2874245D0091B671 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		9804CC152874B7510063407A /* DeveloperInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC142874B7510063407A /* DeveloperInfoView.swift */; };
 		9804CC16287544270063407A /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
 		9804CC17287544290063407A /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
@@ -518,15 +520,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A583092874245B0091B671 /* (null) in Sources */,
 				264D01E128743F73007FD45F /* Color+Extension.swift in Sources */,
 				9804CC16287544270063407A /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				9804CC17287544290063407A /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */,
 				26A583072874218D0091B671 /* Persistence.swift in Sources */,
 				265E4D10287208A600FF83A6 /* JikyeojulgeWidget.swift in Sources */,
+				261A1CCB2875653F00D1D6D0 /* Persistence.swift in Sources */,
+				261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */,
+				261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				265E4D15287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */,
-				26A5830A2874245D0091B671 /* (null) in Sources */,
+				26A5830A2874245D0091B671 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,13 +15,13 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
 //        container = NSPersistentContainer(name: "Jikyeojulge")
-        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Eddy.EmergencyApp")!
-        print(containerURL, "😎")
+        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Eddy.Jikyeojulge")!
         let storeURL = containerURL.appendingPathComponent("Jikyeojulge.sqlite")
-        print(storeURL, "🌊")
         let description = NSPersistentStoreDescription(url: storeURL)
 
         container = NSPersistentContainer(name: "Jikyeojulge")
+        
+        container.persistentStoreDescriptions = [description]
         
         if inMemory {
             

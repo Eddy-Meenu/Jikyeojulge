@@ -9,16 +9,12 @@ import SwiftUI
 import UIKit
 
 struct MedicineSearchView: View {
-    
-//    var medicine: Medicine
 
     @Environment(\.managedObjectContext) private var viewContext
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var networkManager = NetworkManager()
     @State private var searchKeyword = ""
-
-//    @State var date: Date
     
     var body: some View {
         NavigationView {
@@ -27,7 +23,7 @@ struct MedicineSearchView: View {
                     .ignoresSafeArea()
                 List(networkManager.medicineList, id: \.itemSeq) { medicine in
                     Button(action: {
-                        print("저장")
+                        saveMedicine(medicine: medicine)
                     }, label: {
                         MedicineInfo(medicine: medicine)
                     })
@@ -41,6 +37,7 @@ struct MedicineSearchView: View {
             .navigationTitle("약품 검색")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchKeyword, placement: .navigationBarDrawer(displayMode: .always))
+            .disableAutocorrection(true)
             .onSubmit(of: .search) {
                 networkManager.getData(itemName: searchKeyword, itemSeq: "")
             }
@@ -55,8 +52,6 @@ struct MedicineSearchView: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
-                        saveMedicine(medicine: networkManager.medicineList[0])
-
                     }, label: {
                         Text("확인")
                     })
@@ -64,15 +59,20 @@ struct MedicineSearchView: View {
             }
         }
     }
+    
+    func removeHTMLTag(contents: String?) -> String {
+        return contents?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "등록된 정보가 없습니다"
+    }
+    
     func saveMedicine(medicine: Medicine) {
         let add = MedicineDataEntity(context: viewContext)
-        add.itemName = medicine.itemName
-        add.itemSeq = medicine.itemSeq
+        add.itemName = removeHTMLTag(contents: medicine.itemName)
+        add.itemSeq = removeHTMLTag(contents: medicine.itemSeq)
         add.itemImage = medicine.itemImage
         add.date = Date()
-        add.efcyQesitm = medicine.efcyQesitm
-        add.intrcQesitm = medicine.intrcQesitm
-        add.seQesitm = medicine.seQesitm
+        add.efcyQesitm = removeHTMLTag(contents: medicine.efcyQesitm)
+        add.intrcQesitm = removeHTMLTag(contents: medicine.intrcQesitm)
+        add.seQesitm = removeHTMLTag(contents: medicine.seQesitm)
         
         try! self.viewContext.save()
     }
