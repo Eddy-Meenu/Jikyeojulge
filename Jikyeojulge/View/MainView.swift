@@ -13,14 +13,7 @@ struct MainView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false)])
+    @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [])
     var personalInfo: FetchedResults<PersonalInfoEntity>
     
     @State public var image: Data = .init(count: 0)
@@ -56,30 +49,39 @@ struct MainView: View {
                         MainViewText(label: content.contact,
                                      inputInfo: info.contact1 ?? "")
                         .padding(.bottom, 2)
+                        
                         HStack {
                             Spacer()
                             Text(info.contact2 ?? "")
                         }
                         Divider()
+                        
+                        VStack{
+                            HStack {
+                                Text("의료 기록")
+                                Spacer()
+                            }
+                            
+                            ScrollView(showsIndicators: false) {
+                                HStack{
+                                    Text(personalInfo[0].medicalRecord ?? "")
+                                    Spacer()
+                                }
+                            }
+                            .frame(width: 302, height: 156)
+                            .background(Rectangle()
+                                .stroke(Color.black.opacity(0.5)))
+                        }
+                        
                     }
                     .padding(.horizontal, 24)
-            
-            
-                
-                HStack {
-                    Text("의료 기록")
-                    Spacer()
-                }
-                .padding(.horizontal, 24)
-                
-                
-                CustomTextEditor(placholder: "지병에 대해 적어주세요", medicalRecord: $medicalRecord)
+
                 }
             }
             .frame(width: 350, height: 630)
             .background(RoundedRectangle(cornerRadius: 20)
                 .fill(Color.mainWhite)
-                .shadow(color: .gray.opacity(0.25), radius: 10, x: 2, y: 2))
+                .shadow(color: Color.black.opacity(0.15), radius: 30, x: 6, y: 6))
         }
     }
 }
