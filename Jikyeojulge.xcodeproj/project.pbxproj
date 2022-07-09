@@ -616,7 +616,7 @@
 				CODE_SIGN_ENTITLEMENTS = JikyeojulgeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
@@ -644,7 +644,7 @@
 				CODE_SIGN_ENTITLEMENTS = JikyeojulgeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
@@ -789,7 +789,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jikyeojulge/Preview Content\"";
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
@@ -824,7 +824,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jikyeojulge/Preview Content\"";
-				DEVELOPMENT_TEAM = N6LML762WM;
+				DEVELOPMENT_TEAM = F2SSSA5NRF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
