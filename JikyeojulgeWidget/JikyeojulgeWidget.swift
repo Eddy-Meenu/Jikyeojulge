@@ -59,18 +59,18 @@ struct JikyeojulgeWidgetEntryView : View {
         ZStack{
             Color.widgetBlue
             HStack {
-                Text(personalInfo[0].bloodType ?? "A+")
+                Text(personalInfo[0].bloodType ?? "AB+")
                     .foregroundColor(Color.white)
-                    .font(.system(size: 70, weight: .black, design: .rounded))
+                    .font(.system(size: 65, weight: .black, design: .rounded))
                     .padding(.trailing, 10)
                 VStack(alignment: .leading) {
                     
                     Text(personalInfo[0].contact1 ?? "010-1234-5678")
                         .foregroundColor(Color.white)
-                        .font(.system(size: 22, weight: .black, design: .rounded))
+                        .font(.system(size: 20, weight: .black, design: .rounded))
                     Text(personalInfo[0].contact2 ?? "010-5678-1234")
                         .foregroundColor(Color.white)
-                        .font(.system(size: 22, weight: .black, design: .rounded))
+                        .font(.system(size: 20, weight: .black, design: .rounded))
                         .padding(.top, 5)
                 }
             }
@@ -86,7 +86,7 @@ struct JikyeojulgeWidget: Widget {
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            JikyeojulgeWidgetEntryView(entry: entry)
+           JikyeojulgeWidgetEntryView(entry: entry)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("정보 보여주기")
@@ -97,7 +97,7 @@ struct JikyeojulgeWidget: Widget {
 
 struct JikyeojulgeWidget_Previews: PreviewProvider {
     static var previews: some View {
-        JikyeojulgeWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+       JikyeojulgeWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
