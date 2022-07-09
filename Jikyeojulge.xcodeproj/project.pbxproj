@@ -10,8 +10,6 @@
 		261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
 		261A1CCB2875653F00D1D6D0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F23286884B9001A13C5 /* Persistence.swift */; };
 		261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
-		261A1CCD2875654300D1D6D0 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
-		261A1CCF287565AF00D1D6D0 /* Jikyeojulge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98913F25286884B9001A13C5 /* Jikyeojulge.xcdatamodeld */; };
 		265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */; };
 		265E4D0B287208A600FF83A6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0A287208A600FF83A6 /* WidgetKit.framework */; };
 		265E4D0D287208A600FF83A6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0C287208A600FF83A6 /* SwiftUI.framework */; };
@@ -30,6 +28,8 @@
 		9804CC17287544290063407A /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
 		9804CC1A2875486F0063407A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9804CC192875486F0063407A /* Launch Screen.storyboard */; };
 		9804CC1C2876D1F60063407A /* OnboardingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1B2876D1F60063407A /* OnboardingComponent.swift */; };
+		9804CC1E28792F820063407A /* MainViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1D28792F820063407A /* MainViewComponent.swift */; };
+		9804CC202879312F0063407A /* DeveloperLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1F2879312F0063407A /* DeveloperLink.swift */; };
 		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
 		987036A7286AE53600451744 /* InitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A6286AE53600451744 /* InitTextField.swift */; };
 		987036A9286AE55700451744 /* InitTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A8286AE55700451744 /* InitTitle.swift */; };
@@ -119,6 +119,8 @@
 		9804CC182875447B0063407A /* JikyeojulgeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JikyeojulgeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		9804CC192875486F0063407A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9804CC1B2876D1F60063407A /* OnboardingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingComponent.swift; sourceTree = "<group>"; };
+		9804CC1D28792F820063407A /* MainViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewComponent.swift; sourceTree = "<group>"; };
+		9804CC1F2879312F0063407A /* DeveloperLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperLink.swift; sourceTree = "<group>"; };
 		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
 		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
 		987036A8286AE55700451744 /* InitTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTitle.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				98DE9BE228747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift */,
 				98DE9BE328747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift */,
 				266AB3B9286C2CA4008A8079 /* MedicineModel.swift */,
+				9804CC1D28792F820063407A /* MainViewComponent.swift */,
 				9804CC1B2876D1F60063407A /* OnboardingComponent.swift */,
 				98913F23286884B9001A13C5 /* Persistence.swift */,
 			);
@@ -352,6 +355,7 @@
 				98913F5128688524001A13C5 /* MedicineSearchView.swift */,
 				98913F4F2868850D001A13C5 /* SettingView.swift */,
 				9804CC142874B7510063407A /* DeveloperInfoView.swift */,
+				9804CC1F2879312F0063407A /* DeveloperLink.swift */,
 				987036AA286AE58300451744 /* ModifyingInfoView */,
 				98913F552868856E001A13C5 /* OnboardingView.swift */,
 			);
@@ -520,7 +524,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				264D01E128743F73007FD45F /* Color+Extension.swift in Sources */,
 				9804CC16287544270063407A /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				9804CC17287544290063407A /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */,
@@ -530,7 +533,6 @@
 				261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */,
 				261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				265E4D15287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */,
-				26A5830A2874245D0091B671 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,9 +540,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9804CC202879312F0063407A /* DeveloperLink.swift in Sources */,
 				98913F24286884B9001A13C5 /* Persistence.swift in Sources */,
 				987036A5286AE52100451744 /* InitBtn.swift in Sources */,
 				987036AC286AEB5200451744 /* CustomTextEditior.swift in Sources */,
+				9804CC1E28792F820063407A /* MainViewComponent.swift in Sources */,
 				987036B0286AECA500451744 /* ImagePicker.swift in Sources */,
 				266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */,
 				98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */,
@@ -631,7 +635,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Eddy2.Jikyeojulge.JikyeojulgeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge.JikyeojulgeWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -659,7 +663,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Eddy2.Jikyeojulge.JikyeojulgeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge.JikyeojulgeWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -809,7 +813,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Eddy2.Jikyeojulge;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -844,7 +848,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Eddy2.Jikyeojulge;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

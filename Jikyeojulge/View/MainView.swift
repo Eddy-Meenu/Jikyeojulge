@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    var content = MainViewComponent()
+    
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
@@ -38,33 +41,20 @@ struct MainView: View {
                         .frame(width: 150, height: 150)
                     
                     VStack {
-                        HStack {
-                            Text("이름")
-                            Spacer()
-                            Text(info.name ?? "")
-                        }
-                        
+                        MainViewText(label: content.name,
+                                     inputInfo: info.name ?? "")
                         Divider()
                         
-                        HStack {
-                            Text("생년월일")
-                            Spacer()
-                            Text(info.birth ?? "")
-                        }
+                        MainViewText(label: content.birth,
+                                     inputInfo: info.birth ?? "")
                         Divider()
                         
-                        HStack {
-                            Text("혈액형")
-                            Spacer()
-                            Text(info.bloodType ?? "")
-                        }
+                        MainViewText(label: content.bloodType,
+                                     inputInfo: info.bloodType ?? "")
                         Divider()
                         
-                        HStack {
-                            Text("비상연락처")
-                            Spacer()
-                            Text(info.contact1 ?? "")
-                        }
+                        MainViewText(label: content.contact,
+                                     inputInfo: info.contact1 ?? "")
                         .padding(.bottom, 2)
                         HStack {
                             Spacer()
@@ -97,5 +87,19 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+    }
+}
+
+struct MainViewText: View {
+    
+    let label: String
+    let inputInfo: String
+    
+    var body: some View {
+        HStack {
+            Text(label)
+            Spacer()
+            Text(inputInfo)
+        }
     }
 }
