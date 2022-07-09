@@ -27,8 +27,7 @@
 		9804CC16287544270063407A /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
 		9804CC17287544290063407A /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
 		9804CC1A2875486F0063407A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9804CC192875486F0063407A /* Launch Screen.storyboard */; };
-		9804CC1C2876D1F60063407A /* OnboardingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1B2876D1F60063407A /* OnboardingComponent.swift */; };
-		9804CC1E28792F820063407A /* MainViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1D28792F820063407A /* MainViewComponent.swift */; };
+		9804CC1E28792F820063407A /* ViewStirng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1D28792F820063407A /* ViewStirng.swift */; };
 		9804CC202879312F0063407A /* DeveloperLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1F2879312F0063407A /* DeveloperLink.swift */; };
 		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
 		987036A7286AE53600451744 /* InitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A6286AE53600451744 /* InitTextField.swift */; };
@@ -118,8 +117,7 @@
 		9804CC142874B7510063407A /* DeveloperInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoView.swift; sourceTree = "<group>"; };
 		9804CC182875447B0063407A /* JikyeojulgeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JikyeojulgeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		9804CC192875486F0063407A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		9804CC1B2876D1F60063407A /* OnboardingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingComponent.swift; sourceTree = "<group>"; };
-		9804CC1D28792F820063407A /* MainViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewComponent.swift; sourceTree = "<group>"; };
+		9804CC1D28792F820063407A /* ViewStirng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStirng.swift; sourceTree = "<group>"; };
 		9804CC1F2879312F0063407A /* DeveloperLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperLink.swift; sourceTree = "<group>"; };
 		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
 		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
@@ -328,8 +326,7 @@
 				98DE9BE228747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift */,
 				98DE9BE328747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift */,
 				266AB3B9286C2CA4008A8079 /* MedicineModel.swift */,
-				9804CC1D28792F820063407A /* MainViewComponent.swift */,
-				9804CC1B2876D1F60063407A /* OnboardingComponent.swift */,
+				9804CC1D28792F820063407A /* ViewStirng.swift */,
 				98913F23286884B9001A13C5 /* Persistence.swift */,
 			);
 			path = Model;
@@ -544,7 +541,7 @@
 				98913F24286884B9001A13C5 /* Persistence.swift in Sources */,
 				987036A5286AE52100451744 /* InitBtn.swift in Sources */,
 				987036AC286AEB5200451744 /* CustomTextEditior.swift in Sources */,
-				9804CC1E28792F820063407A /* MainViewComponent.swift in Sources */,
+				9804CC1E28792F820063407A /* ViewStirng.swift in Sources */,
 				987036B0286AECA500451744 /* ImagePicker.swift in Sources */,
 				266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */,
 				98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */,
@@ -570,7 +567,6 @@
 				98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */,
 				98DE9BD32873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */,
-				9804CC1C2876D1F60063407A /* OnboardingComponent.swift in Sources */,
 				98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */,
 				98913F562868856E001A13C5 /* OnboardingView.swift in Sources */,
 				265E4D16287208A700FF83A6 /* JikyeojulgeWidget.intentdefinition in Sources */,
