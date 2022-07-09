@@ -208,7 +208,7 @@ struct JikyeojulgeSmallContactTwoWidget: Widget {
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-           JikyeojulgeSmallContactOneWidgetEntryView(entry: entry)
+           JikyeojulgeSmallContactTwoWidgetEntryView(entry: entry)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("비상 연락처 2")
