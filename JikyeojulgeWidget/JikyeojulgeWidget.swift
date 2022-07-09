@@ -57,6 +57,7 @@ struct JikyeojulgeSmallBloodTypeWidgetEntryView : View {
     var body: some View {
         ZStack{
             Color.widgetBlue
+            
             Text(personalInfo[0].bloodType ?? "AB+")
                 .foregroundColor(Color.white)
                 .font(.system(size: 50, weight: .black, design: .rounded))
@@ -82,6 +83,7 @@ struct JikyeojulgeSmallContactOneWidgetEntryView : View {
     var body: some View {
         ZStack{
             Color.widgetBlue
+            
             Text(personalInfo[0].contact1 ?? "010\n1234\n5678")
                 .foregroundColor(Color.white)
                 .font(.system(size: 34, weight: .black, design: .rounded))
@@ -107,6 +109,7 @@ struct JikyeojulgeSmallContactTwoWidgetEntryView : View {
     var body: some View {
         ZStack{
             Color.widgetBlue
+            
             Text(personalInfo[0].contact2 ?? "010\n1234\n5678")
                 .foregroundColor(Color.white)
                 .font(.system(size: 34, weight: .black, design: .rounded))
@@ -133,6 +136,7 @@ struct JikyeojulgeMediumWidgetEntryView : View {
         ZStack{
             Color.widgetBlue
             HStack {
+                
                 Text(personalInfo[0].bloodType ?? "AB+")
                     .foregroundColor(Color.white)
                     .font(.system(size: 65, weight: .black, design: .rounded))
@@ -161,14 +165,14 @@ struct JikyeojulgeWidget: WidgetBundle {
         JikyeojulgeSmallBloodTypeWidget()
         JikyeojulgeSmallContactOneWidget()
         JikyeojulgeSmallContactTwoWidget()
-//        JikyeojulgeMediumWidget()
+        JikyeojulgeMediumWidget()
     }
 }
 
 struct JikyeojulgeSmallBloodTypeWidget: Widget {
     let persistenceController = PersistenceController.shared
     
-    let kind: String = "JikyeojulgeWidget"
+    let kind: String = "JikyeojulgeSmallBloodTypeWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
@@ -184,7 +188,7 @@ struct JikyeojulgeSmallBloodTypeWidget: Widget {
 struct JikyeojulgeSmallContactOneWidget: Widget {
     let persistenceController = PersistenceController.shared
     
-    let kind: String = "JikyeojulgeWidget"
+    let kind: String = "JikyeojulgeSmallContactOneWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
@@ -200,7 +204,7 @@ struct JikyeojulgeSmallContactOneWidget: Widget {
 struct JikyeojulgeSmallContactTwoWidget: Widget {
     let persistenceController = PersistenceController.shared
     
-    let kind: String = "JikyeojulgeWidget"
+    let kind: String = "JikyeojulgeSmallContactTwoWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
@@ -216,7 +220,7 @@ struct JikyeojulgeSmallContactTwoWidget: Widget {
 struct JikyeojulgeMediumWidget: Widget {
     let persistenceController = PersistenceController.shared
     
-    let kind: String = "JikyeojulgeWidget"
+    let kind: String = "JikyeojulgeMediumWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
