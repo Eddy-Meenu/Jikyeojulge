@@ -12,17 +12,22 @@ struct OnboardingView: View {
     let content = OnboardingComponent()
     
     var body: some View {
-
         ZStack{
             Color.white
                 .ignoresSafeArea()
-        TabView {
-            ForEach(0..<5) { num in
-                OnboardingPage(title: content.title[num],
-                               description: content.description[num],
-                               imageName: content.imageName[num])
+            
+            TabView {
+                ForEach(0..<5) { num in
+                    OnboardingPage(title: content.title[num],
+                                   description: content.description[num],
+                                   imageName: content.imageName[num])
+                }
             }
-        }.tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(PageTabViewStyle())
+            .onAppear() {
+                UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color.widgetBlue)
+                UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+            }
         }
     }
 }
