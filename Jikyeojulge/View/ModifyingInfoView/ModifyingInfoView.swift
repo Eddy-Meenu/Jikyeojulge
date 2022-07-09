@@ -19,15 +19,10 @@ struct ModifyingInfoView: View {
     @State var contact2: String = ""
     @State var medicalRecord: String = "지병에 대해 적어주세요."
     @State var isShowing = false
-    @State var showImage: Data = .init(count: 1)
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
 
     @State var photoImage: Image?
     @State var selectedImage: UIImage?
-    
-    @State var saveData = false
-    @State var returnToSetting = false
-    
     
     @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
         NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
@@ -58,34 +53,6 @@ struct ModifyingInfoView: View {
                         .onTapGesture {
                             self.isShowing.toggle()
                         }
-//                        .sheet(isPresented: self.$isShowing, content: {
-//                            ImagePicker(images: $showImage, show: $isShowing, sourceType: sourceType)
-//                        })
-                    
-//                    if !showImage.isEmpty {
-//                        Button(action: {
-//                            self.isShowing.toggle()
-//                        }, label: {
-//                            Image(uiImage: UIImage(data: info.photoImage!)!)
-//                                .resizable()
-//                                .clipShape(Circle())
-//                                .scaledToFill()
-//                                .frame(width: 150, height: 150)
-//                                .padding(.top, 50)
-//                        })
-//                    } else {
-//                        Button(action: {
-//                            self.isShowing.toggle()
-//                        }, label: {
-//                            Image(systemName: "photo.fill")
-//                                .resizable()
-//                                .clipShape(Circle())
-//                                .scaledToFill()
-//                                .foregroundColor(.gray)
-//                                .frame(width: 150, height: 150)
-//                                .padding(.top, 50)
-//                        })
-//                    }
 
                     VStack {
                         ModifyingInfoTextLine(label: "이름", placeholder: info.name ?? "", value: $name)
