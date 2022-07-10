@@ -33,17 +33,13 @@ struct MedicineRecordSegment: View {
 }
 
 struct MedicineRecordView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+
     @State private var isShowingSheet = false
     @State private var isShowingFullScreen = false
     
     @FetchRequest(entity: MedicineDataEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \MedicineDataEntity.itemName, ascending: true),
-        NSSortDescriptor(keyPath: \MedicineDataEntity.itemSeq, ascending: false),
-        NSSortDescriptor(keyPath: \MedicineDataEntity.efcyQesitm, ascending: false),
-        NSSortDescriptor(keyPath: \MedicineDataEntity.intrcQesitm, ascending: false),
-        NSSortDescriptor(keyPath: \MedicineDataEntity.seQesitm, ascending: false),
-        NSSortDescriptor(keyPath: \MedicineDataEntity.itemImage, ascending: false),
-        NSSortDescriptor(keyPath: \MedicineDataEntity.date, ascending: false)])
+        NSSortDescriptor(keyPath: \MedicineDataEntity.itemName, ascending: true)])
     var medicineData: FetchedResults<MedicineDataEntity>
     
     @State private var startDate = Date()
@@ -110,6 +106,7 @@ struct MedicineRecordView: View {
                             MedicineRecordSegment(medicine: medicine)
                         })
                     }
+                    .onDelete(perform: deleteData)
                 }
                 .onAppear {
                     UITableView.appearance().backgroundColor = UIColor.clear
@@ -167,6 +164,18 @@ struct MedicineRecordView: View {
                 .fullScreenCover(isPresented: $isShowingFullScreen, content: {
                     MedicineSearchView()
                 })
+    }
+    private func deleteData(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { medicineData[$0] }.forEach(viewContext.delete)
+
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
 
