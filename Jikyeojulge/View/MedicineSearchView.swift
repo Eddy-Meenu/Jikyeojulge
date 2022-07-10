@@ -53,7 +53,7 @@ struct MedicineSearchView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Text("확인")
+                        Text("저장")
                     })
                 })
             }
