@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MedicineInfo: View {
+    @ObservedObject var networkManager: NetworkManager
     var medicine: Medicine
 
     var body: some View {
@@ -18,8 +19,17 @@ struct MedicineInfo: View {
                 .padding(.trailing, 16)
             
             VStack(alignment: .leading, spacing: 15) {
-                contentsProvider(contents: medicine.itemName)
-                    .font(.system(size: 16, weight: .bold))
+                HStack(alignment: .top) {
+                    contentsProvider(contents: medicine.itemName)
+                        .font(.system(size: 16, weight: .bold))
+                    
+                    Spacer()
+                    
+                    if networkManager.compareMedicine(medicine: medicine) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(Color.green)
+                    }
+                }
                 
                 contentsProvider(contents: medicine.efcyQesitm)
                     .font(.system(size: 14))
