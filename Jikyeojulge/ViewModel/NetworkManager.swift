@@ -10,6 +10,8 @@ import Foundation
 
 class NetworkManager: ObservableObject {
     @Published var medicineList = [Medicine]()
+    @Published var selectedMedicineSet = Set<Medicine>()
+    
     let urlString = "http://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList"
     
     let serviceKey = "5HtxWM9+fExd03260y2ei9X4a4e9UwwI5vbxKNtkVT1YrNGfNrapFTrlqApqhO1rX9LcaHYXEeT8yR9MCyRhnw=="
@@ -46,5 +48,21 @@ class NetworkManager: ObservableObject {
                 print("\(error.localizedDescription)\n\(error)")
             }
         }.resume()
+    }
+    
+    func addMedicineSet(medicine: Medicine) {
+        selectedMedicineSet.insert(medicine)
+    }
+    
+    func popMedicineSet(medicine: Medicine) {
+        selectedMedicineSet.remove(medicine)
+    }
+    
+    func compareMedicine(medicine: Medicine) -> Bool {
+        if selectedMedicineSet.contains(medicine) {
+            return true
+        } else {
+            return false
+        }
     }
 }
