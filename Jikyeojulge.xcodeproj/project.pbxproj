@@ -27,10 +27,12 @@
 		9804CC1A2875486F0063407A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9804CC192875486F0063407A /* Launch Screen.storyboard */; };
 		9804CC1E28792F820063407A /* ViewStirng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1D28792F820063407A /* ViewStirng.swift */; };
 		9804CC202879312F0063407A /* DeveloperLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1F2879312F0063407A /* DeveloperLink.swift */; };
+		9804CC8C287AAC1B0063407A /* InitNumField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC8B287AAC1B0063407A /* InitNumField.swift */; };
+		9804CC8E287AAC900063407A /* ModifyingInfoNumLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC8D287AAC900063407A /* ModifyingInfoNumLine.swift */; };
+		982A3047287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A3046287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift */; };
 		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
 		987036A7286AE53600451744 /* InitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A6286AE53600451744 /* InitTextField.swift */; };
 		987036A9286AE55700451744 /* InitTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A8286AE55700451744 /* InitTitle.swift */; };
-		987036AC286AEB5200451744 /* CustomTextEditior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AB286AEB5200451744 /* CustomTextEditior.swift */; };
 		987036AE286AEBB800451744 /* ModifyingInfoTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */; };
 		987036B0286AECA500451744 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036AF286AECA500451744 /* ImagePicker.swift */; };
 		987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */; };
@@ -117,10 +119,12 @@
 		9804CC192875486F0063407A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9804CC1D28792F820063407A /* ViewStirng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStirng.swift; sourceTree = "<group>"; };
 		9804CC1F2879312F0063407A /* DeveloperLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperLink.swift; sourceTree = "<group>"; };
+		9804CC8B287AAC1B0063407A /* InitNumField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitNumField.swift; sourceTree = "<group>"; };
+		9804CC8D287AAC900063407A /* ModifyingInfoNumLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoNumLine.swift; sourceTree = "<group>"; };
+		982A3046287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalPhotoDirectInputView.swift; sourceTree = "<group>"; };
 		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
 		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
 		987036A8286AE55700451744 /* InitTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTitle.swift; sourceTree = "<group>"; };
-		987036AB286AEB5200451744 /* CustomTextEditior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditior.swift; sourceTree = "<group>"; };
 		987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoTextLine.swift; sourceTree = "<group>"; };
 		987036AF286AECA500451744 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		987036B1286B08DB00451744 /* HidKeyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HidKeyboard+Extension.swift"; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 				98913F49286884E4001A13C5 /* InitSettingView.swift */,
 				987036A8286AE55700451744 /* InitTitle.swift */,
 				987036A6286AE53600451744 /* InitTextField.swift */,
+				9804CC8B287AAC1B0063407A /* InitNumField.swift */,
 				987036A4286AE52100451744 /* InitBtn.swift */,
 				98DE9BD42874642200EFA265 /* LoadingView.swift */,
 				98DE9BD62874642F00EFA265 /* ActivityIndicatorView.swift */,
@@ -243,7 +248,7 @@
 			children = (
 				98913F532868855E001A13C5 /* ModifyingInfoView.swift */,
 				987036AD286AEBB800451744 /* ModifyingInfoTextLine.swift */,
-				987036AB286AEB5200451744 /* CustomTextEditior.swift */,
+				9804CC8D287AAC900063407A /* ModifyingInfoNumLine.swift */,
 			);
 			path = ModifyingInfoView;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				98913F4B286884F3001A13C5 /* MainView.swift */,
 				98913F4D28688502001A13C5 /* MedicineRecordView.swift */,
 				266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */,
+				982A3046287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift */,
 				98913F5128688524001A13C5 /* MedicineSearchView.swift */,
 				98913F4F2868850D001A13C5 /* SettingView.swift */,
 				9804CC142874B7510063407A /* DeveloperInfoView.swift */,
@@ -392,6 +398,8 @@
 				265E4D18287208A700FF83A6 /* PBXTargetDependency */,
 			);
 			name = Jikyeojulge;
+			packageProductDependencies = (
+			);
 			productName = Jikyeojulge;
 			productReference = 98913F17286884B8001A13C5 /* Jikyeojulge.app */;
 			productType = "com.apple.product-type.application";
@@ -467,6 +475,8 @@
 				Base,
 			);
 			mainGroup = 98913F0E286884B8001A13C5;
+			packageReferences = (
+			);
 			productRefGroup = 98913F18286884B8001A13C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -536,7 +546,7 @@
 				9804CC202879312F0063407A /* DeveloperLink.swift in Sources */,
 				98913F24286884B9001A13C5 /* Persistence.swift in Sources */,
 				987036A5286AE52100451744 /* InitBtn.swift in Sources */,
-				987036AC286AEB5200451744 /* CustomTextEditior.swift in Sources */,
+				9804CC8E287AAC900063407A /* ModifyingInfoNumLine.swift in Sources */,
 				9804CC1E28792F820063407A /* ViewStirng.swift in Sources */,
 				987036B0286AECA500451744 /* ImagePicker.swift in Sources */,
 				266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */,
@@ -553,6 +563,7 @@
 				98DE9BD92874656D00EFA265 /* ImageLoader.swift in Sources */,
 				987036A7286AE53600451744 /* InitTextField.swift in Sources */,
 				98DE9BD72874642F00EFA265 /* ActivityIndicatorView.swift in Sources */,
+				9804CC8C287AAC1B0063407A /* InitNumField.swift in Sources */,
 				98DE9BE528747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift in Sources */,
 				265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */,
 				987036AE286AEBB800451744 /* ModifyingInfoTextLine.swift in Sources */,
@@ -561,6 +572,7 @@
 				98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */,
 				98913F502868850D001A13C5 /* SettingView.swift in Sources */,
 				98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */,
+				982A3047287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift in Sources */,
 				98DE9BD32873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */,
 				98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */,
@@ -616,7 +628,7 @@
 				CODE_SIGN_ENTITLEMENTS = JikyeojulgeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				DEVELOPMENT_TEAM = N6LML762WM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
@@ -627,7 +639,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge.JikyeojulgeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy2.Jikyeojulge.JikyeojulgeWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -644,7 +656,7 @@
 				CODE_SIGN_ENTITLEMENTS = JikyeojulgeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				DEVELOPMENT_TEAM = N6LML762WM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JikyeojulgeWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
@@ -655,7 +667,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge.JikyeojulgeWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy2.Jikyeojulge.JikyeojulgeWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -789,7 +801,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jikyeojulge/Preview Content\"";
-				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				DEVELOPMENT_TEAM = N6LML762WM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
@@ -805,7 +817,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy2.Jikyeojulge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -824,7 +836,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jikyeojulge/Preview Content\"";
-				DEVELOPMENT_TEAM = F2SSSA5NRF;
+				DEVELOPMENT_TEAM = N6LML762WM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
@@ -840,7 +852,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Eddy.Jikyeojulge;
+				PRODUCT_BUNDLE_IDENTIFIER = Eddy2.Jikyeojulge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
