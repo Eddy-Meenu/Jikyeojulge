@@ -65,4 +65,12 @@ class NetworkManager: ObservableObject {
             return false
         }
     }
+    
+    func selectMedicine(medicine: Medicine) {
+        if compareMedicine(medicine: medicine) {
+            popMedicineSet(medicine: medicine)
+        } else {
+            addMedicineSet(medicine: medicine)
+        }
+    }
 }

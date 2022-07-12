@@ -23,11 +23,7 @@ struct MedicineSearchView: View {
                     .ignoresSafeArea()
                 List(networkManager.medicineList, id: \.itemSeq) { medicine in
                     Button(action: {
-                        if networkManager.compareMedicine(medicine: medicine) {
-                            networkManager.popMedicineSet(medicine: medicine)
-                        } else {
-                            networkManager.addMedicineSet(medicine: medicine)
-                        }
+                        networkManager.selectMedicine(medicine: medicine)
                     }, label: {
                         MedicineInfo(networkManager: networkManager, medicine: medicine)
                     })
