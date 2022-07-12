@@ -43,7 +43,7 @@ struct MedicineSearchView: View {
             .searchable(text: $searchKeyword, placement: .navigationBarDrawer(displayMode: .always))
             .disableAutocorrection(true)
             .onSubmit(of: .search) {
-                networkManager.getData(itemName: searchKeyword, itemSeq: "")
+                networkManager.requestMedicineData(itemName: searchKeyword, itemSeq: "")
             }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading, content: {

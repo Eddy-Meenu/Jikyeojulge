@@ -17,7 +17,7 @@ class NetworkManager: ObservableObject {
     let serviceKey = "5HtxWM9+fExd03260y2ei9X4a4e9UwwI5vbxKNtkVT1YrNGfNrapFTrlqApqhO1rX9LcaHYXEeT8yR9MCyRhnw=="
     let type = "json"
     
-    func getData(itemName: String, itemSeq: String) {
+    func requestMedicineData(itemName: String, itemSeq: String) {
         var urlComponents = URLComponents(string: urlString)
         var components = urlComponents
         let serviceKeyQuery = URLQueryItem(name: "serviceKey", value: serviceKey)
