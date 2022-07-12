@@ -23,9 +23,13 @@ struct MedicineSearchView: View {
                     .ignoresSafeArea()
                 List(networkManager.medicineList, id: \.itemSeq) { medicine in
                     Button(action: {
-                        saveMedicine(medicine: medicine)
+                        if networkManager.compareMedicine(medicine: medicine) {
+                            networkManager.popMedicineSet(medicine: medicine)
+                        } else {
+                            networkManager.addMedicineSet(medicine: medicine)
+                        }
                     }, label: {
-                        MedicineInfo(medicine: medicine)
+                        MedicineInfo(networkManager: networkManager, medicine: medicine)
                     })
                     .foregroundColor(.black)
                 }
@@ -51,6 +55,7 @@ struct MedicineSearchView: View {
                 })
                 ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                     Button(action: {
+                        saveMedicine(medicineList: networkManager.selectedMedicineSet)
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("저장")
@@ -64,17 +69,22 @@ struct MedicineSearchView: View {
         return contents?.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil) ?? "등록된 정보가 없습니다"
     }
     
-    func saveMedicine(medicine: Medicine) {
-        let add = MedicineDataEntity(context: viewContext)
-        add.itemName = removeHTMLTag(contents: medicine.itemName)
-        add.itemSeq = removeHTMLTag(contents: medicine.itemSeq)
-        add.itemImage = medicine.itemImage
-        add.date = Date()
-        add.efcyQesitm = removeHTMLTag(contents: medicine.efcyQesitm)
-        add.intrcQesitm = removeHTMLTag(contents: medicine.intrcQesitm)
-        add.seQesitm = removeHTMLTag(contents: medicine.seQesitm)
-        
-        try! self.viewContext.save()
+    func saveMedicine(medicineList: Set<Medicine>) {
+        var medicineList = medicineList
+        while !medicineList.isEmpty {
+            let medicine = medicineList.popFirst()
+            
+            let add = MedicineDataEntity(context: viewContext)
+            add.itemName = removeHTMLTag(contents: medicine?.itemName)
+            add.itemSeq = removeHTMLTag(contents: medicine?.itemSeq)
+            add.itemImage = medicine?.itemImage
+            add.date = Date()
+            add.efcyQesitm = removeHTMLTag(contents: medicine?.efcyQesitm)
+            add.intrcQesitm = removeHTMLTag(contents: medicine?.intrcQesitm)
+            add.seQesitm = removeHTMLTag(contents: medicine?.seQesitm)
+
+            try! self.viewContext.save()
+        }
     }
 }
 
