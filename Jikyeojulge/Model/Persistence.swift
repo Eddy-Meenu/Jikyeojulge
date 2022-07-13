@@ -12,7 +12,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Eddy.Jikyeojulge")!
+        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Eddy.EmergencyApp")!
         let storeURL = containerURL.appendingPathComponent("Jikyeojulge.sqlite")
         let description = NSPersistentStoreDescription(url: storeURL)
 

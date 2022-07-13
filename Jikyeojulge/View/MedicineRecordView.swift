@@ -34,9 +34,10 @@ struct MedicineRecordSegment: View {
 
 struct MedicineRecordView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @State private var isShowingSheet = false
     @State private var isShowingFullScreen = false
+    @State private var isShowingPhotoView = false
     
     @FetchRequest(entity: MedicineDataEntity.entity(), sortDescriptors: [
         NSSortDescriptor(keyPath: \MedicineDataEntity.itemName, ascending: true)])
@@ -100,6 +101,7 @@ struct MedicineRecordView: View {
                 
                 List {
                     ForEach(medicineData) { medicine in
+                        
                         NavigationLink(destination: {
                             MedicineDetailView(medicine: medicine)
                         }, label: {
@@ -120,7 +122,7 @@ struct MedicineRecordView: View {
                             DatePicker("시작 날짜", selection: $startDate, in:...Date(), displayedComponents: .date)
                                 .datePickerStyle(GraphicalDatePickerStyle())
                                 .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.98)).shadow(color: Color.black.opacity(0.16), radius: 30, x: 4, y: 4))
-                                                                .frame(width: UIScreen.main.bounds.width * 0.7)
+                                .frame(width: UIScreen.main.bounds.width * 0.7)
                             Spacer()
                         }
                         .padding(EdgeInsets(top: 40, leading: 20, bottom: 0, trailing: 0))
@@ -132,7 +134,7 @@ struct MedicineRecordView: View {
                             DatePicker("종료 날짜", selection: $endDate, in:...Date(), displayedComponents: .date)
                                 .datePickerStyle(GraphicalDatePickerStyle())
                                 .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.98)).shadow(color: Color.black.opacity(0.16), radius: 30, x: 4, y: 4))
-                                                                .frame(width: UIScreen.main.bounds.width * 0.7)
+                                .frame(width: UIScreen.main.bounds.width * 0.7)
                         }
                         .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 20))
                         Spacer()
@@ -140,31 +142,34 @@ struct MedicineRecordView: View {
                 })
         }
         .toolbar {
-            ToolbarItem(content: {
+            ToolbarItem(placement: .navigationBarTrailing,content: {
                 Button(action: {
-                            isShowingSheet = true
-                        }, label: {
-                            Text("추가")
-                        })
-                        Divider()
-                    })
-                }
-                .confirmationDialog("동작 선택", isPresented: $isShowingSheet, actions: {
-                    Button(action: {
-                        isShowingFullScreen = true
-                    }, label: {
-                        Text("조회하여 추가하기")
-                    })
-                    Button(action: {
-        
-                    }, label: {
-                        Text("직접 입력하기")
-                    })
+                    isShowingSheet = true
+                }, label: {
+                    Text("추가")
                 })
-                .fullScreenCover(isPresented: $isShowingFullScreen, content: {
-                    MedicineSearchView()
-                })
+            })
+        }
+        .confirmationDialog("동작 선택", isPresented: $isShowingSheet, actions: {
+            Button(action: {
+                isShowingFullScreen = true
+            }, label: {
+                Text("조회하여 추가하기")
+            })
+            Button(action: {
+                isShowingPhotoView = true
+            }, label: {
+                Text("직접 입력하기")
+            })
+        })
+        .fullScreenCover(isPresented: $isShowingFullScreen, content: {
+            MedicineSearchView()
+        })
+        .fullScreenCover(isPresented: $isShowingPhotoView, content: {
+            MedicalPhotoDirectInputView()
+        })
     }
+    
     private func deleteData(offsets: IndexSet) {
         withAnimation {
             offsets.map { medicineData[$0] }.forEach(viewContext.delete)
