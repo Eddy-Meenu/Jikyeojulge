@@ -8,32 +8,25 @@
 import SwiftUI
 
 struct ModifyingInfoView: View {
-    
+//
+//    @EnvironmentObject var number: Order
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var dismiss
 
-    @State var name: String = ""
-    @State var birth: String = ""
-    @State var bloodType: String = ""
-    @State var contact1: String = ""
-    @State var contact2: String = ""
-    @State var medicalRecord: String = "지병에 대해 적어주세요."
+    @State var name = ""
+    @State var birth = ""
+    @State var bloodType = ""
+    @State var contact1 = ""
+    @State var contact2 = "".toPhoneNumber()
+    @State var medicalRecord = "지병에 대해 적어주세요."
     @State var isShowing = false
-    @State var showImage: Data = .init(count: 1)
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
 
     @State var photoImage: Image?
     @State var selectedImage: UIImage?
     
     @FetchRequest(entity: PersonalInfoEntity.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.name, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.photoImage, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.bloodType, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.birth, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact1, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.contact2, ascending: false),
-        NSSortDescriptor(keyPath: \PersonalInfoEntity.medicalRecord, ascending: false)])
+        NSSortDescriptor(keyPath: \PersonalInfoEntity.id, ascending: true)])
     var personalInfo: FetchedResults<PersonalInfoEntity>
         
     var body: some View {
@@ -60,7 +53,7 @@ struct ModifyingInfoView: View {
                                               value: $name)
                         Divider()
 
-                        ModifyingInfoTextLine(label: "생년월일",
+                        ModifyingInfoNumLine(label: "생년월일",
                                               placeholder: info.birth ?? "",
                                               value: $birth)
                         Divider()
@@ -70,13 +63,13 @@ struct ModifyingInfoView: View {
                                               value: $bloodType)
                         Divider()
 
-                        ModifyingInfoTextLine(label: "비상연락처",
-                                              placeholder: "010-1234-1234",
-                                              value: $contact1)
+                        ModifyingInfoNumLine(label: "비상연락처",
+                                             placeholder: "010-1234-1234",
+                                             value: $contact1)
 
-                        ModifyingInfoTextLine(label: "",
-                                              placeholder: "010-5678-5678",
-                                              value: $contact2)
+                        ModifyingInfoNumLine(label: "",
+                                             placeholder: "010-5678-5678",
+                                             value: $contact2)
                         Divider()
                     }
                     .padding(.horizontal, 24)
@@ -87,7 +80,6 @@ struct ModifyingInfoView: View {
                     }
                     .padding(.horizontal, 24)
 
-//                    CustomTextEditor(placholder: "지병에 대해 적어주세요", medicalRecord: $medicalRecord)
                     TextEditor(text: $medicalRecord)
                         .frame(width: 302, height: 156)
                         .background(Rectangle()
@@ -110,6 +102,9 @@ struct ModifyingInfoView: View {
                 .fill(Color.mainWhite)
                 .shadow(color: Color.black.opacity(0.15), radius: 30, x: 6, y: 6))
 
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
         .onAppear {
             name = personalInfo[0].name!
@@ -145,7 +140,9 @@ struct ModifyingInfoView: View {
         photoImage = Image(uiImage: selectedImage)
     }
 
-    func updatePersonalInfo(name: String, photoImage: UIImage, contact1: String, contact2: String, birth: String, bloodType: String, medicalRecord: String) {
+    func updatePersonalInfo(name: String, photoImage: UIImage, contact1: String,
+                            contact2: String, birth: String, bloodType: String,
+                            medicalRecord: String) {
         personalInfo[0].name = name
         personalInfo[0].photoImage = photoImage.pngData()
         personalInfo[0].contact1 = contact1
@@ -155,5 +152,11 @@ struct ModifyingInfoView: View {
         personalInfo[0].medicalRecord = medicalRecord
 
         try! self.viewContext.save()
+    }
+    
+}
+extension String {
+    public func toPhoneNumber() -> String {
+        return self.replacingOccurrences(of: "(\\d{3})(\\d{4})(\\d(4))", with: "$1-$2-$3", options: .regularExpression, range: nil)
     }
 }
