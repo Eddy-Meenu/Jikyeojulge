@@ -30,6 +30,8 @@
 		9804CC8C287AAC1B0063407A /* InitNumField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC8B287AAC1B0063407A /* InitNumField.swift */; };
 		9804CC8E287AAC900063407A /* ModifyingInfoNumLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC8D287AAC900063407A /* ModifyingInfoNumLine.swift */; };
 		982A3047287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A3046287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift */; };
+		9856D7D3287EC6FD0081A4BC /* PhotoDirectInputEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E13222287EC3C900304D5F /* PhotoDirectInputEntity+CoreDataClass.swift */; };
+		9856D7D4287EC7000081A4BC /* PhotoDirectInputEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E13223287EC3C900304D5F /* PhotoDirectInputEntity+CoreDataProperties.swift */; };
 		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
 		987036A7286AE53600451744 /* InitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A6286AE53600451744 /* InitTextField.swift */; };
 		987036A9286AE55700451744 /* InitTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A8286AE55700451744 /* InitTitle.swift */; };
@@ -154,6 +156,8 @@
 		98DE9BD82874656D00EFA265 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		98DE9BE228747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicineDataEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		98DE9BE328747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicineDataEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		98E13222287EC3C900304D5F /* PhotoDirectInputEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDirectInputEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98E13223287EC3C900304D5F /* PhotoDirectInputEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDirectInputEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		98F1CBFB2869858100B9737B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -328,6 +332,8 @@
 				98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */,
 				98DE9BE228747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift */,
 				98DE9BE328747C6F00EFA265 /* MedicineDataEntity+CoreDataProperties.swift */,
+				98E13222287EC3C900304D5F /* PhotoDirectInputEntity+CoreDataClass.swift */,
+				98E13223287EC3C900304D5F /* PhotoDirectInputEntity+CoreDataProperties.swift */,
 				266AB3B9286C2CA4008A8079 /* MedicineModel.swift */,
 				9804CC1D28792F820063407A /* ViewStirng.swift */,
 				98913F23286884B9001A13C5 /* Persistence.swift */,
@@ -552,11 +558,13 @@
 				266AB3BD286C2E93008A8079 /* NetworkManager.swift in Sources */,
 				98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */,
 				98913F4C286884F3001A13C5 /* MainView.swift in Sources */,
+				9856D7D3287EC6FD0081A4BC /* PhotoDirectInputEntity+CoreDataClass.swift in Sources */,
 				98913F4A286884E4001A13C5 /* InitSettingView.swift in Sources */,
 				98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */,
 				98913F1D286884B8001A13C5 /* ContentView.swift in Sources */,
 				98DE9BD22873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				98DE9BE428747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift in Sources */,
+				9856D7D4287EC7000081A4BC /* PhotoDirectInputEntity+CoreDataProperties.swift in Sources */,
 				98DE9BD52874642200EFA265 /* LoadingView.swift in Sources */,
 				987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */,
 				266AB3BA286C2CA4008A8079 /* MedicineModel.swift in Sources */,
@@ -806,6 +814,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
+				INFOPLIST_KEY_LSApplicationCategoryType = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "이 앱은 카메리 접근권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "이 앱은 사진 촬영 후 저장합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
@@ -841,6 +852,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Jikyeojulge/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "지켜줄게";
+				INFOPLIST_KEY_LSApplicationCategoryType = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "이 앱은 카메리 접근권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "이 앱은 사진 촬영 후 저장합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";

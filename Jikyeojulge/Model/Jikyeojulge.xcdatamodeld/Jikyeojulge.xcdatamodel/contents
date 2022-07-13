@@ -19,8 +19,15 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photoImage" optional="YES" attributeType="Binary"/>
     </entity>
+    <entity name="PhotoDirectInputEntity" representedClassName=".PhotoDirectInputEntity" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptions" optional="YES" attributeType="String"/>
+        <attribute name="medicalTitle" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Binary"/>
+    </entity>
     <elements>
         <element name="MedicineDataEntity" positionX="-63" positionY="45" width="128" height="134"/>
         <element name="PersonalInfoEntity" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="PhotoDirectInputEntity" positionX="-63" positionY="63" width="128" height="89"/>
     </elements>
 </model>
