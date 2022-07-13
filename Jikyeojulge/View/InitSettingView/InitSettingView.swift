@@ -84,9 +84,6 @@ struct InitSettingView: View {
                 Spacer()
 
                 if photoImage != nil {
-//                    NavigationLink(destination: MainView(), tag: true, selection: $nextView) {
-//                        EmptyView()
-//                    }.isDetailLink(false)
                     Button(action: {
                         savePersonalInfo(name: name,
                                          photoImage: selectedImage!,

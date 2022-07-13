@@ -88,7 +88,6 @@ struct JikyeojulgeMediumWidgetEntryView : View {
         ZStack{
             Color.widgetBlue
             HStack {
-                
                 WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: 65)
                     .padding(.trailing, 10)
                 VStack(alignment: .leading) {

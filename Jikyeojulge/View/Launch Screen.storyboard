@@ -34,7 +34,7 @@
                             <constraint firstItem="DYT-ob-HHH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="EWK-W3-mvk"/>
                             <constraint firstItem="DYT-ob-HHH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="MuI-tS-GFL"/>
                             <constraint firstItem="DYT-ob-HHH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QD8-n8-sp8"/>
-                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" symbolic="YES" id="SfN-ll-jLj"/>
                             <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
                             <constraint firstAttribute="bottom" secondItem="DYT-ob-HHH" secondAttribute="bottom" id="xve-4w-zFQ"/>
                         </constraints>

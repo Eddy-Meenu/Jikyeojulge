@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct OnboardingView: View {
 
     let content = OnboardingComponent()
