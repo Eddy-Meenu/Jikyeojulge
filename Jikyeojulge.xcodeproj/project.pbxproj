@@ -29,7 +29,7 @@
 		9804CC202879312F0063407A /* DeveloperLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC1F2879312F0063407A /* DeveloperLink.swift */; };
 		9804CC8C287AAC1B0063407A /* InitNumField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC8B287AAC1B0063407A /* InitNumField.swift */; };
 		9804CC8E287AAC900063407A /* ModifyingInfoNumLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804CC8D287AAC900063407A /* ModifyingInfoNumLine.swift */; };
-		982A3047287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A3046287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift */; };
+		982A3047287BFEF400CC8F5A /* MedicalDirectInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A3046287BFEF400CC8F5A /* MedicalDirectInputView.swift */; };
 		9856D7D3287EC6FD0081A4BC /* PhotoDirectInputEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E13222287EC3C900304D5F /* PhotoDirectInputEntity+CoreDataClass.swift */; };
 		9856D7D4287EC7000081A4BC /* PhotoDirectInputEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E13223287EC3C900304D5F /* PhotoDirectInputEntity+CoreDataProperties.swift */; };
 		987036A5286AE52100451744 /* InitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987036A4286AE52100451744 /* InitBtn.swift */; };
@@ -54,6 +54,7 @@
 		98913F5228688524001A13C5 /* MedicineSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F5128688524001A13C5 /* MedicineSearchView.swift */; };
 		98913F542868855E001A13C5 /* ModifyingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F532868855E001A13C5 /* ModifyingInfoView.swift */; };
 		98913F562868856E001A13C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98913F552868856E001A13C5 /* OnboardingView.swift */; };
+		98AA3384288052640034DECE /* MedicalInputDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA3383288052640034DECE /* MedicalInputDetailView.swift */; };
 		98DE9BD22873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
 		98DE9BD32873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */; };
 		98DE9BD52874642200EFA265 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD42874642200EFA265 /* LoadingView.swift */; };
@@ -123,7 +124,7 @@
 		9804CC1F2879312F0063407A /* DeveloperLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperLink.swift; sourceTree = "<group>"; };
 		9804CC8B287AAC1B0063407A /* InitNumField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitNumField.swift; sourceTree = "<group>"; };
 		9804CC8D287AAC900063407A /* ModifyingInfoNumLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoNumLine.swift; sourceTree = "<group>"; };
-		982A3046287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalPhotoDirectInputView.swift; sourceTree = "<group>"; };
+		982A3046287BFEF400CC8F5A /* MedicalDirectInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDirectInputView.swift; sourceTree = "<group>"; };
 		987036A4286AE52100451744 /* InitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitBtn.swift; sourceTree = "<group>"; };
 		987036A6286AE53600451744 /* InitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTextField.swift; sourceTree = "<group>"; };
 		987036A8286AE55700451744 /* InitTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTitle.swift; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 		98913F5128688524001A13C5 /* MedicineSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSearchView.swift; sourceTree = "<group>"; };
 		98913F532868855E001A13C5 /* ModifyingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyingInfoView.swift; sourceTree = "<group>"; };
 		98913F552868856E001A13C5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		98AA3383288052640034DECE /* MedicalInputDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalInputDetailView.swift; sourceTree = "<group>"; };
 		98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		98DE9BD12873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalInfoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		98DE9BD42874642200EFA265 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -358,7 +360,8 @@
 				98913F4B286884F3001A13C5 /* MainView.swift */,
 				98913F4D28688502001A13C5 /* MedicineRecordView.swift */,
 				266AB39B286B0DC4008A8079 /* MedicineDetailView.swift */,
-				982A3046287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift */,
+				98AA3383288052640034DECE /* MedicalInputDetailView.swift */,
+				982A3046287BFEF400CC8F5A /* MedicalDirectInputView.swift */,
 				98913F5128688524001A13C5 /* MedicineSearchView.swift */,
 				98913F4F2868850D001A13C5 /* SettingView.swift */,
 				9804CC142874B7510063407A /* DeveloperInfoView.swift */,
@@ -565,6 +568,7 @@
 				98DE9BD22873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
 				98DE9BE428747C6F00EFA265 /* MedicineDataEntity+CoreDataClass.swift in Sources */,
 				9856D7D4287EC7000081A4BC /* PhotoDirectInputEntity+CoreDataProperties.swift in Sources */,
+				98AA3384288052640034DECE /* MedicalInputDetailView.swift in Sources */,
 				98DE9BD52874642200EFA265 /* LoadingView.swift in Sources */,
 				987036B2286B08DB00451744 /* HidKeyboard+Extension.swift in Sources */,
 				266AB3BA286C2CA4008A8079 /* MedicineModel.swift in Sources */,
@@ -580,7 +584,7 @@
 				98F1CBFC2869858100B9737B /* Color+Extension.swift in Sources */,
 				98913F502868850D001A13C5 /* SettingView.swift in Sources */,
 				98913F4E28688502001A13C5 /* MedicineRecordView.swift in Sources */,
-				982A3047287BFEF400CC8F5A /* MedicalPhotoDirectInputView.swift in Sources */,
+				982A3047287BFEF400CC8F5A /* MedicalDirectInputView.swift in Sources */,
 				98DE9BD32873049C00EFA265 /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				266AB39C286B0DC4008A8079 /* MedicineDetailView.swift in Sources */,
 				98913F1B286884B8001A13C5 /* JikyeojulgeApp.swift in Sources */,

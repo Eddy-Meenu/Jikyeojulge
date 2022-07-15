@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MedicalPhotoDirectInputView: View {
+struct MedicalDirectInputView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var dismiss
     @State var value = ""
@@ -63,8 +63,8 @@ struct MedicalPhotoDirectInputView: View {
                             let image = photoImage ?? Image(systemName: "photo.fill")
                             image
                                 .resizable()
-                                .scaledToFill()
                                 .frame(width: 150, height: 150)
+                                .scaledToFill()
                         }
                     })
                     .fullScreenCover(isPresented: $isShowingImagePicker, onDismiss: loadImage) {
@@ -128,4 +128,5 @@ struct MedicalPhotoDirectInputView: View {
         guard let selectedImage = selectedImage else { return }
         photoImage = Image(uiImage: selectedImage)
     }
+    
 }

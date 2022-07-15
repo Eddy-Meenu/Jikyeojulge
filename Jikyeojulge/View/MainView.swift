@@ -20,6 +20,16 @@ struct MainView: View {
 
     @State var medicalRecord: String = "지병에 대해 적어주세요."
     
+// TODO: 년월일, 하이픈 자동입력
+//    var dateformat: DateFormatter {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "YYYY년 MM월 dd일"
+//
+//        return formatter
+//    }
+    
+    var date = Date()
+    
     var body: some View {
         ZStack {
             Color.mainBlue.ignoresSafeArea()
@@ -54,6 +64,7 @@ struct MainView: View {
                             Spacer()
                             Text(info.contact2 ?? "")
                         }
+                        
                         Divider()
                         
                         VStack{
@@ -63,14 +74,15 @@ struct MainView: View {
                             }
                             
                             ScrollView(showsIndicators: false) {
-                                HStack{
+                                HStack {
                                     Text(personalInfo[0].medicalRecord ?? "")
-                                    Spacer()
+                                        .font(.system(size: 16, weight: .regular))
+                                        .padding(.all, 5)
                                 }
                             }
-                            .frame(width: 302, height: 156)
+                            .frame(width: 302, height: 156, alignment: .leading)
                             .background(Rectangle()
-                                .stroke(Color.black.opacity(0.5)))
+                                .stroke(Color.gray.opacity(0.5)))
                         }
                         
                     }
@@ -81,7 +93,7 @@ struct MainView: View {
             .frame(width: 350, height: 630)
             .background(RoundedRectangle(cornerRadius: 20)
                 .fill(Color.mainWhite)
-                .shadow(color: Color.black.opacity(0.15), radius: 30, x: 6, y: 6))
+                .shadow(color: Color.gray.opacity(0.5), radius: 20, x: 6, y: 6))
         }
     }
 }
