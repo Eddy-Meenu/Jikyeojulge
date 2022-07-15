@@ -37,13 +37,13 @@
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
-					<string>혈액형</string>
+					<string>의료 정보</string>
 					<key>INEnumValueDisplayNameID</key>
 					<string>93aq3N</string>
 					<key>INEnumValueIndex</key>
 					<integer>2</integer>
 					<key>INEnumValueName</key>
-					<string>bloodType</string>
+					<string>medicalInfo</string>
 				</dict>
 			</array>
 		</dict>

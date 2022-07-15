@@ -75,7 +75,7 @@ struct JikyeojulgeSmallWidgetEntryView : View {
                     WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010\n1234\n5678", size: 16)
                 }
                 
-            case .bloodType:
+            case .medicalInfo:
                 VStack {
                     WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+"))
                     
