@@ -70,8 +70,17 @@ struct JikyeojulgeSmallWidgetEntryView : View {
                 WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010\n1234\n5678", size: 34)
                 
             case .bloodType:
-                WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: 50)
+                WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+"))
             }
+        }
+    }
+    
+    func setFontSizeByBloodType(bloodType: String) -> Int {
+        switch bloodType {
+        case "AB+", "AB-":
+            return 50
+        default:
+            return 70
         }
     }
 }
@@ -88,15 +97,34 @@ struct JikyeojulgeMediumWidgetEntryView : View {
         ZStack{
             Color.widgetBlue
             HStack {
-                WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: 65)
+                WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+", infoType: "bloodType"))
                     .padding(.trailing, 10)
+                
                 VStack(alignment: .leading) {
+                    WidgetText(personalInfoType: personalInfo[0].contact1 ?? "010-1234-5678", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+", infoType: "contact1"))
                     
-                    WidgetText(personalInfoType: personalInfo[0].contact1 ?? "010-1234-5678", size: 18)
-                    
-                    WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010-1234-5678", size: 18)
+                    WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010-1234-5678", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+", infoType: "contact2"))
                         .padding(.top, 5)
                 }
+            }
+        }
+    }
+    
+    func setFontSizeByBloodType(bloodType: String, infoType: String) -> Int {
+        switch bloodType {
+        case "AB+", "AB-":
+            if infoType == "bloodType" {
+                return 65
+            }
+            else {
+                return 18
+            }
+        default:
+            if infoType == "bloodType" {
+                return 70
+            }
+            else {
+                return 22
             }
         }
     }

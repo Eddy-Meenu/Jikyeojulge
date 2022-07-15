@@ -120,7 +120,7 @@ struct MedicineRecordView: View {
                     Button(action: {
                         
                     }, label: {
-                        Text("확인")
+                        Text("조회")
                     })
                     .padding(7)
                     .foregroundColor(Color.white)

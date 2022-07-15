@@ -53,6 +53,9 @@ struct SettingView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
+            .onAppear {
+                UITableView.appearance().backgroundColor = UIColor.clear
+            }
         }
     }
 }
