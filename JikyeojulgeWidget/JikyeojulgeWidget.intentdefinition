@@ -27,23 +27,13 @@
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
-					<string>비상 연락처1</string>
+					<string>비상 연락처</string>
 					<key>INEnumValueDisplayNameID</key>
 					<string>ao8tx3</string>
 					<key>INEnumValueIndex</key>
 					<integer>1</integer>
 					<key>INEnumValueName</key>
-					<string>contact1</string>
-				</dict>
-				<dict>
-					<key>INEnumValueDisplayName</key>
-					<string>비상 연락처2</string>
-					<key>INEnumValueDisplayNameID</key>
-					<string>Uzjifb</string>
-					<key>INEnumValueIndex</key>
-					<integer>2</integer>
-					<key>INEnumValueName</key>
-					<string>contact2</string>
+					<string>contact</string>
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
@@ -51,7 +41,7 @@
 					<key>INEnumValueDisplayNameID</key>
 					<string>93aq3N</string>
 					<key>INEnumValueIndex</key>
-					<integer>3</integer>
+					<integer>2</integer>
 					<key>INEnumValueName</key>
 					<string>bloodType</string>
 				</dict>
