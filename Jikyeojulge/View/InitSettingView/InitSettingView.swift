@@ -44,12 +44,13 @@ struct InitSettingView: View {
 
                 ScrollView(showsIndicators: false) {
                     if arrayCount >= 4 {
-                            let image = photoImage ?? Image(systemName: "photo.fill")
-                            image
+                        let image = photoImage ?? Image(systemName: "photo.fill")
+                        image
                             .resizable()
                             .clipShape(Circle())
                             .scaledToFill()
                             .frame(width: 150, height: 150)
+                            .foregroundColor(.gray)
                             .padding(.top, 50)
                             .onTapGesture{
                                 self.show.toggle()
