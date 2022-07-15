@@ -24,7 +24,8 @@ class NetworkManager: ObservableObject {
         let typeQuery = URLQueryItem(name: "type", value: type)
         let itemNameQuery = URLQueryItem(name: "itemName", value: itemName)
         let itemSeqQuery = URLQueryItem(name: "itemSeq", value: itemSeq)
-        urlComponents?.queryItems = [serviceKeyQuery, typeQuery, itemNameQuery, itemSeqQuery]
+        let numOfRowsQuery = URLQueryItem(name: "numOfRows", value: "100")
+        urlComponents?.queryItems = [serviceKeyQuery, typeQuery, itemNameQuery, itemSeqQuery, numOfRowsQuery]
         components?.percentEncodedQuery = urlComponents?.percentEncodedQuery?
             .replacingOccurrences(of: "+", with: "%2B")
         

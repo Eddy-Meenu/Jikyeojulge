@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1CBFB2869858100B9737B /* Color+Extension.swift */; };
 		261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE9BD02873049C00EFA265 /* PersonalInfoEntity+CoreDataClass.swift */; };
+		2639B9D42881BAF50091CA35 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639B9D32881BAF50091CA35 /* Provider.swift */; };
+		2639B9D62881BB340091CA35 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639B9D52881BB340091CA35 /* SimpleEntry.swift */; };
+		2639B9D82881BB7D0091CA35 /* WidgetText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639B9D72881BB7D0091CA35 /* WidgetText.swift */; };
+		2639B9DA2881BBE10091CA35 /* SmallWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639B9D92881BBE10091CA35 /* SmallWidgetEntryView.swift */; };
+		2639B9DC2881BC4B0091CA35 /* MediumWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639B9DB2881BC4B0091CA35 /* MediumWidgetEntryView.swift */; };
+		2639B9DE2881BCAA0091CA35 /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639B9DD2881BCAA0091CA35 /* SmallWidget.swift */; };
+		2639B9E02881BCE60091CA35 /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639B9DF2881BCE60091CA35 /* MediumWidget.swift */; };
 		265E4D00286F40A100FF83A6 /* MedicineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */; };
 		265E4D0B287208A600FF83A6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0A287208A600FF83A6 /* WidgetKit.framework */; };
 		265E4D0D287208A600FF83A6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265E4D0C287208A600FF83A6 /* SwiftUI.framework */; };
@@ -104,6 +111,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2639B9D32881BAF50091CA35 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		2639B9D52881BB340091CA35 /* SimpleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEntry.swift; sourceTree = "<group>"; };
+		2639B9D72881BB7D0091CA35 /* WidgetText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetText.swift; sourceTree = "<group>"; };
+		2639B9D92881BBE10091CA35 /* SmallWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetEntryView.swift; sourceTree = "<group>"; };
+		2639B9DB2881BC4B0091CA35 /* MediumWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetEntryView.swift; sourceTree = "<group>"; };
+		2639B9DD2881BCAA0091CA35 /* SmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget.swift; sourceTree = "<group>"; };
+		2639B9DF2881BCE60091CA35 /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
 		265E4CFE286C3FB400FF83A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		265E4CFF286F40A100FF83A6 /* MedicineInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineInfo.swift; sourceTree = "<group>"; };
 		265E4D08287208A600FF83A6 /* JikyeojulgeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JikyeojulgeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +232,13 @@
 			isa = PBXGroup;
 			children = (
 				265E4D0F287208A600FF83A6 /* JikyeojulgeWidget.swift */,
+				2639B9DF2881BCE60091CA35 /* MediumWidget.swift */,
+				2639B9DD2881BCAA0091CA35 /* SmallWidget.swift */,
+				2639B9DB2881BC4B0091CA35 /* MediumWidgetEntryView.swift */,
+				2639B9D92881BBE10091CA35 /* SmallWidgetEntryView.swift */,
+				2639B9D72881BB7D0091CA35 /* WidgetText.swift */,
+				2639B9D52881BB340091CA35 /* SimpleEntry.swift */,
+				2639B9D32881BAF50091CA35 /* Provider.swift */,
 				265E4D11287208A600FF83A6 /* JikyeojulgeWidget.intentdefinition */,
 				265E4D12287208A700FF83A6 /* Assets.xcassets */,
 				265E4D14287208A700FF83A6 /* Info.plist */,
@@ -541,10 +562,17 @@
 				26F7814C2879EC98002E8091 /* JikyeojulgeWidget.intentdefinition in Sources */,
 				9804CC17287544290063407A /* PersonalInfoEntity+CoreDataProperties.swift in Sources */,
 				26A58306287421760091B671 /* Jikyeojulge.xcdatamodeld in Sources */,
+				2639B9DE2881BCAA0091CA35 /* SmallWidget.swift in Sources */,
+				2639B9E02881BCE60091CA35 /* MediumWidget.swift in Sources */,
 				26A583072874218D0091B671 /* Persistence.swift in Sources */,
+				2639B9DC2881BC4B0091CA35 /* MediumWidgetEntryView.swift in Sources */,
+				2639B9D42881BAF50091CA35 /* Provider.swift in Sources */,
 				265E4D10287208A600FF83A6 /* JikyeojulgeWidget.swift in Sources */,
+				2639B9D62881BB340091CA35 /* SimpleEntry.swift in Sources */,
 				261A1CCA2875652B00D1D6D0 /* Color+Extension.swift in Sources */,
+				2639B9D82881BB7D0091CA35 /* WidgetText.swift in Sources */,
 				261A1CCC2875654100D1D6D0 /* PersonalInfoEntity+CoreDataClass.swift in Sources */,
+				2639B9DA2881BBE10091CA35 /* SmallWidgetEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
