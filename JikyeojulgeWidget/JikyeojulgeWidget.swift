@@ -63,14 +63,27 @@ struct JikyeojulgeSmallWidgetEntryView : View {
             Color.widgetBlue
             
             switch entry.configuration.personalInfo {
-            case .unknown, .contact1:
-                WidgetText(personalInfoType: personalInfo[0].contact1 ?? "010\n1234\n5678", size: 34)
-                
-            case .contact2:
-                WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010\n1234\n5678", size: 34)
+            case .unknown, .contact:
+                VStack(spacing: 5) {
+                    Text("비상 연락처")
+                        .font(.system(size: 22, weight: .bold))
+                        .foregroundColor(Color.white)
+                        .padding(.bottom, 12)
+                    
+                    WidgetText(personalInfoType: personalInfo[0].contact1 ?? "010\n1234\n5678", size: 16)
+                    
+                    WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010\n1234\n5678", size: 16)
+                }
                 
             case .bloodType:
-                WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+"))
+                VStack {
+                    WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+"))
+                    
+                    Text(personalInfo[0].medicalRecord ?? "")
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(Color.white)
+                        .padding(.bottom, 11)
+                }
             }
         }
     }
@@ -78,7 +91,7 @@ struct JikyeojulgeSmallWidgetEntryView : View {
     func setFontSizeByBloodType(bloodType: String) -> Int {
         switch bloodType {
         case "AB+", "AB-":
-            return 50
+            return 60
         default:
             return 70
         }
@@ -97,35 +110,30 @@ struct JikyeojulgeMediumWidgetEntryView : View {
         ZStack{
             Color.widgetBlue
             HStack {
-                WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+", infoType: "bloodType"))
-                    .padding(.trailing, 10)
+                VStack {
+                    WidgetText(personalInfoType: personalInfo[0].bloodType ?? "AB+", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+"))
+                    
+                    WidgetText(personalInfoType: personalInfo[0].medicalRecord ?? "", size: 16)
+                }
+                .padding(.trailing, 10)
+                .padding(.bottom, 10)
                 
                 VStack(alignment: .leading) {
-                    WidgetText(personalInfoType: personalInfo[0].contact1 ?? "010-1234-5678", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+", infoType: "contact1"))
+                    WidgetText(personalInfoType: personalInfo[0].contact1 ?? "010-1234-5678", size: 20)
                     
-                    WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010-1234-5678", size: setFontSizeByBloodType(bloodType: personalInfo[0].bloodType ?? "AB+", infoType: "contact2"))
+                    WidgetText(personalInfoType: personalInfo[0].contact2 ?? "010-1234-5678", size: 20)
                         .padding(.top, 5)
                 }
             }
         }
     }
     
-    func setFontSizeByBloodType(bloodType: String, infoType: String) -> Int {
+    func setFontSizeByBloodType(bloodType: String) -> Int {
         switch bloodType {
         case "AB+", "AB-":
-            if infoType == "bloodType" {
-                return 65
-            }
-            else {
-                return 18
-            }
+            return 50
         default:
-            if infoType == "bloodType" {
-                return 70
-            }
-            else {
-                return 22
-            }
+            return 60
         }
     }
 }
@@ -151,7 +159,7 @@ struct JikyeojulgeSmallWidget: Widget {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("선택 정보")
-        .description("위젯을 통해 비상 연락처 또는 혈액형 정보 중 하나를 선택해서 제공할 수 있습니다.")
+        .description("위젯을 통해 비상 연락처, 혈액형 또는 질병 기록 정보 중 하나를 선택해서 제공할 수 있습니다.")
         .supportedFamilies([.systemSmall])
     }
 }
@@ -167,7 +175,7 @@ struct JikyeojulgeMediumWidget: Widget {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("기본 정보")
-        .description("위젯을 통해 혈액형 정보와 비상 연락처를 전부 제공할 수 있습니다.")
+        .description("위젯을 통해 혈액형 정보와 비상 연락처, 질병 기록을 전부 제공할 수 있습니다.")
         .supportedFamilies([.systemMedium])
     }
 }
