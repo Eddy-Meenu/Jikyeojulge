@@ -81,6 +81,7 @@ struct ModifyingInfoView: View {
                     .padding(.horizontal, 24)
 
                     TextEditor(text: $medicalRecord)
+                        .font(.system(size: 16, weight: .regular))
                         .frame(width: 302, height: 156)
                         .background(Rectangle()
                             .stroke(Color.black.opacity(0.5)))
@@ -100,7 +101,7 @@ struct ModifyingInfoView: View {
             .frame(width: 350, height: 630)
             .background(RoundedRectangle(cornerRadius: 20)
                 .fill(Color.mainWhite)
-                .shadow(color: Color.black.opacity(0.15), radius: 30, x: 6, y: 6))
+                .shadow(color: Color.gray.opacity(0.5), radius: 20, x: 6, y: 6))
 
         }
         .onTapGesture {
