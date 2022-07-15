@@ -16,7 +16,6 @@ struct MedicalDirectInputView: View {
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State var selectedImage: UIImage?
     @State var show = false
-    @State var isShowingSheet = false
 
     @State var photoImage: Image?
     
@@ -56,27 +55,29 @@ struct MedicalDirectInputView: View {
                         
                     }, label: {
                         ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 150, height: 150)
-                                .foregroundColor(.white)
-                            
-                            let image = photoImage ?? Image(systemName: "photo.fill")
+                            let image = photoImage ?? Image(systemName: "camera.fill")
                             image
                                 .resizable()
-                                .frame(width: 150, height: 150)
-                                .scaledToFill()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100, height: 100)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 25)
+                                .padding(.vertical, 10)
+// TODO: 언젠가 이 색깔을 피그마에서 뽑아서 더블백그라운드를 없애주기를..
+                                .background(RoundedRectangle(cornerRadius: 10).fill(Color.mainBlue))
+                                .background(RoundedRectangle(cornerRadius: 10).fill(Color.mainBlue))
                         }
                     })
                     .fullScreenCover(isPresented: $isShowingImagePicker, onDismiss: loadImage) {
                         ImagePicker(images: $selectedImage, show: $show, sourceType: .camera)
                     }
                 }
-                .padding(.top, 24)
-                .padding(.bottom, 50)
-                
+                .padding(.vertical, 24)
                 
                 HStack {
                     Text("진단서 또는 처방약")
+                        .font(.system(size: 18, weight: .bold))
+                        
                     Spacer()
                 }
                 .padding(.horizontal, 24)
@@ -85,14 +86,16 @@ struct MedicalDirectInputView: View {
                     TextField("진단서 또는 처방약 이름을 적어주세요.", text: $value)
                 }
                 .padding(.horizontal, 24)
+                
 
                 Divider()
                     .background(.black)
                     .padding(.horizontal, 24)
-
+                    .padding(.bottom, 14)
                 
                 HStack {
                     Text("설명")
+                        .font(.system(size: 18, weight: .bold))
                     Spacer()
                 }
                 .padding(.horizontal, 24)
