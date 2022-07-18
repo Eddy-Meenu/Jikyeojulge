@@ -19,7 +19,7 @@ Insert gif or link to demo
 
 ## :fireworks: Screenshots
 
-<img src="./Docs/preview-1.png" alt="App Screenshot" style="zoom:7%;" /><img src="./Docs/preview-2.png" alt="preview-2" style="zoom:7%;" /><img src="./Docs/preview-3.png" alt="preview-3" style="zoom:7%;" /><img src="./Docs/preview-4.png" alt="preview-4" style="zoom:7%;" /><img src="./Docs/preview-5.png" alt="preview-5" style="zoom:7%;" />
+<img src="./Docs/preview-1.png" alt="App Screenshot" width="250" /><img src="./Docs/preview-2.png" alt="preview-2" width="250" /><img src="./Docs/preview-3.png" alt="preview-3" width="250" /><img src="./Docs/preview-4.png" alt="preview-4" width="250" /><img src="./Docs/preview-5.png" alt="preview-5" width="250" />
 
 ## :sparkles: Skills & Tech Stack
 
