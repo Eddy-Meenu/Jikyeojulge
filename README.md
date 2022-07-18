@@ -3,7 +3,7 @@ Eddy-Meenu의 사이드 프로젝트 레포입니다.
 
 혼자가 아닌 당신을 위한 기록
 
-![Logo](https://dummyimage.com/1000x300/000/fff.png)
+![jikyeojulge-logo](/Users/kimmintaek/Github/Jikyeojulge/Docs/jikyeojulge-logo.png)
 
 ## :people_hugging: Authors
 
@@ -22,11 +22,16 @@ Insert gif or link to demo
 ![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
 
 ## :sparkles: Skills & Tech Stack
-swiftUI, CoreData, URLSession, Codable, Combine, WidgetKit
+
+- SwiftUI
+- CoreData
+- URLSession
+- Combine (Codable)
+- WidgetKit
 
 
 ## ✔️ History
-2022.06.26. GIT REPO CREATED
+- 2022.06.26. GIT REPO CREATED
 
 ## 🧩 ETC
 
