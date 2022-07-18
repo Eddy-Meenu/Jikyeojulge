@@ -3,7 +3,7 @@ Eddy-Meenu의 사이드 프로젝트 레포입니다.
 
 혼자가 아닌 당신을 위한 기록
 
-![jikyeojulge-logo](/Users/kimmintaek/Github/Jikyeojulge/Docs/jikyeojulge-logo.png)
+![jikyeojulge-logo](./Docs/jikyeojulge-logo.png)
 
 ## :people_hugging: Authors
 
