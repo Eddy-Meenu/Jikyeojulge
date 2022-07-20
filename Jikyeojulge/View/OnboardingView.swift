@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct OnboardingView: View {
 
     let content = OnboardingComponent()
@@ -42,10 +43,12 @@ struct OnboardingPage: View {
 
             VStack {
                 Text(title)
-                    .font(.system(size: 25, weight: .bold))
+                    .font(.system(size: 22, weight: .bold))
                     
                 Text(description)
-                    .font(.system(size: 18, weight: .regular))
+                    .font(.system(size: 15, weight: .regular))
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
                     .padding(.bottom, 10)
                 
                 Image(imageName)

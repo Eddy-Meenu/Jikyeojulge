@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var images: UIImage?
@@ -40,12 +41,13 @@ struct ImagePicker: UIViewControllerRepresentable {
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             guard let image = info[.originalImage] as? UIImage else { return }
-
-                self.img0.images = image
-                self.img0.show.toggle()
+            
+            self.img0.images = image
+            self.img0.show.toggle()
+            self.img0.presentationMode.wrappedValue.dismiss()
         }
     }
-    
+
     func makeCoordinator() -> Coordinator {
         return Self.Coordinator(img1: self)
     }

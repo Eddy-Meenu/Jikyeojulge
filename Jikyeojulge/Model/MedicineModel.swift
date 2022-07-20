@@ -22,7 +22,7 @@ struct MedicineModel: Codable {
     let items: [Medicine]?
 }
 
-struct Medicine: Codable {
+struct Medicine: Codable, Hashable {
     let entpName: String? // 업체명
     let itemName: String? // 제품명
     let itemSeq: String? // 품목기준코드

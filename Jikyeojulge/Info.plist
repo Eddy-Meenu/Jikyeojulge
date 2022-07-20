@@ -9,7 +9,7 @@
 	</dict>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>ConfigurationIntent</string>
+		<string>PersonalInfoListIntent</string>
 	</array>
 	<key>UILaunchScreen</key>
 	<dict>
