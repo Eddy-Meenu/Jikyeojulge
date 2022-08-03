@@ -15,51 +15,53 @@ struct MedicineDetailView: View {
             Color.mainBlue
                 .ignoresSafeArea()
             ScrollView {
-                VStack(alignment: .center) {
-                    AsyncImage(url: URL(string: medicine.itemImage ?? "https://immeenu.com/image/defaultMedicine.png"), scale: 5.0)
-                        .cornerRadius(10)
+                VStack {
+                    VStack(alignment: .center) {
+                        AsyncImage(url: URL(string: medicine.itemImage ?? "https://immeenu.com/image/defaultMedicine.png"), scale: 5.0)
+                            .cornerRadius(10)
+                        
+                        Spacer()
+                            .frame(height: 25)
+                        
+                        Text(medicine.itemName ?? "등록된 정보가 없습니다")
+                            .font(.system(size: 20, weight: .bold))
+                    }
                     
                     Spacer()
                         .frame(height: 25)
                     
-                    Text(medicine.itemName ?? "등록된 정보가 없습니다")
-                        .font(.system(size: 20, weight: .bold))
-                }
-                
-                Spacer()
-                    .frame(height: 25)
-                
-                VStack(alignment: .leading) {
-                    Group {
-                        Text("효능")
+                    VStack(alignment: .leading) {
+                        Group {
+                            Text("효능")
+                                .font(.system(size: 16, weight: .bold))
+                            
+                            Text(medicine.efcyQesitm ?? "등록된 정보가 업습니다")
+                                .font(.system(size: 16))
+                            
+                            Divider()
+                                .padding(.vertical, 15)
+                        }
+                        
+                        Group {
+                            Text("상호작용")
+                                .font(.system(size: 16, weight: .bold))
+                            
+                            Text(medicine.intrcQesitm ?? "등록된 정보가 없습니다")
+                                .font(.system(size: 16))
+                            
+                            Divider()
+                                .padding(.vertical, 15)
+                        }
+                        
+                        Text("부작용")
                             .font(.system(size: 16, weight: .bold))
                         
-                        Text(medicine.efcyQesitm ?? "등록된 정보가 업습니다")
+                        Text(medicine.seQesitm ?? "등록된 정보가 없습니다")
                             .font(.system(size: 16))
-                        
-                        Divider()
-                            .padding(.vertical, 15)
                     }
-                    
-                    Group {
-                        Text("상호작용")
-                            .font(.system(size: 16, weight: .bold))
-                        
-                        Text(medicine.intrcQesitm ?? "등록된 정보가 없습니다")
-                            .font(.system(size: 16))
-                        
-                        Divider()
-                            .padding(.vertical, 15)
-                    }
-                    
-                    Text("부작용")
-                        .font(.system(size: 16, weight: .bold))
-                    
-                    Text(medicine.seQesitm ?? "등록된 정보가 없습니다")
-                        .font(.system(size: 16))
                 }
+                .padding(16)
             }
-            .padding(16)
             .frame(maxHeight: .infinity)
             .background(RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
