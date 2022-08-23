@@ -26,7 +26,8 @@ swiftUI, CoreData, URLSession, Codable, Combine, WidgetKit
 
 
 ## ✔️ History
-2022.06.26. GIT REPO CREATED
+- 2022.06.26. GIT REPO CREATED
+- 2022.06.26. ~ 2022.07.20. 1차 개발
 
 ## 🧩 ETC
 
