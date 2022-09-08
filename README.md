@@ -26,7 +26,7 @@ Insert gif or link to demo
 - SwiftUI
 - CoreData
 - URLSession
-- Combine (Codable)
+- Combine
 - WidgetKit
 
 ## Used Data
