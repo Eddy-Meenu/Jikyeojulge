@@ -26,12 +26,16 @@ Insert gif or link to demo
 - SwiftUI
 - CoreData
 - URLSession
-- Combine (Codable)
+- Combine
 - WidgetKit
 
+## Used Data
+
+- [식품의약품안전처_의약품개요정보(e약은요)](https://www.data.go.kr/data/15075057/openapi.do)
 
 ## ✔️ History
 - 2022.06.26. GIT REPO CREATED
+- 2022.06.26. ~ 2022.07.20. 1차 개발
 
 ## 🧩 ETC
 
